@@ -85,8 +85,10 @@ public class PlayerController : MonoBehaviour
         HandleMouseLook();
         HandleObjectInteraction();
         CheckPickupRange();
+        RotateObject();
     }
 
+    //물체를 들 수 있는 상태인지 확인
     void CheckPickupRange()
     {
         RaycastHit hit;
@@ -122,6 +124,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
+    //마우스 움직임 
     void HandleMovement()
     {
         isGrounded = controller.isGrounded;
@@ -136,7 +139,6 @@ public class PlayerController : MonoBehaviour
         Vector3 move = transform.right * x + transform.forward * z;
         controller.Move(move * moveSpeed * Time.deltaTime);
 
-        // 점프 처리
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpForce * -1f * gravity);
@@ -250,5 +252,23 @@ public class PlayerController : MonoBehaviour
             return hit.point + hit.normal * (radius + placeOffset);
         }
         return desiredPosition;
+    }
+
+    void RotateObject()
+    {
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            isRotating = true;
+        }
+        else if(Input.GetKeyDown(KeyCode.R))
+        {
+            isRotating = false;
+        }
+
+        if(isRotating)
+        {
+            float rotationAmount = rotationSpeed * Time.deltaTime;
+            objectRotation *= Quaternion.AngleAxis(rotationAmount, rotationAxis); 
+        }
     }
 }
