@@ -16,17 +16,13 @@ public class PlayerController : MonoBehaviour
     public LayerMask wallLayer;                 // 벽이 속한 레이어
     public float placeOffset = 0.1f;            // 물체를 놓을 때 벽으로부터의 거리
 
-    [Header("Size Limits")]
-    public float minSize = 0.1f;                // 물체의 최소 크기
-    public float maxSize = 10f;                 // 물체의 최대 크기
-
     [Header("Distance Settings")]
-    public float minDistance = 1f;              // 플레이어와 물체 사이의 최소 거리
+    public float minDistance = 4f;              // 플레이어와 물체 사이의 최소 거리
+    private float maxDistance = 25f;              // 플레이어와 물체 사이의 최대 거리
 
     [Header("Smoothing Settings")]
     public float smoothSpeed = 10f;             // 물체 이동 및 크기 변경의 부드러움 정도
     public float positionPrecision = 0.001f;    // 위치 조정의 정밀도
-    public float scalePrecision = 0.0001f;      // 크기 조정의 정밀도
 
     [Header("UI Settings")]
     public Color pickupCursorColor = Color.green;   // 물체를 집을 수 있을 때의 커서 색상  
@@ -85,7 +81,6 @@ public class PlayerController : MonoBehaviour
         HandleMouseLook();
         HandleObjectInteraction();
         CheckPickupRange();
-        RotateObject();
     }
 
     //물체를 들 수 있는 상태인지 확인
@@ -169,6 +164,11 @@ public class PlayerController : MonoBehaviour
             else
                 PlaceObject();
         }
+        if (heldObject != null)
+            {
+            UpdateObjectSizeAndPosition();
+                RotateObject();
+            }
     }
 
     void PickupObject()
@@ -214,6 +214,7 @@ public class PlayerController : MonoBehaviour
         }
 
         heldObject.transform.position = currentPosition;
+        heldObject.transform.rotation = objectRotation;
 
         if (heldCollider != null)
         {
@@ -270,5 +271,43 @@ public class PlayerController : MonoBehaviour
             float rotationAmount = rotationSpeed * Time.deltaTime;
             objectRotation *= Quaternion.AngleAxis(rotationAmount, rotationAxis); 
         }
+    }
+
+    void UpdateObjectSizeAndPosition()
+    {
+        if (heldObject == null) return;
+
+        // 현재 거리 계산
+        float currentDistance = Vector3.Distance(playerCamera.transform.position, heldObject.transform.position);
+
+        // 새로운 거리 계산 (제한 적용)
+        float newDistance = Mathf.Clamp(currentDistance, minDistance, maxDistance);
+
+        // 새로운 위치 계산
+        Vector3 cameraForward = playerCamera.transform.forward;
+        targetPosition = playerCamera.transform.position + cameraForward * newDistance;
+
+        // 높이 조정
+        float verticalAdjustment = (heldObject.transform.localScale.y - originalScale.y) / 2f;
+        targetPosition.y += verticalOffset + verticalAdjustment;
+
+        // 물체의 중심이 타겟 위치에 오도록 조정
+        targetPosition += objectOffset;
+
+        // 벽 충돌 검사
+        targetPosition = AdjustPositionForWalls(targetPosition, targetScale);
+
+        // 위치 정밀도 적용
+        targetPosition = new Vector3(
+            Mathf.Round(targetPosition.x / positionPrecision) * positionPrecision,
+            Mathf.Round(targetPosition.y / positionPrecision) * positionPrecision,
+            Mathf.Round(targetPosition.z / positionPrecision) * positionPrecision
+        );
+
+        // 부드러운 위치 변경 적용
+        heldObject.transform.position = Vector3.Lerp(heldObject.transform.position, targetPosition, smoothSpeed * Time.deltaTime);
+
+        // 물체의 회전 상태 적용
+        heldObject.transform.rotation = objectRotation;
     }
 }
