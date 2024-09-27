@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using DG;
 using DG.Tweening;
 
 public class ObjectControl : MonoBehaviour

@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public List<GameObject> objectList = new List<GameObject>();
+    public GameObject box;
+
     [Header("Movement Settings")]
     public float moveSpeed = 5f;                // 플레이어의 이동 속도
     public float mouseSensitivity = 2f;         // 마우스 감도 (시점 회전 속도)
@@ -81,6 +85,20 @@ public class PlayerController : MonoBehaviour
         HandleMouseLook();
         HandleObjectInteraction();
         CheckPickupRange();
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit))
+            {
+                if (box == hit.collider.gameObject)
+                {
+                    int random = Random.Range(0, objectList.Count);
+                    GameObject.Instantiate(objectList[random]);
+                    Debug.Log("생성");
+                }
+            }
+        }
     }
 
     //물체를 들 수 있는 상태인지 확인

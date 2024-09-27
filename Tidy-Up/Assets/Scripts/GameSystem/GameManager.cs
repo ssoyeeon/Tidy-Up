@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public bool isEnd;
     public bool isStart;
     public bool isPause;
+    public bool isPlaying;
 
     public GameObject stopUI;
     public GameObject timeUI;
@@ -49,7 +50,10 @@ public class GameManager : MonoBehaviour
         if (isStart == true)
         {
             ingTime = 10;
-            playTime += Time.deltaTime;
+            if(isPlaying == true)
+            {
+                playTime += Time.deltaTime;
+            }
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 if (isPause == false)
