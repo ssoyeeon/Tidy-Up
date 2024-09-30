@@ -7,6 +7,7 @@ namespace TidyUp
     public class ObjectSciptavle : ScriptableObject
     {
         public string objectName;
+        public string objectDescription;
         public GameObject objectPrefab;
     }
 }
