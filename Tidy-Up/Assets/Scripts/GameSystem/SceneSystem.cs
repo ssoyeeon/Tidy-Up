@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,5 +13,15 @@ public class SceneSystem : MonoBehaviour
     public void ExitButton()
     {
         Application.Quit();
+    }
+
+    public void StartScene()
+    {
+        SceneManager.LoadScene("IntroScene");
+    }
+
+    public void SettingScene()
+    {
+        SceneManager.LoadScene("SettingScene");
     }
 }

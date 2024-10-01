@@ -67,7 +67,8 @@ public class PlayerController : MonoBehaviour
     [Header("Object Holding Settings")]
     public float verticalOffset = 0f;           // 물체의 수직 위치 조정을 위한 오프셋
 
-
+    public GameObject ESCUI;
+    public bool isESC;
 
     void Start()
     {
@@ -77,10 +78,30 @@ public class PlayerController : MonoBehaviour
         // 커서 잠금
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        ESCUI.SetActive(false);
+        isESC = false;
     }
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isESC == true)
+            {
+                Time.timeScale = 1;
+                isESC = false;
+                ESCUI.SetActive(false);
+                return;
+            }
+            if (isESC == false)
+            {
+                Time.timeScale = 0;
+                isESC = true;
+                ESCUI.SetActive(true);
+                return;
+            }
+        }
+
         HandleMovement();
         HandleMouseLook();
         HandleObjectInteraction();
@@ -95,7 +116,6 @@ public class PlayerController : MonoBehaviour
                 {
                     int random = Random.Range(0, objectList.Count);
                     GameObject.Instantiate(objectList[random]);
-                    Debug.Log("생성");
                 }
             }
         }
