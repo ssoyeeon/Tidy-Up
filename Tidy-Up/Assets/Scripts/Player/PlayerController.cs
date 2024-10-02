@@ -115,7 +115,12 @@ public class PlayerController : MonoBehaviour
                 if (box == hit.collider.gameObject)
                 {
                     int random = Random.Range(0, objectList.Count);
-                    GameObject.Instantiate(objectList[random]);
+                    GameObject temp =Instantiate(objectList[random]);
+                    objectList.Remove(temp);
+                    if (objectList[random] = null)
+                    {
+                        Destroy(box);
+                    }
                 }
             }
         }
