@@ -90,7 +90,9 @@ public class PlayerController : MonoBehaviour
             {
                 Time.timeScale = 1;
                 isESC = false;
-                ESCUI.SetActive(false);
+                ESCUI.SetActive(false); 
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
                 return;
             }
             if (isESC == false)
@@ -98,6 +100,8 @@ public class PlayerController : MonoBehaviour
                 Time.timeScale = 0;
                 isESC = true;
                 ESCUI.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
                 return;
             }
         }
@@ -119,7 +123,7 @@ public class PlayerController : MonoBehaviour
                     objectList.Remove(temp);
                     if (objectList[random] = null)
                     {
-                        Destroy(box);
+                        Destroy(temp);
                     }
                 }
             }
