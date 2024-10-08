@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public List<GameObject> objectList = new List<GameObject>();
+    public List<Sprite> spriteList = new List<Sprite>();
     public GameObject box;
 
     [Header("Movement Settings")]
@@ -70,6 +71,13 @@ public class PlayerController : MonoBehaviour
     public GameObject ESCUI;
     public bool isESC;
 
+    public Vector3 boxPosition = new Vector3(-47, -2, -3);
+
+    [Header("Inven List")]
+    public int[] InvenCheck = new int[8] ;                       //0,1로 인벤에 아이템이 있는지 확인
+    public GameObject[] InventoryItem = new GameObject[8];      //인벤 아이템
+    public Sprite[] InventorySprite = new Sprite[8];            //아이템 아이콘
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -116,15 +124,32 @@ public class PlayerController : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit))
             {
-                if (box == hit.collider.gameObject)
+                if (box == hit.collider.gameObject && objectList.Count > 0)
                 {
                     int random = Random.Range(0, objectList.Count);
-                    GameObject temp =Instantiate(objectList[random]);
-                    objectList.Remove(temp);
+                    Debug.Log(random);
+                    GameObject temp = Instantiate(objectList[random], boxPosition, Quaternion.identity);
+                    //temp.AddComponent<GrabItem>().itemNumber = objectList[random].GetComponent<GrabItem>().itemNumber;
+                   
                     if (objectList[random] = null)
                     {
-                        Destroy(temp);
+                        Destroy(objectList[random]);
                     }
+                    objectList.RemoveAt(random);
+                }
+                if(hit.collider.gameObject.tag == "Picker")
+                {
+                    int tempNumber = hit.collider.gameObject.GetComponent<GrabItem>().itemNumber;
+                    for (int i = 0; i < InvenCheck.Length; i++)
+                    {
+                        if (InvenCheck[i] == 0)
+                        {
+                            // InventorySprite[i] = spriteList[random];
+                            Debug.Log("가방 8칸 중 " + i + "칸에 아이템" + tempNumber);
+                            break;
+                        }
+                    }
+                    Destroy(hit.collider.gameObject);
                 }
             }
         }
