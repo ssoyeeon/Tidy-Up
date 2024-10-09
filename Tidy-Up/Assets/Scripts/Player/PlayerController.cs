@@ -74,9 +74,9 @@ public class PlayerController : MonoBehaviour
     public Vector3 boxPosition = new Vector3(-47, -2, -3);
 
     [Header("Inven List")]
-    public int[] InvenCheck = new int[8] ;                       //0,1로 인벤에 아이템이 있는지 확인
-    public GameObject[] InventoryItem = new GameObject[8];      //인벤 아이템
-    public Sprite[] InventorySprite = new Sprite[8];            //아이템 아이콘
+    public int[] InvenCheck = new int[3] ;                       //0,1로 인벤에 아이템이 있는지 확인
+    public GameObject[] InventoryItem = new GameObject[3];      //인벤 아이템
+    public Sprite[] InventorySprite = new Sprite[3];            //아이템 아이콘
 
     void Start()
     {
@@ -147,6 +147,10 @@ public class PlayerController : MonoBehaviour
                             // InventorySprite[i] = spriteList[random];
                             Debug.Log("가방 8칸 중 " + i + "칸에 아이템" + tempNumber);
                             break;
+                        }
+                        if (InvenCheck[i] == 1)
+                        {
+                            Debug.Log("가방" + i + "칸에 아이템" + tempNumber);
                         }
                     }
                     Destroy(hit.collider.gameObject);
