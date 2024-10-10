@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2427827164786806850}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.96, z: 0}
+  m_LocalPosition: {x: 0, y: 1.845, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -109,8 +109,7 @@ MonoBehaviour:
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
-  m_Cameras:
-  - {fileID: 0}
+  m_Cameras: []
   m_RendererIndex: -1
   m_VolumeLayerMask:
     serializedVersion: 2
@@ -147,8 +146,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8255896229969656449}
-  - component: {fileID: 4184232719417526226}
-  - component: {fileID: 2750344364107161110}
+  - component: {fileID: 2729811968561602341}
+  - component: {fileID: 25009251984860270}
+  - component: {fileID: 1985033107156891350}
+  - component: {fileID: 4549614438426546911}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -165,14 +166,14 @@ Transform:
   m_GameObject: {fileID: 6875174781299004103}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.89, y: -2.59, z: -2.26}
+  m_LocalPosition: {x: -20.89, y: -2.67, z: -2.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 720619269287322192}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4184232719417526226
+--- !u!114 &2729811968561602341
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -181,58 +182,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 6875174781299004103}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a42d552267101bc47ac3def41ac31b26, type: 3}
+  m_Script: {fileID: 11500000, guid: f0976daf7c41835469095e87abe014d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  box: {fileID: 0}
   moveSpeed: 5
   mouseSensitivity: 2
-  jumpForce: 1.5
-  gravity: -12
-  pickupRange: 10
+  jumpForce: 5
+  groundCheckDistance: 0.1
+  rb: {fileID: 4549614438426546911}
+  cameraTransform: {fileID: 720619269287322192}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!114 &25009251984860270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6875174781299004103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3fb6abc3ada0224f97d5052c2d705af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupRange: 3
   pickupLayer:
     serializedVersion: 2
     m_Bits: 64
-  wallLayer:
+  placementLayer:
     serializedVersion: 2
-    m_Bits: 128
-  placeOffset: 0.1
-  minDistance: 1
-  smoothSpeed: 10
-  positionPrecision: 0.001
-  pickupCursorColor: {r: 0, g: 1, b: 0, a: 1}
-  defaultCrosshair: {fileID: 10912, guid: 0000000000000000f000000000000000, type: 0}
-  pickupCrosshair: {fileID: 10906, guid: 0000000000000000f000000000000000, type: 0}
-  crosshairColor: {r: 1, g: 1, b: 1, a: 1}
-  crosshairSize: 32
-  rotationSpeed: 100
-  rotationAxis: {x: 0, y: 1, z: 0}
-  verticalOffset: 0
-  ESCUI: {fileID: 0}
-  isESC: 0
---- !u!143 &2750344364107161110
-CharacterController:
+    m_Bits: 256
+  playerCamera: {fileID: 0}
+  heldObjectPosition: {x: -0.5, y: -0.3, z: 0.5}
+--- !u!136 &1985033107156891350
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -249,11 +233,35 @@ CharacterController:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 2.86
-  m_Radius: 0.25
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2.8390982
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.9195491, z: 0}
+--- !u!54 &4549614438426546911
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6875174781299004103}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
