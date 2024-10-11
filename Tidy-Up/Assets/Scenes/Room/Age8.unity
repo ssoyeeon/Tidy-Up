@@ -2756,6 +2756,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cushion
       objectReference: {fileID: 0}
+    - target: {fileID: -5252507003311035573, guid: c9acaf80b86d1904188e625ec0367974,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12.14
+      objectReference: {fileID: 0}
     - target: {fileID: -4669928856399440884, guid: c9acaf80b86d1904188e625ec0367974,
         type: 3}
       propertyPath: m_Layer
