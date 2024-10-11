@@ -18,6 +18,6 @@ public class ObjectControlManager : MonoBehaviour
 
     void AllCheckDone()
     {
-         
+
     }
 }
