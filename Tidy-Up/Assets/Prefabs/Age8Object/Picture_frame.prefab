@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2554107386532550092}
   - component: {fileID: 7063336663416047393}
-  - component: {fileID: 2031240998401182610}
-  m_Layer: 0
+  - component: {fileID: 6850174076869680902}
+  m_Layer: 6
   m_Name: Picture_frame
   m_TagString: Picker
   m_Icon: {fileID: 0}
@@ -53,27 +53,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemNumber: 7
---- !u!65 &2031240998401182610
-BoxCollider:
+--- !u!54 &6850174076869680902
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1019255598698156815}
-  m_Material: {fileID: 0}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1869412271495667019
 GameObject:
   m_ObjectHideFlags: 0
@@ -86,7 +92,7 @@ GameObject:
   - component: {fileID: 1973150163043001532}
   - component: {fileID: 1189731449630079426}
   - component: {fileID: 4209291753106743353}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pCube229
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,7 +198,7 @@ GameObject:
   - component: {fileID: 4914730590437664651}
   - component: {fileID: 190179595905377128}
   - component: {fileID: 6388737575567202904}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pSphere20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,7 +304,7 @@ GameObject:
   - component: {fileID: 2995409377048150337}
   - component: {fileID: 8776207885359843474}
   - component: {fileID: 7983293482732474865}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pCube230
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -404,7 +410,8 @@ GameObject:
   - component: {fileID: 1415636358224688795}
   - component: {fileID: 5729068968425037453}
   - component: {fileID: 5612051001333534063}
-  m_Layer: 0
+  - component: {fileID: 1710592421823452489}
+  m_Layer: 6
   m_Name: pCube228
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -499,6 +506,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7747928136421026313, guid: c9acaf80b86d1904188e625ec0367974, type: 3}
+--- !u!65 &1710592421823452489
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4658901941183146139}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.20764038, y: 0.2761531, z: 0.20764373}
+  m_Center: {x: 0.000012122095, y: -0.000000022351742, z: -0.000010460615}
 --- !u!1 &5033079730684924009
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,7 +539,7 @@ GameObject:
   - component: {fileID: 8653837611710246599}
   - component: {fileID: 946812119861111859}
   - component: {fileID: 8477135000389229691}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pSphere21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -617,7 +645,7 @@ GameObject:
   - component: {fileID: 3067069487426176173}
   - component: {fileID: 1729999958843644014}
   - component: {fileID: 6427471117763399178}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pSphere23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -723,7 +751,7 @@ GameObject:
   - component: {fileID: 1835688458328311100}
   - component: {fileID: 2575220056115885212}
   - component: {fileID: 7202777881048369525}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pSphere22
   m_TagString: Untagged
   m_Icon: {fileID: 0}

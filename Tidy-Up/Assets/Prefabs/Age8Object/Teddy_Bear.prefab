@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8537296606122660440}
   - component: {fileID: 4727519183100671924}
   - component: {fileID: 7766244426144003354}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pCube188
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 4256329390465035282}
   - component: {fileID: 5470738274196145690}
   - component: {fileID: 1375522252075020799}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pCube189
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,7 +225,7 @@ GameObject:
   - component: {fileID: 1040243959946587542}
   - component: {fileID: 4030334224645197942}
   - component: {fileID: 6452858006183354000}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pSphere16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -329,9 +329,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2866623835032085600}
   - component: {fileID: 1185985904378288715}
-  m_Layer: 0
+  - component: {fileID: 4829467509318226554}
+  m_Layer: 6
   m_Name: Teddy_Bear
-  m_TagString: Untagged
+  m_TagString: Picker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -383,6 +384,33 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &4829467509318226554
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2586627245090459607}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &3594892643250914337
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,7 +423,7 @@ GameObject:
   - component: {fileID: 5414261515816015008}
   - component: {fileID: 2411347630378999477}
   - component: {fileID: 818509240952227086}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pCylinder76
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -502,7 +530,7 @@ GameObject:
   - component: {fileID: 173338422890448711}
   - component: {fileID: 1158719152399529283}
   - component: {fileID: 3278358669970280128}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pCube191
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -608,7 +636,7 @@ GameObject:
   - component: {fileID: 8167772672371706228}
   - component: {fileID: 2655951332411289869}
   - component: {fileID: 175888150767867908}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pSphere19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -714,7 +742,7 @@ GameObject:
   - component: {fileID: 7002570533875308542}
   - component: {fileID: 7442507422049923113}
   - component: {fileID: 7621805301944046571}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pCube193
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -820,7 +848,7 @@ GameObject:
   - component: {fileID: 3448949486475518596}
   - component: {fileID: 2133392614026166104}
   - component: {fileID: 4316989272585286821}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pCube190
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -926,7 +954,7 @@ GameObject:
   - component: {fileID: 7123669353926748581}
   - component: {fileID: 2501156760704178945}
   - component: {fileID: 8779432913801150438}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pCube194
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1032,7 +1060,7 @@ GameObject:
   - component: {fileID: 424415379439439266}
   - component: {fileID: 8227765875586972738}
   - component: {fileID: 4509735994721388755}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pCube192
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1138,7 +1166,7 @@ GameObject:
   - component: {fileID: 6106559057100215335}
   - component: {fileID: 784557140173033073}
   - component: {fileID: 5496351601809294634}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pCylinder77
   m_TagString: Untagged
   m_Icon: {fileID: 0}

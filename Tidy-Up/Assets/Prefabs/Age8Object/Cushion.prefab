@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2842906135777473781}
   - component: {fileID: 8352376786815006862}
   - component: {fileID: 6332067767585844416}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: typeMesh2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 6095005588520976642}
   - component: {fileID: 7556871076911528735}
   - component: {fileID: 2497616381152648667}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: typeMesh1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,8 +222,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4753228748789238250}
   - component: {fileID: 3942686910997361940}
-  - component: {fileID: 4753359944079920354}
-  m_Layer: 0
+  - component: {fileID: 8817066636231609563}
+  m_Layer: 6
   m_Name: Cushion
   m_TagString: Picker
   m_Icon: {fileID: 0}
@@ -239,7 +239,7 @@ Transform:
   m_GameObject: {fileID: 3724703939476903141}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20.582552, y: -3.6932821, z: -5.627234}
+  m_LocalPosition: {x: -20.474, y: -3.6932821, z: -5.627234}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -259,27 +259,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemNumber: 3
---- !u!65 &4753359944079920354
-BoxCollider:
+--- !u!54 &8817066636231609563
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3724703939476903141}
-  m_Material: {fileID: 0}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4007514944259648538
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,7 +298,7 @@ GameObject:
   - component: {fileID: 2435221460638156699}
   - component: {fileID: 897636972146898487}
   - component: {fileID: 148002463828890289}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: typeMesh4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -395,7 +401,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3247740348514894015}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cushion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -435,7 +441,7 @@ GameObject:
   - component: {fileID: 5247671826418731836}
   - component: {fileID: 2649175860589089769}
   - component: {fileID: 1638857675968071647}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: typeMesh3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -541,7 +547,7 @@ GameObject:
   - component: {fileID: 7060499257830607420}
   - component: {fileID: 6751139986529998404}
   - component: {fileID: 5205713192458071360}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: typeMesh5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -647,7 +653,8 @@ GameObject:
   - component: {fileID: 6117559872807263892}
   - component: {fileID: 3158328188330471657}
   - component: {fileID: 1051214147869109770}
-  m_Layer: 0
+  - component: {fileID: 4051487817611682901}
+  m_Layer: 6
   m_Name: pCube143
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -741,3 +748,24 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 1957841143065629348, guid: c9acaf80b86d1904188e625ec0367974, type: 3}
+--- !u!65 &4051487817611682901
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6292611668754130765}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.558288, y: 0.38265923, z: 0.5582876}
+  m_Center: {x: -0.000000044703484, y: 0, z: -0.00000013411045}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1051520503878133129}
   - component: {fileID: 1853641009390635178}
   - component: {fileID: 7058987365242658881}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: simsim:pCylinder2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 508400490226518853}
   - component: {fileID: 2714819100059672596}
   - component: {fileID: 1073095664990656616}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: simsim:pCylinder3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 8541995354566516851}
   - component: {fileID: 8071754191534170064}
   - component: {fileID: 8687990837732047931}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: simsim:pSphere4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 7546400358707705388}
   - component: {fileID: 6492086402693731652}
   - component: {fileID: 8263608358482240042}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: simsim:pSphere5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 8315639429142074588}
   - component: {fileID: 2321901725494136752}
   - component: {fileID: 8389371888600464173}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: simsim:pCylinder6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -426,9 +426,9 @@ GameObject:
   - component: {fileID: 6383147948980379062}
   - component: {fileID: 8366547902510369982}
   - component: {fileID: 4536390058394227836}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lights
-  m_TagString: Untagged
+  m_TagString: Picker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -514,7 +514,7 @@ GameObject:
   - component: {fileID: 7606654147251009897}
   - component: {fileID: 6847636481303421651}
   - component: {fileID: 1800958806542718649}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: simsim:pCylinder7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -597,7 +597,7 @@ GameObject:
   - component: {fileID: 2379544104800398982}
   - component: {fileID: 3191194265847157266}
   - component: {fileID: 9126862607693567202}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: simsim:pSphere3
   m_TagString: Untagged
   m_Icon: {fileID: 0}

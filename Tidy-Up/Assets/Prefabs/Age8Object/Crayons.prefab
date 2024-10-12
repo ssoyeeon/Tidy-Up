@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2189446624724734524}
   - component: {fileID: 9041977987174447937}
   - component: {fileID: 2688709437500126424}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pCylinder97
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 4284133419137980049}
   - component: {fileID: 6403365707206648890}
   - component: {fileID: 3562370274759111045}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pCylinder95
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 7372823773277197429}
   - component: {fileID: 4429375092431411220}
   - component: {fileID: 3111029525990616178}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pCylinder94
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -336,7 +336,8 @@ GameObject:
   - component: {fileID: 4099800033874096869}
   - component: {fileID: 6493449891930849583}
   - component: {fileID: 5544993853245972966}
-  m_Layer: 0
+  - component: {fileID: 54473950407068997}
+  m_Layer: 6
   m_Name: pCube244
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -430,6 +431,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7508207549926867071, guid: c9acaf80b86d1904188e625ec0367974, type: 3}
+--- !u!65 &54473950407068997
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3358341762739856541}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.29120559, y: 0.03364681, z: 0.33794662}
+  m_Center: {x: -0.000000007450581, y: -0.000000022351742, z: 0}
 --- !u!1 &3394934297765251911
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,10 +461,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5035159815197232119}
-  - component: {fileID: 7650181455735428401}
-  m_Layer: 0
+  - component: {fileID: 6489666719624211920}
+  m_Layer: 6
   m_Name: Crayons
-  m_TagString: Untagged
+  m_TagString: Picker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -474,27 +496,33 @@ Transform:
   - {fileID: 5258088569340567114}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &7650181455735428401
-BoxCollider:
+--- !u!54 &6489666719624211920
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3394934297765251911}
-  m_Material: {fileID: 0}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &3682570848015316289
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,7 +535,7 @@ GameObject:
   - component: {fileID: 7512471247478938623}
   - component: {fileID: 7955549560535932977}
   - component: {fileID: 2999554113175271162}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pCylinder96
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -615,7 +643,7 @@ GameObject:
   - component: {fileID: 8687550610503618106}
   - component: {fileID: 6945981163815875353}
   - component: {fileID: 6209704679323100000}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pCylinder100
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -723,7 +751,7 @@ GameObject:
   - component: {fileID: 826383073265023257}
   - component: {fileID: 3899681349600021458}
   - component: {fileID: 1755144396749780772}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pCylinder98
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -831,7 +859,7 @@ GameObject:
   - component: {fileID: 7656569748523828882}
   - component: {fileID: 2714012327415259991}
   - component: {fileID: 8463888588250442425}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pCylinder93
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -939,7 +967,8 @@ GameObject:
   - component: {fileID: 3150737580767592021}
   - component: {fileID: 5776208628598910275}
   - component: {fileID: 444003548260216537}
-  m_Layer: 0
+  - component: {fileID: 5659434029636839554}
+  m_Layer: 6
   m_Name: pCube245
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1033,6 +1062,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4364213808276323523, guid: c9acaf80b86d1904188e625ec0367974, type: 3}
+--- !u!65 &5659434029636839554
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6353705903964719304}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.33491, y: 0.10048805, z: 0.28642964}
+  m_Center: {x: 0, y: -0.000000009313226, z: -0.000000022351742}
 --- !u!1 &6669380080602221312
 GameObject:
   m_ObjectHideFlags: 0
@@ -1045,7 +1095,7 @@ GameObject:
   - component: {fileID: 5718652783248030216}
   - component: {fileID: 6130722387988189159}
   - component: {fileID: 182212584020229955}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pCylinder99
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1153,7 +1203,7 @@ GameObject:
   - component: {fileID: 8502787621274797162}
   - component: {fileID: 3427254218057019632}
   - component: {fileID: 326780172153089850}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pCylinder91
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1261,7 +1311,7 @@ GameObject:
   - component: {fileID: 8853811222025137901}
   - component: {fileID: 5946021069842020141}
   - component: {fileID: 6684862143678165056}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pCylinder92
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 5619244765920138618}
   - component: {fileID: 6302034890981704932}
   - component: {fileID: 7959342101151093897}
-  - component: {fileID: 431816874466679127}
-  m_Layer: 0
+  - component: {fileID: 1526487943444810714}
+  m_Layer: 6
   m_Name: Book4
-  m_TagString: Untagged
+  m_TagString: Picker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,8 +113,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &431816874466679127
-MeshCollider:
+--- !u!65 &1526487943444810714
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -131,7 +131,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 5526333316045018313, guid: a9293402f069a154d9f86ce3cf702932, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.8361337, y: 0.07867523, z: 0.76580566}
+  m_Center: {x: 0.000000014901161, y: 0, z: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1520762622186011174}
   - component: {fileID: 7489829585753040336}
   - component: {fileID: 932367209771639611}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pCube327
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 7778081196555026812}
   - component: {fileID: 8513655148941211714}
   - component: {fileID: 5592628686731673542}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pCube326
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 5303550209442394147}
   - component: {fileID: 7676093614684293752}
   - component: {fileID: 833124609061433616}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pCube325
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,9 +260,9 @@ GameObject:
   - component: {fileID: 1602667871545208339}
   - component: {fileID: 8951300328923177381}
   - component: {fileID: 7423975000901482920}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: speaker1
-  m_TagString: Untagged
+  m_TagString: Picker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -347,7 +347,7 @@ GameObject:
   - component: {fileID: 7613778317798051601}
   - component: {fileID: 2581158821943645142}
   - component: {fileID: 5135789424993068731}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pCylinder140
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -430,7 +430,7 @@ GameObject:
   - component: {fileID: 8553701683093093531}
   - component: {fileID: 4582600811739804769}
   - component: {fileID: 5448435680152542958}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pCube324
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -514,7 +514,7 @@ GameObject:
   - component: {fileID: 1674440826087249448}
   - component: {fileID: 1580400034813302461}
   - component: {fileID: 2826624238598495197}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pCube333
   m_TagString: Untagged
   m_Icon: {fileID: 0}

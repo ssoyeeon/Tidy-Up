@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 1987385083743165378}
   - component: {fileID: 690849255899860103}
   - component: {fileID: 3519807985942573958}
-  m_Layer: 0
+  - component: {fileID: 7867153487392095681}
+  m_Layer: 6
   m_Name: Soccer_Ball
   m_TagString: Picker
   m_Icon: {fileID: 0}
@@ -120,3 +121,30 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.3912428, y: 0.39118785, z: 0.39141798}
   m_Center: {x: 0.00000008195639, y: 0.000000007450581, z: 0.000000052154064}
+--- !u!54 &7867153487392095681
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8446392217459537370}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 8216093806553785772}
   - component: {fileID: 6552437728201979587}
   - component: {fileID: 1975638109617960736}
-  - component: {fileID: 2105700636783911000}
-  m_Layer: 0
+  - component: {fileID: 4275341648306653671}
+  m_Layer: 6
   m_Name: Soccer_Ball
-  m_TagString: Untagged
+  m_TagString: Picker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,8 +113,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &2105700636783911000
-MeshCollider:
+--- !u!65 &4275341648306653671
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -131,7 +131,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 6948674666885108005, guid: a9293402f069a154d9f86ce3cf702932, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.6423907, y: 0.64230055, z: 0.6426782}
+  m_Center: {x: 0, y: 0, z: 0}
