@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 public class PickupController : MonoBehaviour
@@ -8,6 +9,7 @@ public class PickupController : MonoBehaviour
     public LayerMask placementLayer; // 물체를 놓을 수 있는 레이어
     public Camera playerCamera; // 플레이어의 카메라
     public Vector3 heldObjectPosition = new Vector3(-0.5f, -0.3f, 0.5f); // 화면에 물체를 표시할 위치 (카메라 기준)
+    public Rigidbody playerRigidbody;
 
     private GameObject heldObject; // 현재 플레이어가 들고 있는 물체
     private Rigidbody heldRigidbody; // 들고 있는 물체의 Rigidbody (물리 속성)
@@ -22,11 +24,15 @@ public class PickupController : MonoBehaviour
     public GameObject ESCUI;
     public bool isESC;
 
+    public bool isGrounded;
+    private Vector3 velocity;                   // 플레이어의 현재 속도
+
     void Start()
     {
         playerCamera = playerCamera ? playerCamera : Camera.main; // 만약 카메라가 설정되지 않았다면 메인 카메라를 사용
         Cursor.lockState = CursorLockMode.Locked; // 마우스 커서를 화면 중앙에 고정
         Cursor.visible = false; // 마우스 커서 숨김
+        isGrounded = true;
     }
 
     void Update()
@@ -44,6 +50,28 @@ public class PickupController : MonoBehaviour
                 // 물체를 들고 있으면 놓기 시도
                 TryPlace();
             }
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                RaycastHit hit;
+                if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit))
+                {
+                    if (box == hit.collider.gameObject && objectList.Count > 0)
+                    {
+                        int random = Random.Range(0, objectList.Count);
+                        Debug.Log(random);
+                        GameObject temp = Instantiate(objectList[random], boxPosition, Quaternion.identity);
+                        //temp.AddComponent<GrabItem>().itemNumber = objectList[random].GetComponent<GrabItem>().itemNumber;
+
+                        if (objectList[random] = null)
+                        {
+                            Destroy(objectList[random]);
+                        }
+                        objectList.RemoveAt(random);
+                    }
+                }
+            }
+          
         }
 
         // 물체를 들고 있는 동안 계속 위치 업데이트
@@ -73,6 +101,12 @@ public class PickupController : MonoBehaviour
                 return;
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
+        {
+            playerRigidbody.AddForce(Vector3.up * 20, ForceMode.Impulse);
+        }
+        else { Debug.Log("기다려!!!!!!!!"); }
     }
 
     // 물체를 집기 시도하는 함수
@@ -83,25 +117,6 @@ public class PickupController : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit, pickupRange, pickupLayer)) // 레이가 충돌하면
         {
             PickupObject(hit.collider.gameObject); // 물체 집기
-        }
-        if(Physics.Raycast(ray, out RaycastHit hitt, pickupRange))
-        {
-            if(box == hit.collider.gameObject && objectList.Count > 0)
-            {
-                int random = Random.Range(0, objectList.Count);
-                Debug.Log(random);
-                GameObject temp = Instantiate(objectList[random], boxPosition, Quaternion.identity);
-
-                if (objectList[random] = null)
-                {
-                    Destroy(objectList[random]);
-                }
-                objectList.RemoveAt(random);
-            }
-            else if(objectList.Count <= 0)
-            {
-                Debug.Log("더 이상 나올 아이템이 없습니다.");
-            }
         }
     }
 
