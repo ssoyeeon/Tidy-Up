@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PickupController : MonoBehaviour
@@ -13,6 +14,13 @@ public class PickupController : MonoBehaviour
     private Collider heldCollider; // 들고 있는 물체의 Collider (충돌 처리)
     private Vector3 originalScale; // 물체의 원래 크기 저장
     private Vector3 bottomOffset; // 물체의 하단점을 기준으로 위치를 조정하기 위한 오프셋
+
+    public List<GameObject> objectList = new List<GameObject>();
+    public GameObject box;
+    public Vector3 boxPosition = new Vector3(-47, -2, -3);
+
+    public GameObject ESCUI;
+    public bool isESC;
 
     void Start()
     {
@@ -43,6 +51,28 @@ public class PickupController : MonoBehaviour
         {
             UpdateHeldObjectPosition();
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isESC == true)
+            {
+                Time.timeScale = 1;
+                isESC = false;
+                ESCUI.SetActive(false);
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+                return;
+            }
+            if (isESC == false)
+            {
+                Time.timeScale = 0;
+                isESC = true;
+                ESCUI.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                return;
+            }
+        }
     }
 
     // 물체를 집기 시도하는 함수
@@ -53,6 +83,25 @@ public class PickupController : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit, pickupRange, pickupLayer)) // 레이가 충돌하면
         {
             PickupObject(hit.collider.gameObject); // 물체 집기
+        }
+        if(Physics.Raycast(ray, out RaycastHit hitt, pickupRange))
+        {
+            if(box == hit.collider.gameObject && objectList.Count > 0)
+            {
+                int random = Random.Range(0, objectList.Count);
+                Debug.Log(random);
+                GameObject temp = Instantiate(objectList[random], boxPosition, Quaternion.identity);
+
+                if (objectList[random] = null)
+                {
+                    Destroy(objectList[random]);
+                }
+                objectList.RemoveAt(random);
+            }
+            else if(objectList.Count <= 0)
+            {
+                Debug.Log("더 이상 나올 아이템이 없습니다.");
+            }
         }
     }
 
