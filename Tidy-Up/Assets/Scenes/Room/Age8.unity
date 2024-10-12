@@ -2898,6 +2898,12 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.020120239, y: 0.37130117, z: 0.7874087}
   m_Center: {x: -0.00000004749745, y: 0.000000037252903, z: -0.000000044703484}
+--- !u!54 &1764396118 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 4549614438426546911, guid: 31378d9fc21a44b4ebf8f03b24be194e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2099672780}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1784663747
 GameObject:
   m_ObjectHideFlags: 0
@@ -3785,6 +3791,11 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 2088020570}
+    - target: {fileID: 25009251984860270, guid: 31378d9fc21a44b4ebf8f03b24be194e,
+        type: 3}
+      propertyPath: playerRigidbody
+      value: 
+      objectReference: {fileID: 1764396118}
     - target: {fileID: 25009251984860270, guid: 31378d9fc21a44b4ebf8f03b24be194e,
         type: 3}
       propertyPath: objectList.Array.size

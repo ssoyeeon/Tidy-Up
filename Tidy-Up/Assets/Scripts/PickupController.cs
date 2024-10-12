@@ -25,7 +25,7 @@ public class PickupController : MonoBehaviour
     public bool isESC;
 
     public bool isGrounded;
-    private Vector3 velocity;                   // 플레이어의 현재 속도
+    public float jumpTime;
 
     void Start()
     {
@@ -33,6 +33,7 @@ public class PickupController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked; // 마우스 커서를 화면 중앙에 고정
         Cursor.visible = false; // 마우스 커서 숨김
         isGrounded = true;
+        jumpTime = 0f;
     }
 
     void Update()
@@ -50,9 +51,6 @@ public class PickupController : MonoBehaviour
                 // 물체를 들고 있으면 놓기 시도
                 TryPlace();
             }
-
-            if (Input.GetMouseButtonDown(0))
-            {
                 RaycastHit hit;
                 if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit))
                 {
@@ -68,9 +66,13 @@ public class PickupController : MonoBehaviour
                             Destroy(objectList[random]);
                         }
                         objectList.RemoveAt(random);
+
+                        if(objectList.Count == 0)
+                        {
+                             Destroy(box);
+                        }
                     }
                 }
-            }
           
         }
 
@@ -102,11 +104,22 @@ public class PickupController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true && jumpTime <= 0)
         {
-            playerRigidbody.AddForce(Vector3.up * 20, ForceMode.Impulse);
+            playerRigidbody.AddForce(Vector3.up * 5, ForceMode.Impulse);
+            jumpTime = 2f;
+            isGrounded = false;
+            Debug.Log("뛰었당!");
         }
-        else { Debug.Log("기다려!!!!!!!!"); }
+        else if(isGrounded == false)
+        {
+            jumpTime -= Time.deltaTime;
+            if (jumpTime < 0)
+            {
+                jumpTime = 0; 
+                isGrounded = true;
+            }
+        }
     }
 
     // 물체를 집기 시도하는 함수
