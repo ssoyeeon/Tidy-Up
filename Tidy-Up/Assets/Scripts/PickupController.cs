@@ -47,8 +47,6 @@ public class PickupController : MonoBehaviour
         isGrounded = true;
         jumpTime = 0f;
     }
-    
-    //놓을 때 위치 바뀌는 것, 회전 안되는거 빼기. -> 회전 가능해야함! 놓을 떄 정확하게 놓이면 안돼용..
 
     void Update()
     {
@@ -144,14 +142,18 @@ public class PickupController : MonoBehaviour
             }
         }
 
-        /*if (heldObject != null)
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            if (Input.GetKey(KeyCode.R))
+            RaycastHit hit;
+            if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit))
             {
-                float rotationAmount = rotationSpeed * Time.deltaTime;
-                objectRotation *= Quaternion.AngleAxis(rotationAmount, rotationAxis);
+                if (hit.collider.CompareTag("Picker"))
+                {
+                    hit.collider.gameObject.transform.Rotate(0, 90, 0);
+                    Debug.Log("물체 회전");
+                }
             }
-        }*/
+        }
     }
 
     void OnGUI()
@@ -250,7 +252,7 @@ public class PickupController : MonoBehaviour
     void PlaceObject(Vector3 position, Vector3 normal)
     {
         heldObject.transform.SetParent(null); // 물체를 카메라의 자식에서 해제
-        //heldObject.transform.rotation = Quaternion.FromToRotation(Vector3.up, normal); // 물체를 바닥에 맞게 회전
+        heldObject.transform.rotation = Quaternion.FromToRotation(Vector3.up, normal); // 물체를 바닥에 맞게 회전
         heldObject.transform.localScale = originalScale; // 물체 크기를 원래 크기로 복구
 
         // 하단점을 기준으로 물체의 위치를 조정하여 정확히 바닥에 놓음
