@@ -54,23 +54,7 @@ public class GameManager : MonoBehaviour
             {
                 playTime += Time.deltaTime;
             }
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                if (isPause == false)
-                {
-                    Time.timeScale = 0f;
-                    stopUI.SetActive(true);
-                    isPause = true; 
-                    return;
-                }
-                if (isPause == true)
-                {
-                    Time.timeScale = 1f;
-                    stopUI.SetActive(false);
-                    isPause = false;
-                    return;
-                }
-            }
+        }
             Scene scene = SceneManager.GetActiveScene();
             int curScene = scene.buildIndex;
             if(curScene == 1)
@@ -80,7 +64,6 @@ public class GameManager : MonoBehaviour
                 isPause = false;
                 stopUI.SetActive(false);
             }
-        }
-        
     }
+        
 }

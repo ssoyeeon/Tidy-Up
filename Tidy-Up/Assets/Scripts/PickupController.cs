@@ -68,7 +68,7 @@ public class PickupController : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit))
             {
-                if (box == hit.collider.gameObject && objectList.Count > 0 && boxTimer <= 0)
+                if (box == hit.collider.gameObject && objectList.Count > 0 && boxTimer <= 0 && heldObject == null)
                 {
                     int random = Random.Range(0, objectList.Count);
                     Debug.Log(random);
@@ -85,7 +85,7 @@ public class PickupController : MonoBehaviour
                     {
                         Destroy(box);
                     }
-                    boxTimer = 1.5f;
+                    boxTimer = 2f;
                     Debug.Log("BoxHit and Instaniate Object");
                 }
             }
@@ -112,6 +112,7 @@ public class PickupController : MonoBehaviour
                 ESCUI.SetActive(false);
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
+                playerCamera.enabled = true;
                 return;
             }
             if (isESC == false)
@@ -121,6 +122,7 @@ public class PickupController : MonoBehaviour
                 ESCUI.SetActive(true);
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
+                playerCamera.enabled = false;
                 return;
             }
         }
