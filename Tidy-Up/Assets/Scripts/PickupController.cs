@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class PickupController : MonoBehaviour
 {
+    [Header("UI Settings")]
+    private Color pickupCursorColor = Color.green;   // 물체를 집을 수 있을 때의 커서 색상  
+    public Texture2D defaultCrosshair;          // 기본 크로스헤어 텍스처
+    private Color crosshairColor = Color.white;  // 크로스헤어 색상
+    private float crosshairSize = 25f;           // 크로스헤어 크기
+
+
+    public float rotationSpeed = 100f;          // 물체 회전 속도
+    public Vector3 rotationAxis = Vector3.up;   // 회전 축 (기본값: Y축)
+    private Quaternion objectRotation;          // 물체의 현재 회전 상태
+
     public float pickupRange = 3f; // 플레이어가 물체를 집을 수 있는 최대 거리
     public LayerMask pickupLayer; // 물체를 집을 수 있는 레이어
     public LayerMask placementLayer; // 물체를 놓을 수 있는 레이어
@@ -17,9 +28,10 @@ public class PickupController : MonoBehaviour
     private Vector3 originalScale; // 물체의 원래 크기 저장
     private Vector3 bottomOffset; // 물체의 하단점을 기준으로 위치를 조정하기 위한 오프셋
 
-    public List<GameObject> objectList = new List<GameObject>();
-    public GameObject box;
-    public Vector3 boxPosition = new Vector3(-47, -2, -3);
+    public List<GameObject> objectList = new List<GameObject>();        //박스 안에 생성할 오브젝트를 넣을 리스트
+    public GameObject box;                                              //오브젝트를 생성할 박스
+    private Vector3 boxPosition = new Vector3(-47, -2, -3);              //생성할 오브젝트 위치 설정 -> 박스 포지션
+    private float boxTimer = 1;                                              //계속해서 눌러도 안 나오게 타이머 설정
 
     public GameObject ESCUI;
     public bool isESC;
@@ -45,35 +57,44 @@ public class PickupController : MonoBehaviour
             if (heldObject == null)
             {
                 TryPickup();
+                Debug.Log("PickUp");
             }
             else
             {
                 // 물체를 들고 있으면 놓기 시도
                 TryPlace();
+                Debug.Log("PickDown");
             }
-                RaycastHit hit;
-                if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit))
+            RaycastHit hit;
+            if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit))
+            {
+                if (box == hit.collider.gameObject && objectList.Count > 0 && boxTimer <= 0 && heldObject == null)
                 {
-                    if (box == hit.collider.gameObject && objectList.Count > 0)
+                    int random = Random.Range(0, objectList.Count);
+                    Debug.Log(random);
+                    GameObject temp = Instantiate(objectList[random], boxPosition, Quaternion.identity);
+                    //temp.AddComponent<GrabItem>().itemNumber = objectList[random].GetComponent<GrabItem>().itemNumber;
+
+                    if (objectList[random] = null)
                     {
-                        int random = Random.Range(0, objectList.Count);
-                        Debug.Log(random);
-                        GameObject temp = Instantiate(objectList[random], boxPosition, Quaternion.identity);
-                        //temp.AddComponent<GrabItem>().itemNumber = objectList[random].GetComponent<GrabItem>().itemNumber;
-
-                        if (objectList[random] = null)
-                        {
-                            Destroy(objectList[random]);
-                        }
-                        objectList.RemoveAt(random);
-
-                        if(objectList.Count == 0)
-                        {
-                             Destroy(box);
-                        }
+                        Destroy(objectList[random]);
                     }
+                    objectList.RemoveAt(random);
+
+                    if(objectList.Count == 0)
+                    {
+                        Destroy(box);
+                    }
+                    boxTimer = 2f;
+                    Debug.Log("BoxHit and Instaniate Object");
                 }
-          
+            }
+        }
+        boxTimer -= Time.deltaTime;
+
+        if(boxTimer <= 0)
+        {
+            boxTimer = 0;
         }
 
         // 물체를 들고 있는 동안 계속 위치 업데이트
@@ -91,6 +112,7 @@ public class PickupController : MonoBehaviour
                 ESCUI.SetActive(false);
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
+                playerCamera.enabled = true;
                 return;
             }
             if (isESC == false)
@@ -100,6 +122,7 @@ public class PickupController : MonoBehaviour
                 ESCUI.SetActive(true);
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
+                playerCamera.enabled = false;
                 return;
             }
         }
@@ -109,7 +132,7 @@ public class PickupController : MonoBehaviour
             playerRigidbody.AddForce(Vector3.up * 5, ForceMode.Impulse);
             jumpTime = 2f;
             isGrounded = false;
-            Debug.Log("뛰었당!");
+            Debug.Log("Jump");
         }
         else if(isGrounded == false)
         {
@@ -120,6 +143,33 @@ public class PickupController : MonoBehaviour
                 isGrounded = true;
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit))
+            {
+                if (hit.collider.CompareTag("Picker"))
+                {
+                    hit.collider.gameObject.transform.Rotate(0, 90, 0);
+                    Debug.Log("물체 회전");
+                }
+            }
+        }
+    }
+
+    void OnGUI()
+    {
+        // 화면 중앙 좌표 계산
+        float centerX = Screen.width / 2;
+        float centerY = Screen.height / 2;
+
+        // 크로스헤어 위치 및 크기 계산
+        Rect crosshairRect = new Rect(centerX - crosshairSize / 2, centerY - crosshairSize / 2, crosshairSize, crosshairSize);
+
+        // 크로스헤어 그리기
+        GUI.color = crosshairColor;
+        GUI.DrawTexture(crosshairRect, defaultCrosshair);
     }
 
     // 물체를 집기 시도하는 함수
