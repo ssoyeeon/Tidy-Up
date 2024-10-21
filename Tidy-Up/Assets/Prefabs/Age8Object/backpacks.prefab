@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 6290759245328689374}
   - component: {fileID: 4424089204706298383}
   - component: {fileID: 5092000986695179493}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: backpacks
-  m_TagString: Untagged
+  m_TagString: Picker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

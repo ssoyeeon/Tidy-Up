@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 6003368123924287613}
   - component: {fileID: 6778957691875138160}
   - component: {fileID: 8978776890357340092}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Teddy_Bear_Small
-  m_TagString: Untagged
+  m_TagString: Picker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

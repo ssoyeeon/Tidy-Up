@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 8935224730658495271}
   - component: {fileID: 3029686097421106564}
   - component: {fileID: -3198772917680062221}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Book_Sky
-  m_TagString: Untagged
+  m_TagString: Picker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

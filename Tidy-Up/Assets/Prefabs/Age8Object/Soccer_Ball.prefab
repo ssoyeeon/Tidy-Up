@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 6937223099426706390}
   - component: {fileID: 2572469143263664385}
   - component: {fileID: -779338006379551301}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Soccer_Ball
-  m_TagString: Untagged
+  m_TagString: Picker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

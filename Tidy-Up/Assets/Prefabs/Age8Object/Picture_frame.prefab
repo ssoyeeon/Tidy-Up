@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 1007209704237037488}
   - component: {fileID: 4170809297393909929}
   - component: {fileID: 2358556411900423435}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: picture_frame
-  m_TagString: Untagged
+  m_TagString: Picker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

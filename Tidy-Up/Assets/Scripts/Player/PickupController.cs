@@ -207,7 +207,7 @@ public class PickupController : MonoBehaviour
 
         obj.transform.SetParent(playerCamera.transform); // 물체를 플레이어 카메라의 자식으로 설정하여 플레이어와 함께 이동
         UpdateHeldObjectPosition(); // 물체를 화면에 보이도록 위치 업데이트
-        obj.transform.localScale = originalScale * 0.5f; // 물체 크기를 축소하여 플레이어가 들고 있다는 느낌을 줌
+        obj.transform.localScale = originalScale * 1f; // 물체 크기를 축소하여 플레이어가 들고 있다는 느낌을 줌
     }
 
     // 물체의 하단점을 계산하여 물체를 정확히 놓기 위한 오프셋을 반환하는 함수

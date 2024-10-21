@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 3663281232098347454}
   - component: {fileID: 699784699588121599}
   - component: {fileID: -7120883577084507744}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Book_Red
-  m_TagString: Untagged
+  m_TagString: Picker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

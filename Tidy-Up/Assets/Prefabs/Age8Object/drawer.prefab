@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 3464803163865365034}
   - component: {fileID: 4648944949303464524}
   - component: {fileID: -922072862985319131}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: drawer
-  m_TagString: Untagged
+  m_TagString: Picker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

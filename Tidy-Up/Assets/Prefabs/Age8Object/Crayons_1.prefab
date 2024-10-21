@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 4931168091807255753}
   - component: {fileID: 4744449669135627979}
   - component: {fileID: 9025327249899747115}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Crayons_1
-  m_TagString: Untagged
+  m_TagString: Picker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
