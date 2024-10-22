@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
     public float playTime;
     public float ingTime;
 
-    public bool isEnd;
     public bool isStart;
     public bool isPause;
     public bool isPlaying;
@@ -19,6 +18,8 @@ public class GameManager : MonoBehaviour
     public GameObject timeUI;
 
     public TMP_Text timeText;
+
+    ObjectControlManager objectControlManager;
 
     private void Awake()
     {
@@ -30,13 +31,12 @@ public class GameManager : MonoBehaviour
     {
         playTime = 0; 
         isStart = true;
-        isEnd = false; 
         ingTime = 10;
     }
 
     void Update()
     {
-        if (isEnd == true)
+        if (objectControlManager.isDone == true)
         {
             isStart = false;
             timeText.text = (int)playTime+ "√ "; 
@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
             int curScene = scene.buildIndex;
             if(curScene == 1)
             {
-                isEnd = false;
+                objectControlManager.isDone = false;
                 isStart = false;
                 isPause = false;
                 stopUI.SetActive(false);
