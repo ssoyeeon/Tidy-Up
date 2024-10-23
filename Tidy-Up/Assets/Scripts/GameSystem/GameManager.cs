@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (objectControlManager.isDone == true)
+        if (objectControlManager.isFinish == true)
         {
             isStart = false;
             timeText.text = (int)playTime+ "√ "; 
@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
             int curScene = scene.buildIndex;
             if(curScene == 1)
             {
-                objectControlManager.isDone = false;
+                objectControlManager.isFinish = false;
                 isStart = false;
                 isPause = false;
                 stopUI.SetActive(false);
