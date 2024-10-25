@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1498459803179782251}
   - component: {fileID: -213998528390837784}
   - component: {fileID: 846405500673640711}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Paper
   m_TagString: Picker
   m_Icon: {fileID: 0}

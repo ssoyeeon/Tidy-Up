@@ -46,7 +46,11 @@ public class GameManager : MonoBehaviour
             {
                 timeUI.SetActive(false);
             }
+            Scene scenes = SceneManager.GetActiveScene();
+            int curScenes = scenes.buildIndex;
+            SceneManager.LoadScene(curScenes + 1);
         }
+
         if (isStart == true)
         {
             ingTime = 10;
@@ -57,7 +61,7 @@ public class GameManager : MonoBehaviour
         }
         Scene scene = SceneManager.GetActiveScene();
         int curScene = scene.buildIndex;
-        if(curScene == 1)
+        if (curScene == 1)
         {
             objectControlManager.isFinish = false;
             isStart = false;

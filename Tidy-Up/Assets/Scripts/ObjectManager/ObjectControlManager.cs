@@ -11,7 +11,7 @@ public class ObjectControlManager : MonoBehaviour
   
     void Update()
     {
-       
+
     }
 
     public void ObjectCheckDone(int triggerID)
@@ -21,7 +21,6 @@ public class ObjectControlManager : MonoBehaviour
 
         for(int i = 0; i < TriggerDone.Length; i++) 
         {
-
             TriggerCheckCount += TriggerDone[i];
         }
 
@@ -30,5 +29,4 @@ public class ObjectControlManager : MonoBehaviour
             isFinish = true;
         }
     }
-
 }

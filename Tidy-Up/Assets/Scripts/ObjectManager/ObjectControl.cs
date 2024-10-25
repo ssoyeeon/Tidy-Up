@@ -33,14 +33,36 @@ public class ObjectControl : MonoBehaviour
 
     public void OnTriggerExit(Collider other)
     {
-        
+        for (int i = 0; i < objectsList.Count; i++)
+        {
+            if (other.gameObject.GetComponent<ObjectItem>().ItemNumber == objectsList[i].GetComponent<ObjectItem>().ItemNumber)
+            {
+                Number[i] = 0;
+            }
+        }
+        for (int i = 0; i < objectsList.Count; i++)
+        {
+            EndNumber -= Number[i];
+        }
     }
 
     public void DoneCheck()
     {
-        if(EndNumber == DoneNumber)
+        for (int i = 0; i < objectsList.Count; i++)
+        {
+            if(Number[i] == 1)
+            {
+                DoneNumber += 1;
+                break;
+            }
+        }
+        /*if(DoneNumber == DoneCheckingTrigger)
         {
             objectControlManager.ObjectCheckDone(myID);
-        }
+        }*/
+    }
+    void Update()
+    {
+        DoneCheck();
     }
 }
