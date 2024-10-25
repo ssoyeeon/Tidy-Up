@@ -3,33 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ObjectControlManager : MonoBehaviour
-{
-    //리스트에 넣고, 오브젝트 컨트롤에서 다 되면 리스트에서 빼야햄
-    public ObjectControl[] objectsList = new ObjectControl[10];
-    ObjectControl objectcontrol;
+{    
     public bool isFinish;
-    //ObjectControl에서 isDone = true인 애만 리스트에서 제거. 근데 이거 끝날 때 봐야함 볼거임 끝날때 볼거임... 모든 오브젝트가 다 나왔을때.
-    PickupController pickupcontroller;
-
+    public int[] TriggerDone = new int[10];
+    public int TriggerDoneCount = 10;
+    public int TriggerCheckCount = 0;
+  
     void Update()
     {
-        if(pickupcontroller.objectList.Count == 0)  
-        {
-            AllCheckDone();
-        }
+       
     }
 
-    void AllCheckDone()
+    public void ObjectCheckDone(int triggerID)
     {
-        if(objectcontrol.isDone == true)
+        TriggerCheckCount = 0;
+        TriggerDone[triggerID] = 1;
+
+        for(int i = 0; i < TriggerDone.Length; i++) 
         {
-            objectsList[objectcontrol.InObjectNumber] = null;
+
+            TriggerCheckCount += TriggerDone[i];
         }
-        if(objectsList.Length <= 0)
+
+        if(TriggerCheckCount == TriggerDoneCount)
         {
             isFinish = true;
         }
-        else
-            isFinish = false;
     }
+
 }

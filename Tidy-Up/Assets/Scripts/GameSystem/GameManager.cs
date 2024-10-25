@@ -55,15 +55,15 @@ public class GameManager : MonoBehaviour
                 playTime += Time.deltaTime;
             }
         }
-            Scene scene = SceneManager.GetActiveScene();
-            int curScene = scene.buildIndex;
-            if(curScene == 1)
-            {
-                objectControlManager.isFinish = false;
-                isStart = false;
-                isPause = false;
-                stopUI.SetActive(false);
-            }
+        Scene scene = SceneManager.GetActiveScene();
+        int curScene = scene.buildIndex;
+        if(curScene == 1)
+        {
+            objectControlManager.isFinish = false;
+            isStart = false;
+            isPause = false;
+            stopUI.SetActive(false);
+        }
     }
         
 }

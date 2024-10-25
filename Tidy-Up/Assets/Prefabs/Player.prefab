@@ -206,6 +206,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3fb6abc3ada0224f97d5052c2d705af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultCrosshair: {fileID: 0}
+  rotationSpeed: 100
+  rotationAxis: {x: 0, y: 1, z: 0}
   pickupRange: 3
   pickupLayer:
     serializedVersion: 2
@@ -215,6 +218,13 @@ MonoBehaviour:
     m_Bits: 256
   playerCamera: {fileID: 0}
   heldObjectPosition: {x: -0.5, y: -0.3, z: 0.5}
+  playerRigidbody: {fileID: 0}
+  objectList: []
+  box: {fileID: 0}
+  ESCUI: {fileID: 0}
+  isESC: 0
+  isGrounded: 0
+  jumpTime: 0
 --- !u!136 &1985033107156891350
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/GameSystem/IntroScene.unity
     guid: c27809027c13d0a4a9799c199e3b81fb
   - enabled: 1
-    path: Assets/Scenes/GameSystem/StartScene.unity
-    guid: 97b2aa9624f6502459a302a3a9b8ba6b
-  - enabled: 1
     path: Assets/Scenes/Room/Age8.unity
     guid: 9df1ec8b1acfc454c9b360aa2ed82017
   - enabled: 1
@@ -38,9 +35,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameSystem/EndScene.unity
     guid: 910e1684f4cfbd6409e2e38d3f90fa1a
-  - enabled: 1
-    path: Assets/Scenes/GameSystem/SettingScene.unity
-    guid: c159e6dca16a8bb4fa0cc328a0317860
   - enabled: 1
     path: Assets/Scenes/GameSystem/AchievementScene.unity
     guid: 74c609fc4b606754aa304a0063499a10
