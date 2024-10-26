@@ -30,7 +30,7 @@ public class PickupController : MonoBehaviour
 
     public List<GameObject> objectList = new List<GameObject>();        //박스 안에 생성할 오브젝트를 넣을 리스트
     public GameObject box;                                              //오브젝트를 생성할 박스
-    private Vector3 boxPosition = new Vector3(-47, -2, -3);              //생성할 오브젝트 위치 설정 -> 박스 포지션
+    private Vector3 boxPosition = new Vector3(-55.5f, -1f, -1.7f);              //생성할 오브젝트 위치 설정 -> 박스 포지션
     private float boxTimer = 1;                                              //계속해서 눌러도 안 나오게 타이머 설정
 
     public GameObject ESCUI;
@@ -41,6 +41,7 @@ public class PickupController : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1;
         playerCamera = playerCamera ? playerCamera : Camera.main; // 만약 카메라가 설정되지 않았다면 메인 카메라를 사용
         Cursor.lockState = CursorLockMode.Locked; // 마우스 커서를 화면 중앙에 고정
         Cursor.visible = false; // 마우스 커서 숨김
