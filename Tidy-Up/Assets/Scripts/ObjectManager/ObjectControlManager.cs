@@ -15,13 +15,13 @@ public class ObjectControlManager : MonoBehaviour
     }
     public void Update()
     {
-        if(objectItem.isDone == true)
+        /*if(objectItem.isDone == true)
         {
             for (int i = 0; i < triggerObjects.Length; i++)
             {
                 triggerNumber[i] = 1;
                 Debug.Log( i + "번이 끝났습니다.");
             }
-        }
+        }*/
     }
 }
