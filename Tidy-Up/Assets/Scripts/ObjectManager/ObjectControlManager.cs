@@ -4,24 +4,28 @@ using UnityEngine;
 
 public class ObjectControlManager : MonoBehaviour
 {
-    public ObjectItemGroup objectItem;
-    public bool isFinish;               //끝났는지 알려줄 Bool 값
-    public GameObject[] triggerObjects = new GameObject[4];     //Trigger 오브젝트를 넣어둘 예정입니다.
-    public int[] triggerNumber = new int[4];                    //Trigger들이 다 끝났는지 세어줄 배열입니다.
+    public List<ObjectItemGroup> objectItemGroups = new List<ObjectItemGroup>();
+    public bool isFinish;
 
-    public void Start()
-    {
-        
-    }
     public void Update()
     {
-        /*if(objectItem.isDone == true)
+        CheckAll();
+    }
+    public void CheckAll()
+    {
+        int doneCount = 0;
+        foreach(var item in objectItemGroups)
         {
-            for (int i = 0; i < triggerObjects.Length; i++)
+            if(item.isDone)
             {
-                triggerNumber[i] = 1;
-                Debug.Log( i + "번이 끝났습니다.");
+                doneCount++;
             }
-        }*/
+        }
+
+        if(doneCount == objectItemGroups.Count)
+        {
+            Debug.Log("모두 완료");
+            isFinish = true;
+        }
     }
 }

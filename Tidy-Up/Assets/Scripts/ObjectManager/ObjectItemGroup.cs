@@ -7,7 +7,7 @@ public class ObjectItemGroup : MonoBehaviour
 {
     public GameObject[] ObjectList = new GameObject[6];     //잡을 수 있는 오브젝트 리스트 
     public int[] ObjectTriggerCheckList = new int[6];            //오브젝트가 나갔는지 들어왔는지 확인 할 리스트 1이면 완료 0이면 미완료
-   
+   //DoneCheck 모아서 배열로 다 더해서 게임 넘기기 
    
     public int DoneCheck = 0;                               //체크용 int 수 입니다. RealDoneChecking 과 비교할 예정입니다.
     public int RealDoneChecking = 6;                        //트리거의 있는 오브젝트와 같은 수여야 합니다. 
@@ -18,6 +18,7 @@ public class ObjectItemGroup : MonoBehaviour
         isDone = false;
         DoneCheck = 0;
     }
+
     public void Update()
     {
         

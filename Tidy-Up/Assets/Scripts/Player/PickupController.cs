@@ -131,7 +131,7 @@ public class PickupController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true && jumpTime <= 0)
         {
             playerRigidbody.AddForce(Vector3.up * 5, ForceMode.Impulse);
-            jumpTime = 2f;
+            jumpTime = 1f;
             isGrounded = false;
             Debug.Log("Jump");
         }

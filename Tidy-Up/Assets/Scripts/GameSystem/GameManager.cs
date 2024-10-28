@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using Unity.VisualScripting;
+using System.Threading;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,8 +19,8 @@ public class GameManager : MonoBehaviour
     public GameObject timeUI;
 
     public TMP_Text timeText;
-
-    ObjectControlManager objectControlManager;
+    
+    public ObjectControlManager objectControlManager;
 
     private void Awake()
     {
@@ -36,20 +37,27 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        /*if (objectControlManager.isFinish == true)
+        if (objectControlManager.isFinish == true)
         {
-            isStart = false;
-            timeText.text = (int)playTime+ "초"; 
-            timeUI.SetActive(true);
-            ingTime -= Time.deltaTime;
-            if(ingTime <= 0)
+            //3초 기다려도 true라면 
+            if (objectControlManager.isFinish == true)
             {
-                timeUI.SetActive(false);
+                //플레이어를 멈추고, UI 띄우기
+                //PickupController pickupController = GetComponent<PickupController>();
+                //pickupController.playerRigidbody.velocity = Vector3.zero;
+                //isStart = false;
+                //timeText.text = (int)playTime + "초";
+                //timeUI.SetActive(true);
+                //ingTime -= Time.deltaTime;
+                //if (ingTime <= 0)
+                //{
+                //    timeUI.SetActive(false);
+                //}
+                Scene scenes = SceneManager.GetActiveScene();
+                int curScenes = scenes.buildIndex;
+                SceneManager.LoadScene(curScenes + 1);
             }
-            Scene scenes = SceneManager.GetActiveScene();
-            int curScenes = scenes.buildIndex;
-            SceneManager.LoadScene(curScenes + 1);
-        }*/
+        }
 
         if (isStart == true)
         {
