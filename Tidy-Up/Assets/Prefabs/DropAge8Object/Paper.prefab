@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1426782728395627171}
   - component: {fileID: 1498459803179782251}
   - component: {fileID: -213998528390837784}
-  - component: {fileID: 846405500673640711}
+  - component: {fileID: 4195848567192670937}
   m_Layer: 6
   m_Name: Paper
   m_TagString: Picker
@@ -134,7 +134,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &846405500673640711
+--- !u!114 &4195848567192670937
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,7 +143,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4892662265959116012}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 934272a6316c3a942b4c4e6b2bfde2ae, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e9f80f02881ffc49999d2f3fafbcdec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemNumber: 10
+  objectNumber: 11
+  inGroup: 0
+  group: {fileID: 0}

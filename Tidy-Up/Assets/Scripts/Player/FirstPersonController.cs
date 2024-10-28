@@ -1,3 +1,4 @@
+using Fur;
 using UnityEngine;
 
 public class FirstPersonController : MonoBehaviour
@@ -5,6 +6,7 @@ public class FirstPersonController : MonoBehaviour
     public float moveSpeed = 5f;
     public float mouseSensitivity = 2f;
 
+    //움직일때 힘이 계속 더해져서 벽이 뚫린다면, 힘을 계속 더하지 않게 해버리면 어떨까여 
     public Rigidbody rb;
     public Transform cameraTransform;
     public LayerMask groundMask;
@@ -41,7 +43,11 @@ public class FirstPersonController : MonoBehaviour
 
         Vector3 movement = transform.right * moveX + transform.forward * moveZ;
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-        if()
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Wall"))
         {
 
         }

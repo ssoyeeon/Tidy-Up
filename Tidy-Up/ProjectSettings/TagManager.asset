@@ -9,6 +9,7 @@ TagManager:
   - Bed
   - Chest
   - Picker
+  - Wall
   layers:
   - Default
   - TransparentFX

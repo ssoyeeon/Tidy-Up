@@ -180,7 +180,19 @@ public class PickupController : MonoBehaviour
         Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)); // 카메라 화면 중앙에서 레이 시작
         if (Physics.Raycast(ray, out RaycastHit hit, pickupRange, pickupLayer)) // 레이가 충돌하면
         {
-            PickupObject(hit.collider.gameObject); // 물체 집기
+            if (hit.collider.tag == "Picker" && hit.collider != null)
+            {
+                try
+                {
+                    PickupObject(hit.collider.gameObject); // 물체 집기
+                }
+                catch
+                {
+                    Debug.Log(hit.collider.name);
+                }
+               
+            }
+           
         }
     }
 
@@ -189,6 +201,16 @@ public class PickupController : MonoBehaviour
     {
         heldObject = obj; // 들고 있는 물체 설정
         originalScale = obj.transform.localScale; // 물체의 원래 크기 저장
+
+        if(obj.tag == "Picker")
+        {
+            ObjectItem temp = obj.GetComponent<ObjectItem>();
+            if (temp.inGroup == true)
+            {
+                ObjectItemGroup itemgroup = temp.group;
+                itemgroup.ObjectOut(temp);
+            }
+        }        
 
         // 물체에 Rigidbody가 있으면 물리적 상호작용 중지
         heldRigidbody = obj.GetComponent<Rigidbody>();

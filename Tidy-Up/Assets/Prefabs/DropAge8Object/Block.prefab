@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3467454156123562078}
   - component: {fileID: 6192579666948110578}
   - component: {fileID: -7653222342457085538}
-  - component: {fileID: -8743672847548760927}
+  - component: {fileID: 5305131657543456155}
   m_Layer: 6
   m_Name: Block
   m_TagString: Picker
@@ -134,7 +134,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-8743672847548760927
+--- !u!114 &5305131657543456155
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,7 +143,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8083481080869101908}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 934272a6316c3a942b4c4e6b2bfde2ae, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e9f80f02881ffc49999d2f3fafbcdec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemNumber: 1
+  objectNumber: 2
+  inGroup: 0
+  group: {fileID: 0}

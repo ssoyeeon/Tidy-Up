@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4931168091807255753}
   - component: {fileID: 4744449669135627979}
   - component: {fileID: 9025327249899747115}
-  - component: {fileID: 6614340495650544101}
+  - component: {fileID: 2080506877814766891}
   m_Layer: 6
   m_Name: Crayons_1
   m_TagString: Picker
@@ -134,7 +134,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6614340495650544101
+--- !u!114 &2080506877814766891
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,7 +143,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7636710452907752961}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 934272a6316c3a942b4c4e6b2bfde2ae, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e9f80f02881ffc49999d2f3fafbcdec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemNumber: 6
+  objectNumber: 7
+  inGroup: 0
+  group: {fileID: 0}

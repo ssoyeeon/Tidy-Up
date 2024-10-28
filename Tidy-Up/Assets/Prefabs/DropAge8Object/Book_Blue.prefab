@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 672587510183573544}
   - component: {fileID: 305694067541328348}
   - component: {fileID: 8773194761193370160}
-  - component: {fileID: -1448480739346418657}
+  - component: {fileID: 5318595674309851860}
   m_Layer: 6
   m_Name: Book_Blue
   m_TagString: Picker
@@ -134,7 +134,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-1448480739346418657
+--- !u!114 &5318595674309851860
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,7 +143,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8262646207982861929}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 934272a6316c3a942b4c4e6b2bfde2ae, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e9f80f02881ffc49999d2f3fafbcdec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemNumber: 2
+  objectNumber: 3
+  inGroup: 0
+  group: {fileID: 0}

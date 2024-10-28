@@ -24,8 +24,8 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(gameObject); 
-        timeUI.SetActive(false);
-        stopUI.SetActive(false);
+       // timeUI.SetActive(false);
+       // stopUI.SetActive(false);
     }
     void Start()
     {
@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
             //objectControlManager.isFinish = false;
             isStart = false;
             isPause = false;
-            stopUI.SetActive(false);
+            //stopUI.SetActive(false);
         }
     }
         

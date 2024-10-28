@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6003368123924287613}
   - component: {fileID: 6778957691875138160}
   - component: {fileID: 8978776890357340092}
-  - component: {fileID: 8018352569124182777}
+  - component: {fileID: -4148338234164525371}
   m_Layer: 6
   m_Name: Teddy_Bear_Small
   m_TagString: Picker
@@ -134,7 +134,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8018352569124182777
+--- !u!114 &-4148338234164525371
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,7 +143,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6308027969824749221}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 934272a6316c3a942b4c4e6b2bfde2ae, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e9f80f02881ffc49999d2f3fafbcdec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemNumber: 15
+  objectNumber: 16
+  inGroup: 0
+  group: {fileID: 0}

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObjectControlManager : MonoBehaviour
 {
-    public ObjectItem objectItem;
+    public ObjectItemGroup objectItem;
     public bool isFinish;               //끝났는지 알려줄 Bool 값
     public GameObject[] triggerObjects = new GameObject[4];     //Trigger 오브젝트를 넣어둘 예정입니다.
     public int[] triggerNumber = new int[4];                    //Trigger들이 다 끝났는지 세어줄 배열입니다.
