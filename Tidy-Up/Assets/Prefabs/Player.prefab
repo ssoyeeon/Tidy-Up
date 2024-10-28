@@ -65,7 +65,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -187,8 +187,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   mouseSensitivity: 2
-  jumpForce: 5
-  groundCheckDistance: 0.1
   rb: {fileID: 4549614438426546911}
   cameraTransform: {fileID: 720619269287322192}
   groundMask:
