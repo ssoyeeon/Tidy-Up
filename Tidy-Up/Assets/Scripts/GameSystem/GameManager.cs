@@ -37,27 +37,31 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+
+        if(Input.GetKeyDown(KeyCode.F)) 
+        {
+            objectControlManager.isFinish = true;
+        }
+        
+        //3초 기다려도 true라면 
         if (objectControlManager.isFinish == true)
         {
-            //3초 기다려도 true라면 
-            if (objectControlManager.isFinish == true)
-            {
-                //플레이어를 멈추고, UI 띄우기
-                //PickupController pickupController = GetComponent<PickupController>();
-                //pickupController.playerRigidbody.velocity = Vector3.zero;
-                //isStart = false;
-                //timeText.text = (int)playTime + "초";
-                //timeUI.SetActive(true);
-                //ingTime -= Time.deltaTime;
-                //if (ingTime <= 0)
-                //{
-                //    timeUI.SetActive(false);
-                //}
-                Scene scenes = SceneManager.GetActiveScene();
-                int curScenes = scenes.buildIndex;
-                SceneManager.LoadScene(curScenes + 1);
-            }
+            //플레이어를 멈추고, UI 띄우기
+            //PickupController pickupController = GetComponent<PickupController>();
+            //pickupController.playerRigidbody.velocity = Vector3.zero;
+            //isStart = false;
+            //timeText.text = (int)playTime + "초";
+            //timeUI.SetActive(true);
+            //ingTime -= Time.deltaTime;
+            //if (ingTime <= 0)
+            //{
+            //    timeUI.SetActive(false);
+            //}
+            objectControlManager.isFinish = false;
+            StartCoroutine(GoToNextScene());
+                
         }
+        
 
         if (isStart == true)
         {
@@ -76,6 +80,21 @@ public class GameManager : MonoBehaviour
             isPause = false;
             //stopUI.SetActive(false);
         }
+    }
+
+    public IEnumerator GoToNextScene()
+    {
+        for(int i = 0; i < 3; i++)
+        {
+            timeText.text = (i+1).ToString();
+            yield return new WaitForSeconds(1.0f);
+        }       
+       
+        Scene scenes = SceneManager.GetActiveScene();
+        int curScenes = scenes.buildIndex;
+        SceneManager.LoadScene(curScenes + 1);
+
+        
     }
         
 }
