@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3029686097421106564}
   - component: {fileID: -3198772917680062221}
   - component: {fileID: -5165628811794424883}
+  - component: {fileID: -3836036142192153144}
   m_Layer: 6
   m_Name: Book_Sky
   m_TagString: Picker
@@ -149,3 +150,16 @@ MonoBehaviour:
   objectNumber: 5
   inGroup: 0
   group: {fileID: 0}
+--- !u!114 &-3836036142192153144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3598660182287508455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1c49ffd8699f34e93f6b2b8f25090e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMaterial: {fileID: 2100000, guid: c959cb67abcfcba47a5f9c679ea95069, type: 2}

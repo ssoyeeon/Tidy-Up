@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 305694067541328348}
   - component: {fileID: 8773194761193370160}
   - component: {fileID: 5318595674309851860}
+  - component: {fileID: 8044028856319092721}
   m_Layer: 6
   m_Name: Book_Blue
   m_TagString: Picker
@@ -149,3 +150,16 @@ MonoBehaviour:
   objectNumber: 3
   inGroup: 0
   group: {fileID: 0}
+--- !u!114 &8044028856319092721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8262646207982861929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1c49ffd8699f34e93f6b2b8f25090e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMaterial: {fileID: 2100000, guid: c959cb67abcfcba47a5f9c679ea95069, type: 2}

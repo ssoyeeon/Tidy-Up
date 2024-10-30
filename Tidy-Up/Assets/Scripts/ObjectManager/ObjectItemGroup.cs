@@ -30,7 +30,8 @@ public class ObjectItemGroup : MonoBehaviour
         if(other.tag == "Picker")
         {
             ObjectItem objectControl = other.GetComponent<ObjectItem>();
-           
+            OutlineController outline = other.GetComponent<OutlineController>();
+
             for (int i = 0; i < ObjectList.Length; i++)
             {
                 if (ObjectList[i].gameObject.GetComponent<ObjectItem>().objectNumber == objectControl.objectNumber && ObjectTriggerCheckList[i] == 0)
@@ -38,7 +39,13 @@ public class ObjectItemGroup : MonoBehaviour
                     ObjectTriggerCheckList[i] = 1;
                     objectControl.gameObject.GetComponent<ObjectItem>().group = this;
                     objectControl.gameObject.GetComponent<ObjectItem>().inGroup = true;
+                    if (outline) outline.SetHighlightState(OutlineController.HighlightState.Correct);
                     break;
+                }
+                else if (ObjectList[i].gameObject.GetComponent<ObjectItem>().objectNumber != objectControl.objectNumber)
+                {
+                    // 이 그룹에 속하지 않은 오브젝트라면 빨간색
+                    if (outline) outline.SetHighlightState(OutlineController.HighlightState.Incorrect);
                 }
             }
 
@@ -52,7 +59,7 @@ public class ObjectItemGroup : MonoBehaviour
         if (other.tag == "Picker")
         {
             ObjectItem temp = other.GetComponent<ObjectItem>();
-
+            OutlineController outline = other.GetComponent<OutlineController>();
             for (int i = 0; i < ObjectList.Length; i++)
             {
                 if (temp.objectNumber == ObjectList[i].GetComponent<ObjectItem>().objectNumber)
@@ -65,13 +72,16 @@ public class ObjectItemGroup : MonoBehaviour
             temp.gameObject.GetComponent<ObjectItem>().group = null;
             temp.gameObject.GetComponent<ObjectItem>().inGroup = true;
 
+            // 범위를 벗어나면 아웃라인 제거
+            if (outline) outline.SetHighlightState(OutlineController.HighlightState.None);
+
             CheckDone();
         }
     }
 
     public void ObjectOut(ObjectItem temp)
     {
-
+        OutlineController outline = temp.gameObject.GetComponent<OutlineController>();
         for (int i = 0; i < ObjectList.Length; i++)
         {
             if(temp.objectNumber == ObjectList[i].GetComponent<ObjectItem>().objectNumber)
@@ -83,7 +93,8 @@ public class ObjectItemGroup : MonoBehaviour
 
         temp.gameObject.GetComponent<ObjectItem>().group = null;
         temp.gameObject.GetComponent<ObjectItem>().inGroup = true;
-
+        // 범위를 벗어나면 아웃라인 제거
+        if (outline) outline.SetHighlightState(OutlineController.HighlightState.None);
         CheckDone();
 
     }

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2572469143263664385}
   - component: {fileID: -779338006379551301}
   - component: {fileID: -3358210720398014191}
+  - component: {fileID: 8350829390658750763}
   m_Layer: 6
   m_Name: Soccer_Ball
   m_TagString: Picker
@@ -149,3 +150,16 @@ MonoBehaviour:
   objectNumber: 14
   inGroup: 0
   group: {fileID: 0}
+--- !u!114 &8350829390658750763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2779300169167963929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1c49ffd8699f34e93f6b2b8f25090e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMaterial: {fileID: 2100000, guid: c959cb67abcfcba47a5f9c679ea95069, type: 2}
