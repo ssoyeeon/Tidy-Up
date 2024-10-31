@@ -6,7 +6,6 @@ public class FirstPersonController : MonoBehaviour
     public float moveSpeed = 5f;
     public float mouseSensitivity = 2f;
 
-    //움직일때 힘이 계속 더해져서 벽이 뚫린다면, 힘을 계속 더하지 않게 해버리면 어떨까여 
     public Rigidbody rb;
     public Transform cameraTransform;
     public LayerMask groundMask;

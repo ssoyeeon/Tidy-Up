@@ -6,9 +6,11 @@ public class ObjectControlManager : MonoBehaviour
 {
     public List<ObjectItemGroup> objectItemGroups = new List<ObjectItemGroup>();
     public bool isFinish;
+    public bool isDone;
 
     public void Update()
     {
+        if(!isDone)
         CheckAll();
     }
     public void CheckAll()
@@ -26,6 +28,7 @@ public class ObjectControlManager : MonoBehaviour
         {
             Debug.Log("모두 완료");
             isFinish = true;
+            isDone = true;
         }
     }
 }

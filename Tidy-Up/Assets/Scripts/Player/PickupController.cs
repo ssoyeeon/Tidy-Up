@@ -30,7 +30,7 @@ public class PickupController : MonoBehaviour
 
     public List<GameObject> objectList = new List<GameObject>();        //박스 안에 생성할 오브젝트를 넣을 리스트
     public GameObject box;                                              //오브젝트를 생성할 박스
-    private Vector3 boxPosition = new Vector3(-55.5f, -1f, -1.7f);              //생성할 오브젝트 위치 설정 -> 박스 포지션
+    public Vector3 boxPosition = new Vector3(-55.5f, -1f, -1.7f);              //생성할 오브젝트 위치 설정 -> 박스 포지션
     private float boxTimer = 1;                                              //계속해서 눌러도 안 나오게 타이머 설정
 
     public GameObject ESCUI;

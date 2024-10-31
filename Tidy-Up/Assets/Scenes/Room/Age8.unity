@@ -801,6 +801,7 @@ MonoBehaviour:
   - {fileID: 2027241418}
   - {fileID: 17610179}
   isFinish: 0
+  isDone: 0
 --- !u!4 &166567440
 Transform:
   m_ObjectHideFlags: 0
@@ -1759,6 +1760,7 @@ MonoBehaviour:
   isStart: 0
   isPause: 0
   isPlaying: 0
+  isDone: 0
   stopUI: {fileID: 0}
   timeUI: {fileID: 0}
   timeText: {fileID: 1756174387}
@@ -1775,7 +1777,8 @@ Transform:
   m_LocalPosition: {x: -41.44088, y: -6.2677927, z: -25.572954}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 929701430}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &695956025
@@ -3112,7 +3115,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1756174386}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 660313572}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4451,8 +4454,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.632719, y: 0.12630011, z: 1.2507939}
-  m_Center: {x: -0.6735919, y: -1.8272114, z: -0.60599494}
+  m_Size: {x: 1.6059202, y: 0.06594855, z: 1.2507939}
+  m_Center: {x: -0.68699133, y: -1.7970353, z: -0.60599494}
 --- !u!65 &1685111087
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4472,8 +4475,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.1979065, y: 0.071393825, z: 1.2381463}
-  m_Center: {x: 0.61890805, y: -2.5246377, z: -0.56170344}
+  m_Size: {x: 1.5779083, y: 0.071393825, z: 1.2381463}
+  m_Center: {x: 0.5753866, y: -2.5246377, z: -0.56170344}
 --- !u!4 &1685111088
 Transform:
   m_ObjectHideFlags: 0
@@ -6093,4 +6096,3 @@ SceneRoots:
   - {fileID: 2107008437}
   - {fileID: 129720716}
   - {fileID: 1523564192}
-  - {fileID: 929701430}

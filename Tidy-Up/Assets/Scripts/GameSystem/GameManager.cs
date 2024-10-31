@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public bool isStart;
     public bool isPause;
     public bool isPlaying;
+    public bool isDone;
 
     public GameObject stopUI;
     public GameObject timeUI;
@@ -42,9 +43,13 @@ public class GameManager : MonoBehaviour
         {
             objectControlManager.isFinish = true;
         }
-        
-        //3초 기다려도 true라면 
-        if (objectControlManager.isFinish == true)
+
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            objectControlManager.isFinish = false;
+        }
+            //3초 기다려도 true라면 
+        if (objectControlManager.isFinish == true && SceneManager.GetActiveScene().buildIndex != 0)
         {
             //플레이어를 멈추고, UI 띄우기
             //PickupController pickupController = GetComponent<PickupController>();
@@ -59,7 +64,6 @@ public class GameManager : MonoBehaviour
             //}
             objectControlManager.isFinish = false;
             StartCoroutine(GoToNextScene());
-                
         }
         
 
@@ -93,8 +97,6 @@ public class GameManager : MonoBehaviour
         Scene scenes = SceneManager.GetActiveScene();
         int curScenes = scenes.buildIndex;
         SceneManager.LoadScene(curScenes + 1);
-
-        
     }
         
 }
