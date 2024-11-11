@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 8193553597157631122}
   - component: {fileID: 3008543522613198385}
   - component: {fileID: -6030700152898192542}
-  - component: {fileID: -7998490129728199077}
   - component: {fileID: 7813391560746344671}
+  - component: {fileID: 5897435694145966132}
   m_Layer: 6
   m_Name: Teddy_Bear_Big
   m_TagString: Picker
@@ -135,21 +135,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-7998490129728199077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5265757291518257631}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e9f80f02881ffc49999d2f3fafbcdec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectNumber: 15
-  inGroup: 0
-  group: {fileID: 0}
 --- !u!114 &7813391560746344671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,3 +148,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMaterial: {fileID: 2100000, guid: c959cb67abcfcba47a5f9c679ea95069, type: 2}
+--- !u!114 &5897435694145966132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5265757291518257631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e25a4b4c9879047b330ed6b667c16f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 0}

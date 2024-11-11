@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 3663281232098347454}
   - component: {fileID: 699784699588121599}
   - component: {fileID: -7120883577084507744}
-  - component: {fileID: 5375381148081071973}
   - component: {fileID: -6171913322535270909}
+  - component: {fileID: -3905910949802051118}
   m_Layer: 6
   m_Name: Book_Red
   m_TagString: Picker
@@ -135,21 +135,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5375381148081071973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6542961457320227567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e9f80f02881ffc49999d2f3fafbcdec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectNumber: 4
-  inGroup: 0
-  group: {fileID: 0}
 --- !u!114 &-6171913322535270909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,3 +148,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMaterial: {fileID: 2100000, guid: c959cb67abcfcba47a5f9c679ea95069, type: 2}
+--- !u!114 &-3905910949802051118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6542961457320227567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e25a4b4c9879047b330ed6b667c16f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: b961cc19c435c3f448e10773a555778c, type: 2}

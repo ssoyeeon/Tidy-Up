@@ -186,18 +186,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 17610174}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 934272a6316c3a942b4c4e6b2bfde2ae, type: 3}
+  m_Script: {fileID: 11500000, guid: 70fe454b00eeb674b9bba184a8f0b074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectList:
-  - {fileID: 7636710452907752961, guid: 07c195b1283cb6d4cbb9e55fa577a44c, type: 3}
-  - {fileID: 7085663154219323999, guid: 23ab57c87b617d645b64729a421580d4, type: 3}
-  - {fileID: 454588963618582056, guid: 1b57739e2e2f9164195ba2fced928bb8, type: 3}
-  - {fileID: 4892662265959116012, guid: 1b5d8dc52aa5a344c90c446722db82c9, type: 3}
-  ObjectTriggerCheckList: 00000000000000000000000000000000
-  DoneCheck: 0
-  RealDoneChecking: 4
-  isDone: 0
+  data: {fileID: 11400000, guid: f0c45101c5f946d4e96efaf0e046f939, type: 2}
+  isComplete: 0
 --- !u!1 &29563495
 GameObject:
   m_ObjectHideFlags: 0
@@ -790,16 +783,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 166567438}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e544ab27f61be1438f772ed8d5ba72b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   objectItemGroups:
-  - {fileID: 262287932}
-  - {fileID: 1685111089}
-  - {fileID: 2027241418}
-  - {fileID: 17610179}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   isFinish: 0
   isDone: 0
 --- !u!4 &166567440
@@ -1163,20 +1156,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 262287928}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 934272a6316c3a942b4c4e6b2bfde2ae, type: 3}
+  m_Script: {fileID: 11500000, guid: 70fe454b00eeb674b9bba184a8f0b074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectList:
-  - {fileID: 4803264495019374708, guid: 8e2afd06dbc85be4a824f43054720d20, type: 3}
-  - {fileID: 7738984242385225879, guid: ec12cac7df3535d439b00662ae1e22a7, type: 3}
-  - {fileID: 2715295480747853108, guid: 87242be9a495b9c438c2a6e74fdf41f8, type: 3}
-  - {fileID: 2779300169167963929, guid: 6dc9890fcc4ef524a99ebca33b305eae, type: 3}
-  - {fileID: 5265757291518257631, guid: 954fc8fc46f078e43bd665cc86c11792, type: 3}
-  - {fileID: 6308027969824749221, guid: a7aa59251b386ab41a77deee3a16b84d, type: 3}
-  ObjectTriggerCheckList: 000000000000000000000000000000000000000000000000
-  DoneCheck: 0
-  RealDoneChecking: 6
-  isDone: 0
+  data: {fileID: 11400000, guid: d3f50ff45246dad4f8e12ec7132d23f0, type: 2}
+  isComplete: 0
 --- !u!1 &371570646
 GameObject:
   m_ObjectHideFlags: 0
@@ -4037,19 +4021,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1685111084}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 934272a6316c3a942b4c4e6b2bfde2ae, type: 3}
+  m_Script: {fileID: 11500000, guid: 70fe454b00eeb674b9bba184a8f0b074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectList:
-  - {fileID: 8262646207982861929, guid: 44f6610c33089984687a365331592b73, type: 3}
-  - {fileID: 6542961457320227567, guid: 2235c2c6ecd75c14a8acce17efb7b6ab, type: 3}
-  - {fileID: 3598660182287508455, guid: 132662def0cfbdb4db2fd88136352b80, type: 3}
-  - {fileID: 5255042819258201539, guid: e23d86b0019e1564e9d799592b29b981, type: 3}
-  - {fileID: 8083481080869101908, guid: 0cd0dcf8010dee541b738bd4ee83e307, type: 3}
-  ObjectTriggerCheckList: 0000000000000000000000000000000000000000
-  DoneCheck: 0
-  RealDoneChecking: 5
-  isDone: 0
+  data: {fileID: 11400000, guid: da777497a0da3ec459e7989a29fad37a, type: 2}
+  isComplete: 0
 --- !u!1 &1756174385
 GameObject:
   m_ObjectHideFlags: 0
@@ -4735,15 +4711,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2027241413}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 934272a6316c3a942b4c4e6b2bfde2ae, type: 3}
+  m_Script: {fileID: 11500000, guid: 70fe454b00eeb674b9bba184a8f0b074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectList:
-  - {fileID: 8073590066178272421, guid: dd2e7a7034de18b4eb1dda7e63ded1d2, type: 3}
-  ObjectTriggerCheckList: 00000000
-  DoneCheck: 0
-  RealDoneChecking: 1
-  isDone: 0
+  data: {fileID: 11400000, guid: 51ecdbe0371ecda4cb35fc977b422354, type: 2}
+  isComplete: 0
 --- !u!1 &2030582651
 GameObject:
   m_ObjectHideFlags: 0
@@ -4888,6 +4860,12 @@ PrefabInstance:
       objectReference: {fileID: 6704459335102876561}
     - target: {fileID: 25009251984860270, guid: 31378d9fc21a44b4ebf8f03b24be194e,
         type: 3}
+      propertyPath: boxData
+      value: 
+      objectReference: {fileID: 11400000, guid: 8ceb543416f200e4eb66c942192b49ed,
+        type: 2}
+    - target: {fileID: 25009251984860270, guid: 31378d9fc21a44b4ebf8f03b24be194e,
+        type: 3}
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 2088020570}
@@ -4904,7 +4882,7 @@ PrefabInstance:
     - target: {fileID: 25009251984860270, guid: 31378d9fc21a44b4ebf8f03b24be194e,
         type: 3}
       propertyPath: objectList.Array.size
-      value: 16
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 25009251984860270, guid: 31378d9fc21a44b4ebf8f03b24be194e,
         type: 3}
@@ -4916,13 +4894,13 @@ PrefabInstance:
         type: 3}
       propertyPath: objectList.Array.data[1]
       value: 
-      objectReference: {fileID: 8083481080869101908, guid: 0cd0dcf8010dee541b738bd4ee83e307,
+      objectReference: {fileID: 8262646207982861929, guid: 44f6610c33089984687a365331592b73,
         type: 3}
     - target: {fileID: 25009251984860270, guid: 31378d9fc21a44b4ebf8f03b24be194e,
         type: 3}
       propertyPath: objectList.Array.data[2]
       value: 
-      objectReference: {fileID: 8262646207982861929, guid: 44f6610c33089984687a365331592b73,
+      objectReference: {fileID: 6542961457320227567, guid: 2235c2c6ecd75c14a8acce17efb7b6ab,
         type: 3}
     - target: {fileID: 25009251984860270, guid: 31378d9fc21a44b4ebf8f03b24be194e,
         type: 3}

@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55266f95bb4750f4d90f60a3d7b558fd, type: 3}
-  m_Name: TeddyBear
+  m_Script: {fileID: 11500000, guid: d1fe4c09c066b314089a5a74055e0df4, type: 3}
+  m_Name: Robot
   m_EditorClassIdentifier: 
-  objectName: "\uACF0\uC778\uD615"
-  objectPrefab: {fileID: 8645851969465393846, guid: c146c08fa618caa41985840f49616bcb,
-    type: 3}
+  id: 11
+  prefab: {fileID: 8073590066178272421, guid: dd2e7a7034de18b4eb1dda7e63ded1d2, type: 3}

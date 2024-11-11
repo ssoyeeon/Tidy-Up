@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55266f95bb4750f4d90f60a3d7b558fd, type: 3}
-  m_Name: Toy 2
+  m_Script: {fileID: 11500000, guid: d1fe4c09c066b314089a5a74055e0df4, type: 3}
+  m_Name: Block
   m_EditorClassIdentifier: 
-  objectName: "\uC7A5\uB09C\uAC10 2"
-  objectPrefab: {fileID: 8645851969465393846, guid: db3b232dda0b23047bbc1b90d3eec26d,
-    type: 3}
+  id: 15
+  prefab: {fileID: 8083481080869101908, guid: 0cd0dcf8010dee541b738bd4ee83e307, type: 3}

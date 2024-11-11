@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59b378d3bddd08a4eb4b222274dee43a, type: 3}
+  m_Name: LatheGroup
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 11400000, guid: 4e922bcee2ba64f4cb515ee15a09d5b8, type: 2}
+  - {fileID: 11400000, guid: b961cc19c435c3f448e10773a555778c, type: 2}
+  - {fileID: 11400000, guid: d08cfce296f54c840bc67ba3ea9782df, type: 2}
+  - {fileID: 11400000, guid: c15a1cf922fb1f44984195996c9d8ec4, type: 2}
+  - {fileID: 11400000, guid: 7263d872290b0ba47b0bb44946ce71b1, type: 2}

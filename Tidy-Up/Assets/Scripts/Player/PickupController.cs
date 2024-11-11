@@ -28,16 +28,23 @@ public class PickupController : MonoBehaviour
     private Vector3 originalScale; // 물체의 원래 크기 저장
     private Vector3 bottomOffset; // 물체의 하단점을 기준으로 위치를 조정하기 위한 오프셋
 
-    public List<GameObject> objectList = new List<GameObject>();        //박스 안에 생성할 오브젝트를 넣을 리스트
-    public GameObject box;                                              //오브젝트를 생성할 박스
-    public Vector3 boxPosition = new Vector3(-55.5f, -1f, -1.7f);              //생성할 오브젝트 위치 설정 -> 박스 포지션
-    private float boxTimer = 1;                                              //계속해서 눌러도 안 나오게 타이머 설정
+    [Header("Box Settings")]
+    public BoxData boxData;
+    public GameObject box;
+    private List<ItemData> remainingItems;
+    private float boxTimer = 1f;
+    //계속해서 눌러도 안 나오게 타이머 설정
 
     public GameObject ESCUI;
     public bool isESC;
 
     public bool isGrounded;
     public float jumpTime;
+
+    private void Awake()
+    {
+        remainingItems = new List<ItemData>(boxData.spawnableItems);
+    }
 
     void Start()
     {
@@ -69,26 +76,27 @@ public class PickupController : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit))
             {
-                if (box == hit.collider.gameObject && objectList.Count > 0 && boxTimer <= 0 && heldObject == null)
+                if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit))
                 {
-                    int random = Random.Range(0, objectList.Count);
-                    Debug.Log(random);
-                    GameObject temp = Instantiate(objectList[random], boxPosition, Quaternion.identity);
-                    //temp.AddComponent<GrabItem>().itemNumber = objectList[random].GetComponent<GrabItem>().itemNumber;
-
-                    if (objectList[random] = null)
+                    if (box == hit.collider.gameObject && remainingItems.Count > 0 && boxTimer <= 0 && heldObject == null)
                     {
-                        Destroy(objectList[random]);
-                    }
-                    objectList.RemoveAt(random);
+                        int random = Random.Range(0, remainingItems.Count);
+                        ItemData selectedItem = remainingItems[random];
 
-                    if(objectList.Count == 0)
-                    {
-                        Destroy(box);
+                        Vector3 spawnPoint = box.transform.position + Vector3.up * (box.GetComponent<Collider>().bounds.size.y + 0.1f);
+
+                        GameObject temp = Instantiate(selectedItem.prefab, spawnPoint, Quaternion.identity);
+                        remainingItems.RemoveAt(random);
+
+                        if (remainingItems.Count == 0)
+                        {
+                            Destroy(box);
+                        }
+                        boxTimer = boxData.spawnCooldown;
+
                     }
-                    boxTimer = 2f;
-                    Debug.Log("BoxHit and Instaniate Object");
                 }
+
             }
         }
         boxTimer -= Time.deltaTime;

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59b378d3bddd08a4eb4b222274dee43a, type: 3}
+  m_Name: WallfloorGroup
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 11400000, guid: 649b877ad5d605b47b04f22be3fe8e86, type: 2}
+  - {fileID: 11400000, guid: 2064ebc7ef8c45d43a75ba8e55762887, type: 2}
+  - {fileID: 11400000, guid: 8e28500e681aca9449b710efe055b5d2, type: 2}
+  - {fileID: 11400000, guid: 4afef602059a5cd49ae5f13699c3d4f2, type: 2}
+  - {fileID: 11400000, guid: ab24ae7ba58fbc04d87b5722baa5c040, type: 2}
+  - {fileID: 11400000, guid: 8041f45167dc9464d88fa006d0c1b0ec, type: 2}
