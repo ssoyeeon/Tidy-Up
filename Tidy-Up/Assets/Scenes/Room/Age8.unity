@@ -790,9 +790,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectItemGroups:
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   isFinish: 0
   isDone: 0
 --- !u!4 &166567440
@@ -4083,7 +4080,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '!isFinish'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 81377b95333930a43b56fde4cfb2d426, type: 2}
   m_sharedMaterial: {fileID: -491194408099006959, guid: 81377b95333930a43b56fde4cfb2d426,
