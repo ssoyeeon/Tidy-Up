@@ -63,10 +63,8 @@ public class GameManager : MonoBehaviour
             //    timeUI.SetActive(false);
             //}
             objectControlManager.isFinish = false;
-            StartCoroutine(GoToNextScene());
         }
         
-
         if (isStart == true)
         {
             ingTime = 10;
@@ -75,28 +73,5 @@ public class GameManager : MonoBehaviour
                 playTime += Time.deltaTime;
             }
         }
-        Scene scene = SceneManager.GetActiveScene();
-        int curScene = scene.buildIndex;
-        if (curScene == 1)
-        {
-            //objectControlManager.isFinish = false;
-            isStart = false;
-            isPause = false;
-            //stopUI.SetActive(false);
-        }
-    }
-
-    public IEnumerator GoToNextScene()
-    {
-        for(int i = 0; i < 3; i++)
-        {
-            timeText.text = (i+1).ToString();
-            yield return new WaitForSeconds(1.0f);
-        }       
-       
-        Scene scenes = SceneManager.GetActiveScene();
-        int curScenes = scenes.buildIndex;
-        SceneManager.LoadScene(curScenes + 1);
-    }
-        
+    }   
 }

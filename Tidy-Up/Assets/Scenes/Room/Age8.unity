@@ -789,7 +789,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectItemGroups:
-  - {fileID: 0}
+  - {fileID: 262287932}
+  - {fileID: 1685111089}
+  - {fileID: 2027241418}
+  - {fileID: 17610179}
   isFinish: 0
   isDone: 0
 --- !u!4 &166567440
@@ -2949,6 +2952,55 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1114767033}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1125801492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1125801494}
+  - component: {fileID: 1125801493}
+  m_Layer: 0
+  m_Name: AchievementManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1125801493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125801492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71ee7faab22c24a4390cc1048e3ebd7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  achievementList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!4 &1125801494
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125801492}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -52.3446, y: -1.0689638, z: 1.2421007}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1129349414
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5584,3 +5636,4 @@ SceneRoots:
   - {fileID: 17610178}
   - {fileID: 2107008437}
   - {fileID: 129720716}
+  - {fileID: 1125801494}

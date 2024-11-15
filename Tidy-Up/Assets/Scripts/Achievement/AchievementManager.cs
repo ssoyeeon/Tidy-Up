@@ -1,58 +1,97 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
+using System;
 
 public class AchievementManager : MonoBehaviour
 {
-    public static AchievementManager instance;
-    public List<Achievement> achievements;
-    public TMP_Text[] AchievementTexts = new TMP_Text[4];
+    public static AchievementManager Instance { get; private set; }
+
+    [SerializeField] private AchievementData[] achievementList;
+    private Dictionary<string, bool> unlockedAchievements = new Dictionary<string, bool>();
+    private float levelStartTime;
+
+    public event Action<AchievementData> OnAchievementUnlocked;
 
     private void Awake()
     {
-        if(instance == null)
+        if(Instance == null)
         {
-            instance = this;
+            Instance = this;
+            InitializeAchievements();
             DontDestroyOnLoad(gameObject);
         }
-        else
+    }
+
+    private void Start()
+    {
+        levelStartTime = Time.time;
+    }
+
+    private void InitializeAchievements()
+    {
+        foreach (var achievement in achievementList)
         {
-            Destroy(gameObject);
+            unlockedAchievements[achievement.id] = false;
+        }
+        LoadAchievements();
+    }
+
+    public void OnItemCorrectlyPlaced()
+    {
+        UnlockAchievement("FIRST_ITEM");
+    }
+
+    public void OnGroupCompleted()
+    {
+        UnlockAchievement("GROUP_COMPLETE");
+        float timeToComplete = Time.time - levelStartTime;
+        if(timeToComplete <= 60f )
+        {
+            UnlockAchievement("SPEED_MASTER");
         }
     }
 
-    public void UpdateAchievementUI()
+    public void OnAllGroupsCompleted()
     {
-        AchievementTexts[0].text = achievements[0].name;
-        AchievementTexts[1].text = achievements[0].description;
-        AchievementTexts[2].text = $"{achievements[0].currentProgress} / {achievements[0].goal}";
-        AchievementTexts[3].text = achievements[0].isUnlocked ? "달성" : "미달성";
+        UnlockAchievement("ALL_COMPLETE");
     }
 
-    public void AddProgressInList(string achievementName, int amount)
+    private void UnlockAchievement(string Id)
     {
-        Achievement achievement = achievements.Find( a => a.name == achievementName );
-        if( achievement != null)
+        if (!unlockedAchievements.ContainsKey(Id)) return;
+        if (unlockedAchievements[Id]) return;
+
+        unlockedAchievements[Id] = true;
+
+        var achievement = Array.Find(achievementList, a => a.id == Id);
+        if(achievement != null )
         {
-            achievement.AddProgress(amount);
+            OnAchievementUnlocked?.Invoke(achievement);
+            SaveAchievements();
+            Debug.Log($"업적 달성 : {achievement.title}");
         }
     }
-    public void AddAchievement ( Achievement achievement)
+
+    private void SaveAchievements()
     {
-        //Achievement temp = new Achievement("이름", "설명", 5); 
-        achievements.Add(achievement);      //List에 업적 추가
+        foreach(var achievement in unlockedAchievements)
+        {
+            PlayerPrefs.SetInt($"Achievement_{achievement.Key}", achievement.Value ? 1 : 0);
+        }
+        PlayerPrefs.Save();
     }
 
-    void Update()
+    private void LoadAchievements()
     {
-        if(Input.GetKeyDown(KeyCode.UpArrow))
+        foreach (var achievement in achievementList)
         {
-            AddProgressInList("도약" , 1);      //AddProgressInList 로 넣어야하는데요..?
-            UpdateAchievementUI();
+            unlockedAchievements[achievement.id] = PlayerPrefs.GetInt($"Achievement_{achievement.id}", 0) == 1;
         }
+    }
 
-        //여기에 엔딩 관련 함수 짜보죠 ~ 
+    public bool IsAchievementUnlocked(string Id)
+    {
+        return unlockedAchievements.ContainsKey (Id) && unlockedAchievements[Id];
     }
 }

@@ -6,6 +6,7 @@ public class Group : MonoBehaviour
     public GroupData data;
     public bool isComplete;
     private HashSet<int> currentItems = new HashSet<int>();
+    private bool firstItemPlaced = false;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -16,6 +17,12 @@ public class Group : MonoBehaviour
         {
             currentItems.Add(item.data.id);
             item.SetOutline(OutlineController.HighlightState.Correct);
+
+            if(!firstItemPlaced)
+            {
+                firstItemPlaced = true;
+                AchievementManager.Instance.OnItemCorrectlyPlaced();
+            }
         }
         else
         {
@@ -42,6 +49,12 @@ public class Group : MonoBehaviour
 
     private void CheckComplete()
     {
+        bool wasComplete = isComplete;
         isComplete = currentItems.Count == data.items.Length;
+
+        if(!wasComplete && isComplete)      //퀘스트 반복 금지용 
+        {
+            AchievementManager.Instance.OnGroupCompleted();
+        }
     }
 }

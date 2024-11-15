@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObjectControlManager : MonoBehaviour
 {
-    public List<ObjectItemGroup> objectItemGroups = new List<ObjectItemGroup>();
+    public List<Group> objectItemGroups = new List<Group>();
     public bool isFinish;
     public bool isDone;
 
@@ -18,7 +18,7 @@ public class ObjectControlManager : MonoBehaviour
         int doneCount = 0;
         foreach(var item in objectItemGroups)
         {
-            if(item.isDone)
+            if(item.isComplete)
             {
                 doneCount++;
             }
