@@ -1525,16 +1525,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faa695f50f6358e4aaf63d217a7a178d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playTime: 0
-  ingTime: 0
-  isStart: 0
-  isPause: 0
-  isPlaying: 0
-  isDone: 0
-  stopUI: {fileID: 0}
-  timeUI: {fileID: 0}
-  timeText: {fileID: 1756174387}
-  objectControlManager: {fileID: 166567439}
 --- !u!4 &660313572
 Transform:
   m_ObjectHideFlags: 0
@@ -5558,6 +5548,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EscCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5812722881385322232, guid: 84539836dfe9e984d95d34565707d208,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6880938830454638172, guid: 84539836dfe9e984d95d34565707d208,
         type: 3}
