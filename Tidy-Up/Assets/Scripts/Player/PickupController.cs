@@ -21,6 +21,7 @@ public class PickupController : MonoBehaviour
     public Camera playerCamera; // 플레이어의 카메라
     public Vector3 heldObjectPosition = new Vector3(-0.5f, -0.3f, 0.5f); // 화면에 물체를 표시할 위치 (카메라 기준)
     public Rigidbody playerRigidbody;
+    public float jumpForce = 3;
 
     private GameObject heldObject; // 현재 플레이어가 들고 있는 물체
     private Rigidbody heldRigidbody; // 들고 있는 물체의 Rigidbody (물리 속성)
@@ -138,7 +139,7 @@ public class PickupController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true && jumpTime <= 0)
         {
-            playerRigidbody.AddForce(Vector3.up * 5, ForceMode.Impulse);
+            playerRigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             jumpTime = 1f;
             isGrounded = false;
             Debug.Log("Jump");

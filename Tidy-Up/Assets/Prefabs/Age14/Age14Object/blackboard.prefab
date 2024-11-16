@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 7572223786832140876}
   - component: {fileID: 6825692439725759408}
   - component: {fileID: 4357096582490517493}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: blackboard
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

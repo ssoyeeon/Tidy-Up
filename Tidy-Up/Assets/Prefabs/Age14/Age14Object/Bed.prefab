@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 3381952583967985717}
   - component: {fileID: 6456218766033583493}
   - component: {fileID: 5479475893352616397}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bed
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

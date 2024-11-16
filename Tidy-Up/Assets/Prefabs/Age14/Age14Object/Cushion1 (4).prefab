@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1394302305725968544}
   - component: {fileID: 8952275751901228982}
   - component: {fileID: 2637063888456488801}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cushion1 (4)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

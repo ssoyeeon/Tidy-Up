@@ -1801,6 +1801,55 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 727909217}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &736809397
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 736809398}
+  - component: {fileID: 736809399}
+  m_Layer: 0
+  m_Name: SceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &736809398
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736809397}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -25.069687, y: -8.8118105, z: 50.869003}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &736809399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736809397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6ab7f5b45c6fd3418ae159c111198e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groups:
+  - {fileID: 262287932}
+  - {fileID: 1685111089}
+  - {fileID: 2027241418}
+  - {fileID: 17610179}
 --- !u!1 &753923495
 GameObject:
   m_ObjectHideFlags: 0
@@ -2982,10 +3031,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   achievementList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 293689c091479e648b68489c7c27b6ea, type: 2}
+  - {fileID: 11400000, guid: f5e28666fc510394eb0843de150e63b7, type: 2}
+  - {fileID: 11400000, guid: b653d970706bcb44fab86cd4bbed0d5f, type: 2}
+  - {fileID: 11400000, guid: 32647032dd725564f8d47a2f1b35fb20, type: 2}
 --- !u!4 &1125801494
 Transform:
   m_ObjectHideFlags: 0
@@ -4930,6 +4979,11 @@ PrefabInstance:
       objectReference: {fileID: 10912, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 25009251984860270, guid: 31378d9fc21a44b4ebf8f03b24be194e,
         type: 3}
+      propertyPath: heldObjectPosition.x
+      value: -0.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 25009251984860270, guid: 31378d9fc21a44b4ebf8f03b24be194e,
+        type: 3}
       propertyPath: objectList.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -5637,3 +5691,4 @@ SceneRoots:
   - {fileID: 2107008437}
   - {fileID: 129720716}
   - {fileID: 1125801494}
+  - {fileID: 736809398}

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3168912053497547556}
   - component: {fileID: -2358252202402059402}
   - component: {fileID: -5155939621490265571}
+  - component: {fileID: -8011349482145332807}
   m_Layer: 6
   m_Name: Laptop
   m_TagString: Picker
@@ -147,3 +148,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMaterial: {fileID: 2100000, guid: c959cb67abcfcba47a5f9c679ea95069, type: 2}
+--- !u!114 &-8011349482145332807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9021285771384918735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e25a4b4c9879047b330ed6b667c16f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: cafed246ac9a91845a3eee376e6272bd, type: 2}

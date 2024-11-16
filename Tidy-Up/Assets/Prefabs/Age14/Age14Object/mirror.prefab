@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 6034374417083115938}
   - component: {fileID: 3806815355360389694}
   - component: {fileID: 7917976153655201846}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: mirror
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

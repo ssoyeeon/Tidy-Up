@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3fb6abc3ada0224f97d5052c2d705af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultCrosshair: {fileID: 0}
+  defaultCrosshair: {fileID: 10912, guid: 0000000000000000f000000000000000, type: 0}
   rotationSpeed: 100
   rotationAxis: {x: 0, y: 1, z: 0}
   pickupRange: 3
@@ -217,7 +217,7 @@ MonoBehaviour:
   playerCamera: {fileID: 0}
   heldObjectPosition: {x: -0.5, y: -0.3, z: 0.5}
   playerRigidbody: {fileID: 0}
-  objectList: []
+  boxData: {fileID: 0}
   box: {fileID: 0}
   ESCUI: {fileID: 0}
   isESC: 0

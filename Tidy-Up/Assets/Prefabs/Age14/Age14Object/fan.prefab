@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 728109100052280068}
   - component: {fileID: 8908298426850466340}
   - component: {fileID: 4480772991906357964}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: fan
-  m_TagString: Picker
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
