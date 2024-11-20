@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59b378d3bddd08a4eb4b222274dee43a, type: 3}
+  m_Name: Book2TriggerEQ
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 11400000, guid: 76b3aedf750ff9a4a8135d360fab3751, type: 2}
+  - {fileID: 11400000, guid: 47870e7ea1e12e24291bb8eb86c23c00, type: 2}
+  - {fileID: 11400000, guid: 56a09a9926f70504b888fdf2fd34bed0, type: 2}
+  - {fileID: 11400000, guid: 51e0aef2ec3566846befe60212e6d994, type: 2}

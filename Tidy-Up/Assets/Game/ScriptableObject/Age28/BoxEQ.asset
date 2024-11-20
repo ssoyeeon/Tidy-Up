@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b0df4368b8bf640aad7f32c2c21762, type: 3}
+  m_Name: BoxEQ
+  m_EditorClassIdentifier: 
+  boxPrefab: {fileID: 0}
+  spawnableItems:
+  - {fileID: 11400000, guid: 6a64be976e2cbe2468336586bf8177e8, type: 2}
+  - {fileID: 11400000, guid: 0ddc5b2b5ee65204aa3631a949820a58, type: 2}
+  - {fileID: 11400000, guid: 43110259f80128948b473965df86a87c, type: 2}
+  - {fileID: 11400000, guid: 07cfa0175df75874086939fd3e3cc95e, type: 2}
+  - {fileID: 11400000, guid: fb80eb0f20da3e94ba5f432655bd7e5a, type: 2}
+  - {fileID: 11400000, guid: d1630a5be302a2e40a01a8ab458889dd, type: 2}
+  - {fileID: 11400000, guid: 28c5d9eb7f764be4495d6c6b6e405023, type: 2}
+  - {fileID: 11400000, guid: e920bab7885b9254294a2c4a7ec24bfa, type: 2}
+  - {fileID: 11400000, guid: 81b1d93c6410c2a46ae2601662b52aa3, type: 2}
+  - {fileID: 11400000, guid: 16a5218eb137a724c960a83a91b42a96, type: 2}
+  - {fileID: 11400000, guid: 052a25341a857d04b8431d892c2148da, type: 2}
+  - {fileID: 11400000, guid: 51e0aef2ec3566846befe60212e6d994, type: 2}
+  - {fileID: 11400000, guid: 56a09a9926f70504b888fdf2fd34bed0, type: 2}
+  - {fileID: 11400000, guid: 76b3aedf750ff9a4a8135d360fab3751, type: 2}
+  - {fileID: 11400000, guid: 47870e7ea1e12e24291bb8eb86c23c00, type: 2}
+  - {fileID: 11400000, guid: c1f867a1c69c2814b8f6607ee82c0fc1, type: 2}
+  - {fileID: 11400000, guid: b3f3796a208effc46af962ca98e764a1, type: 2}
+  - {fileID: 11400000, guid: fcf4d5db03c195240a87f2b5a1dcff66, type: 2}
+  - {fileID: 11400000, guid: 80f2af5d82bb2354a8091a293a233a1d, type: 2}
+  - {fileID: 11400000, guid: 785d4ef7180cc484e9c02799027ad99e, type: 2}
+  - {fileID: 11400000, guid: 81a6433c676201945a66651f082dee77, type: 2}
+  - {fileID: 11400000, guid: cf70170858bc1b44bad091ec3ad708a5, type: 2}
+  - {fileID: 11400000, guid: 9c99e391011d5ee41a8d3f5e8f9f7ca4, type: 2}
+  - {fileID: 11400000, guid: 2df6eae445bfeb143869cc4dc3eaf665, type: 2}
+  - {fileID: 11400000, guid: 374036c0dfa095349aa43ee02b9569ec, type: 2}
+  spawnCooldown: 1

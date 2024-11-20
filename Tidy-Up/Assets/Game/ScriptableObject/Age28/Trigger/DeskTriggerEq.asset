@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59b378d3bddd08a4eb4b222274dee43a, type: 3}
+  m_Name: DeskTriggerEq
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 11400000, guid: 07cfa0175df75874086939fd3e3cc95e, type: 2}
+  - {fileID: 11400000, guid: fb80eb0f20da3e94ba5f432655bd7e5a, type: 2}
+  - {fileID: 11400000, guid: b3f3796a208effc46af962ca98e764a1, type: 2}
+  - {fileID: 11400000, guid: fcf4d5db03c195240a87f2b5a1dcff66, type: 2}
+  - {fileID: 11400000, guid: 80f2af5d82bb2354a8091a293a233a1d, type: 2}
+  - {fileID: 11400000, guid: 785d4ef7180cc484e9c02799027ad99e, type: 2}
