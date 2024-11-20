@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b0df4368b8bf640aad7f32c2c21762, type: 3}
+  m_Name: Age8Box
+  m_EditorClassIdentifier: 
+  boxPrefab: {fileID: 0}
+  spawnableItems:
+  - {fileID: 11400000, guid: 649b877ad5d605b47b04f22be3fe8e86, type: 2}
+  - {fileID: 11400000, guid: 4e922bcee2ba64f4cb515ee15a09d5b8, type: 2}
+  - {fileID: 11400000, guid: b961cc19c435c3f448e10773a555778c, type: 2}
+  - {fileID: 11400000, guid: d08cfce296f54c840bc67ba3ea9782df, type: 2}
+  - {fileID: 11400000, guid: c15a1cf922fb1f44984195996c9d8ec4, type: 2}
+  - {fileID: 11400000, guid: ae801dea4e6642d47bf8cd37df7144e2, type: 2}
+  - {fileID: 11400000, guid: 7b70c3d7952f98841a4123c7a6b74c0e, type: 2}
+  - {fileID: 11400000, guid: 2064ebc7ef8c45d43a75ba8e55762887, type: 2}
+  - {fileID: 11400000, guid: 8e28500e681aca9449b710efe055b5d2, type: 2}
+  - {fileID: 11400000, guid: acf9acc21a2cd3546b66f5535f5b77c1, type: 2}
+  - {fileID: 11400000, guid: 648977fc30e12fb44a11fc3d92b581b4, type: 2}
+  - {fileID: 11400000, guid: 1af8fe966c3249f48a8fb0a37addd0e1, type: 2}
+  - {fileID: 11400000, guid: 4afef602059a5cd49ae5f13699c3d4f2, type: 2}
+  - {fileID: 11400000, guid: ab24ae7ba58fbc04d87b5722baa5c040, type: 2}
+  - {fileID: 11400000, guid: 8041f45167dc9464d88fa006d0c1b0ec, type: 2}
+  - {fileID: 11400000, guid: 7263d872290b0ba47b0bb44946ce71b1, type: 2}
+  spawnCooldown: 1
