@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d1fe4c09c066b314089a5a74055e0df4, type: 3}
-  m_Name: Small_chair1EQ
+  m_Name: OpenBookEQ
   m_EditorClassIdentifier: 
-  id: 28
-  prefab: {fileID: 3025111486669966882, guid: 03a28cab1b1f4804aa711f452089a878, type: 3}
+  id: 26
+  prefab: {fileID: 4393481767631377142, guid: e580e327cffa2cf4babb9157038d593d, type: 3}
