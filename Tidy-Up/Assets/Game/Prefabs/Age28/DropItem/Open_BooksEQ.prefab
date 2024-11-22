@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 2773717512037102728}
   - component: {fileID: 7028340540682047639}
   - component: {fileID: 3286028242301941185}
-  m_Layer: 0
+  - component: {fileID: -4434018137232028650}
+  m_Layer: 6
   m_Name: Open_BooksEQ
-  m_TagString: Untagged
+  m_TagString: Picker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,6 +127,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-4434018137232028650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4393481767631377142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1c49ffd8699f34e93f6b2b8f25090e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMaterial: {fileID: 2100000, guid: c959cb67abcfcba47a5f9c679ea95069, type: 2}
 --- !u!1 &4740528633610423078
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,9 +152,9 @@ GameObject:
   - component: {fileID: 7719705441323823755}
   - component: {fileID: 4441763686445992263}
   - component: {fileID: 8515080219475510780}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Picker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

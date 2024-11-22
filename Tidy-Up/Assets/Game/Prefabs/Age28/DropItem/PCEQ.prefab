@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 2805235803167514621}
   - component: {fileID: -298293758680666747}
   - component: {fileID: 7366191895913937281}
-  m_Layer: 0
+  - component: {fileID: 5274229123517610420}
+  m_Layer: 6
   m_Name: PCEQ
-  m_TagString: Untagged
+  m_TagString: Picker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,6 +127,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5274229123517610420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869767397194172759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1c49ffd8699f34e93f6b2b8f25090e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMaterial: {fileID: 2100000, guid: c959cb67abcfcba47a5f9c679ea95069, type: 2}
 --- !u!1 &8801588093195894979
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,9 +152,9 @@ GameObject:
   - component: {fileID: 569378742406428436}
   - component: {fileID: 7844858044922621068}
   - component: {fileID: 5303670458215010718}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Picker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

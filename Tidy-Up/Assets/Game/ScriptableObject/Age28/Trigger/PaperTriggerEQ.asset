@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59b378d3bddd08a4eb4b222274dee43a, type: 3}
+  m_Name: PaperTriggerEQ
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 11400000, guid: ed73339eda83e984d89a6afaf7026615, type: 2}
+  - {fileID: 11400000, guid: 78b6b58433e43e14e8fb436051058547, type: 2}
+  - {fileID: 11400000, guid: 153129840f515d04796e09a9d502b2c4, type: 2}
+  - {fileID: 11400000, guid: fd82c903c28002549aebfaadd4e05894, type: 2}
+  - {fileID: 11400000, guid: fbeb30bbbe4bffc44a5869de4040b202, type: 2}
+  - {fileID: 11400000, guid: c32d6be1fd780f442b588ef0c5b09b0c, type: 2}
+  - {fileID: 11400000, guid: 6fc7f0b758f45184a8c43a983859298b, type: 2}
+  - {fileID: 11400000, guid: deebb87c0ec5af343b156f5a5f46516a, type: 2}
