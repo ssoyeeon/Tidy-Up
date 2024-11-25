@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Game/Scenes/Room/Age70.unity
     guid: 4aaf5049d49004442b895eee0e68b94a
   - enabled: 1
-    path: Assets/Game/Scenes/Room/Age100.unity
+    path: Assets/Game/Scenes/Room/Heart Rate Machine.unity
     guid: f8491df19e1d31646ad0740bf4fc4f5e
   - enabled: 1
     path: Assets/Game/Scenes/GameSystem/EndScene.unity
