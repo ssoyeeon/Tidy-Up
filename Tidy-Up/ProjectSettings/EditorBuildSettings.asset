@@ -14,9 +14,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/Scenes/Room/Age14.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 0
-    path: Assets/Scenes/Room/Age20.unity
-    guid: fa20ca838f5b2974cbbff09a36f42c2e
   - enabled: 1
     path: Assets/Game/Scenes/Room/Age28.unity
     guid: 0eaad4806e89a274dadc73534a527b33
