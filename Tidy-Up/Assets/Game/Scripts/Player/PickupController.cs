@@ -1,6 +1,8 @@
+using System.Collections;
 using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PickupController : MonoBehaviour
 {
@@ -41,6 +43,9 @@ public class PickupController : MonoBehaviour
 
     public bool isGrounded;
     public float jumpTime;
+    public Image fadeImage; // 페이드용 이미지
+    public float fadeDuration = 1f; // 페이드 시간
+    public float holdDuration = 1f;
 
     private void Awake()
     {
@@ -55,6 +60,10 @@ public class PickupController : MonoBehaviour
         Cursor.visible = false; // 마우스 커서 숨김
         isGrounded = true;
         jumpTime = 0f;
+        if (fadeImage != null)
+        {
+            StartCoroutine(FadeIn());
+        }
     }
 
     void Update()
@@ -312,5 +321,25 @@ public class PickupController : MonoBehaviour
         heldObject = null;
         heldRigidbody = null;
         heldCollider = null;
+    }
+    public IEnumerator FadeIn()
+    {
+        // 검정 화면 유지
+        yield return new WaitForSeconds(holdDuration);
+
+        float elapsedTime = 0f;
+        Color color = fadeImage.color;
+        color.a = 1f;
+
+        while (elapsedTime < fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            color.a = Mathf.Lerp(1f, 0f, elapsedTime / fadeDuration);
+            fadeImage.color = color;
+            yield return null;
+        }
+
+        color.a = 0f;
+        fadeImage.color = color;
     }
 }
