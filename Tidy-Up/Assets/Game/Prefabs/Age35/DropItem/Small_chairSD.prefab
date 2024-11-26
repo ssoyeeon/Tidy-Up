@@ -13,7 +13,9 @@ GameObject:
   - component: {fileID: 8603569304552462096}
   - component: {fileID: -7266120323797939852}
   - component: {fileID: -4180098401838572693}
-  m_Layer: 0
+  - component: {fileID: -8167634099198506196}
+  - component: {fileID: 7930564046472831499}
+  m_Layer: 6
   m_Name: Small_chairSD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,3 +135,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-8167634099198506196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565418203584040956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e25a4b4c9879047b330ed6b667c16f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 382b389c3780fd94a83d5b5bf6df6e35, type: 2}
+--- !u!114 &7930564046472831499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565418203584040956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1c49ffd8699f34e93f6b2b8f25090e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMaterial: {fileID: 2100000, guid: c959cb67abcfcba47a5f9c679ea95069, type: 2}

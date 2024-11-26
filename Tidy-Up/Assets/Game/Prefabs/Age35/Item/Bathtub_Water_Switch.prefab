@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9111502513962147106}
   - component: {fileID: 6276228741207352176}
   - component: {fileID: 983090934230593158}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bathtub_Water_Switch
   m_TagString: Untagged
   m_Icon: {fileID: 0}

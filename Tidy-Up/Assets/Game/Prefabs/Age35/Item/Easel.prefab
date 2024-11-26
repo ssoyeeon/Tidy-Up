@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8424305114974373516}
   - component: {fileID: 85093649107952094}
   - component: {fileID: -6294645581182794209}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Easel
   m_TagString: Untagged
   m_Icon: {fileID: 0}

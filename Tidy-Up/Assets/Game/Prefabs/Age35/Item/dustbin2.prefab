@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 586015101604350004}
   - component: {fileID: 1635537348114822549}
   - component: {fileID: -5062633043734778635}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: dustbin2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

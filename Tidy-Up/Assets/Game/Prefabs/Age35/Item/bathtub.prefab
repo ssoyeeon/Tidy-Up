@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9192636269999324463}
   - component: {fileID: 8923683305885178628}
   - component: {fileID: -6313012360642626519}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bathtub
   m_TagString: Untagged
   m_Icon: {fileID: 0}

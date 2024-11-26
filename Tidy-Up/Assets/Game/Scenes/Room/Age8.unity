@@ -1950,7 +1950,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeImage: {fileID: 1662388936}
-  fadeDuration: 1
+  fadeDuration: 5
   groups:
   - {fileID: 262287932}
   - {fileID: 1685111089}
