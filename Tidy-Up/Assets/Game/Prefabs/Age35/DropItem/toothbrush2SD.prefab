@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -3174512591205353588}
   m_Layer: 6
   m_Name: toothbrush2SD
-  m_TagString: Untagged
+  m_TagString: Picker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

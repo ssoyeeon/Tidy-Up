@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -3112576362422398853}
   m_Layer: 6
   m_Name: candleSD
-  m_TagString: Untagged
+  m_TagString: Picker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

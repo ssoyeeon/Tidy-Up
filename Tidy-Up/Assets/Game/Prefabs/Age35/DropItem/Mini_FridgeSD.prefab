@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5365318144854938780}
   m_Layer: 6
   m_Name: Mini_FridgeSD
-  m_TagString: Untagged
+  m_TagString: Picker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
