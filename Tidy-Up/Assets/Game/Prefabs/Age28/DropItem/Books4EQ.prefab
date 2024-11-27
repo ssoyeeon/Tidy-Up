@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -7522313838910750152}
   - component: {fileID: 2032583643130206723}
   - component: {fileID: 6435612915408750551}
+  - component: {fileID: 2701173344220221452}
   m_Layer: 6
   m_Name: Books4EQ
   m_TagString: Picker
@@ -139,3 +140,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMaterial: {fileID: 2100000, guid: c959cb67abcfcba47a5f9c679ea95069, type: 2}
+--- !u!65 &2701173344220221452
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2348792694365776222}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.82822204, y: 0.20975532, z: 1.0597204}
+  m_Center: {x: 0, y: 0, z: 0}

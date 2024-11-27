@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: FloorTriggerEQ
   m_EditorClassIdentifier: 
   items:
-  - {fileID: 11400000, guid: 0ddc5b2b5ee65204aa3631a949820a58, type: 2}
   - {fileID: 11400000, guid: 9c99e391011d5ee41a8d3f5e8f9f7ca4, type: 2}
   - {fileID: 11400000, guid: 2df6eae445bfeb143869cc4dc3eaf665, type: 2}
-  - {fileID: 11400000, guid: 43110259f80128948b473965df86a87c, type: 2}
   - {fileID: 11400000, guid: 374036c0dfa095349aa43ee02b9569ec, type: 2}
+  - {fileID: 11400000, guid: 43110259f80128948b473965df86a87c, type: 2}

@@ -15,7 +15,6 @@ MonoBehaviour:
   boxPrefab: {fileID: 0}
   spawnableItems:
   - {fileID: 11400000, guid: 6a64be976e2cbe2468336586bf8177e8, type: 2}
-  - {fileID: 11400000, guid: 0ddc5b2b5ee65204aa3631a949820a58, type: 2}
   - {fileID: 11400000, guid: 43110259f80128948b473965df86a87c, type: 2}
   - {fileID: 11400000, guid: 07cfa0175df75874086939fd3e3cc95e, type: 2}
   - {fileID: 11400000, guid: fb80eb0f20da3e94ba5f432655bd7e5a, type: 2}

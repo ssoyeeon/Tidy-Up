@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d1fe4c09c066b314089a5a74055e0df4, type: 3}
-  m_Name: Book 1EQ
+  m_Name: humidifierDE
   m_EditorClassIdentifier: 
   id: 1
-  prefab: {fileID: 4778905123574436074, guid: f3e7ff5e154db474c85e54a4c6920d47, type: 3}
+  prefab: {fileID: 763397127293731504, guid: eb556832bb90ce548b3e0f592737980d, type: 3}

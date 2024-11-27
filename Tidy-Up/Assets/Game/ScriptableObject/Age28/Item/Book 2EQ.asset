@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fe4c09c066b314089a5a74055e0df4, type: 3}
   m_Name: Book 2EQ
   m_EditorClassIdentifier: 
-  id: 2
+  id: 90
   prefab: {fileID: 1399400065996756829, guid: 4f24393b78e7d2e4fac28e5f0fe6d444, type: 3}

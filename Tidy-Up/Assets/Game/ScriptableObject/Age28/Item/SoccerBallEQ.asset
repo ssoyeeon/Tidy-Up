@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fe4c09c066b314089a5a74055e0df4, type: 3}
   m_Name: SoccerBallEQ
   m_EditorClassIdentifier: 
-  id: 23
+  id: 55
   prefab: {fileID: 6883733662520547979, guid: 0ec1fcdb92038ec4c8aa90f0b5700897, type: 3}
