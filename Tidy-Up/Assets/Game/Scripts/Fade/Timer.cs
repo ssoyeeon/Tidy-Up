@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
@@ -10,8 +11,8 @@ public class Timer : MonoBehaviour
     public float NextScene = 20;
     public GameObject firstObject;
     public GameObject Object;
-    public GameObject Plane1;
-    public GameObject Plane2;
+    public Image fadeImage; // 페이드용 이미지
+    public float fadeDuration = 1f; // 페이드 시간
 
     private void Awake()
     {
@@ -25,7 +26,28 @@ public class Timer : MonoBehaviour
         NextScene -= Time.deltaTime;
         if(StartTimer <= StopTimer) Object.SetActive(true);
         if (StartTimer <= 0) { firstObject.SetActive(false); StartTimer = 0; }
-        if (NextScene <= 5) { Plane1.transform.Translate(Vector3.forward * 3 * Time.deltaTime); Plane2.transform.Translate(Vector3.back * 3 * Time.deltaTime); }
+        if (NextScene <= 5)
+        {
+            StartCoroutine(FadeOut());
+        }
         if (NextScene <= 0) SceneManager.LoadScene("Age100");
+    }
+
+    public IEnumerator FadeOut()
+    {
+        float elapsedTime = 0f;
+        Color color = fadeImage.color;
+        color.a = 0f;
+
+        while (elapsedTime < fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            color.a = Mathf.Lerp(0f, 1f, elapsedTime / fadeDuration);
+            fadeImage.color = color;
+            yield return null;
+        }
+
+        color.a = 1f;
+        fadeImage.color = color;
     }
 }
