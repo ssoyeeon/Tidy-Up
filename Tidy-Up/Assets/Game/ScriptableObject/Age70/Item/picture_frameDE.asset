@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fe4c09c066b314089a5a74055e0df4, type: 3}
   m_Name: picture_frameDE
   m_EditorClassIdentifier: 
-  id: 1
-  prefab: {fileID: 763397127293731504, guid: eb556832bb90ce548b3e0f592737980d, type: 3}
+  id: 7
+  prefab: {fileID: 7686849044624151822, guid: a3c6992e57e3cd2449b210693d93440a, type: 3}

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fe4c09c066b314089a5a74055e0df4, type: 3}
   m_Name: Gift_Box_SmallDE
   m_EditorClassIdentifier: 
-  id: 1
-  prefab: {fileID: 763397127293731504, guid: eb556832bb90ce548b3e0f592737980d, type: 3}
+  id: 4
+  prefab: {fileID: 7218115282787781385, guid: e6dec23b32b92f1449e602ab6bad8f0c, type: 3}

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: alarm_clcokDE
   m_EditorClassIdentifier: 
   id: 1
-  prefab: {fileID: 763397127293731504, guid: eb556832bb90ce548b3e0f592737980d, type: 3}
+  prefab: {fileID: 5924875561058970197, guid: 6a18c68ca786ba44d935ada728ece0e8, type: 3}

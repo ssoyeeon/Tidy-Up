@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fe4c09c066b314089a5a74055e0df4, type: 3}
   m_Name: Small_chairDE
   m_EditorClassIdentifier: 
-  id: 1
-  prefab: {fileID: 763397127293731504, guid: eb556832bb90ce548b3e0f592737980d, type: 3}
+  id: 8
+  prefab: {fileID: 1525322392000158303, guid: d93ded7a19cf3d14cb4c81f02df9ed7f, type: 3}
