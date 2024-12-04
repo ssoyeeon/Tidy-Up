@@ -48,9 +48,18 @@ public class GameSceneManager : MonoBehaviour
             yield return null;
         }
 
-        color.a = 1f;
-        fadeImage.color = color;
-        int nextScene = SceneManager.GetActiveScene().buildIndex + 1;
-        SceneManager.LoadScene(nextScene);
+        int nowScene = SceneManager.GetActiveScene().buildIndex;
+        if(nowScene == 10)
+        {
+            SceneManager.LoadScene("IntroScene");
+        }
+        else
+        {
+            color.a = 1f;
+            fadeImage.color = color;
+            int nextScene = SceneManager.GetActiveScene().buildIndex + 1;
+            SceneManager.LoadScene(nextScene);
+        }
+
     }
 }

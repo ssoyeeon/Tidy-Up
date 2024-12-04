@@ -24,4 +24,8 @@ public class SceneSystem : MonoBehaviour
     {
         SceneManager.LoadScene("SettingScene");
     }
+    public void Tutorial()
+    {
+        SceneManager.LoadScene("TutorialScene");
+    }
 }
