@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
@@ -7,44 +7,44 @@ using UnityEngine.UI;
 public class PickupController : MonoBehaviour
 {
     [Header("UI Settings")]
-    private Color pickupCursorColor = Color.green;   // ¹°Ã¼¸¦ ÁıÀ» ¼ö ÀÖÀ» ¶§ÀÇ Ä¿¼­ »ö»ó  
-    public Texture2D defaultCrosshair;          // ±âº» Å©·Î½ºÇì¾î ÅØ½ºÃ³
-    private Color crosshairColor = Color.white;  // Å©·Î½ºÇì¾î »ö»ó
-    private float crosshairSize = 25f;           // Å©·Î½ºÇì¾î Å©±â
+    private Color pickupCursorColor = Color.green;   // ë¬¼ì²´ë¥¼ ì§‘ì„ ìˆ˜ ìˆì„ ë•Œì˜ ì»¤ì„œ ìƒ‰ìƒ  
+    public Texture2D defaultCrosshair;          // ê¸°ë³¸ í¬ë¡œìŠ¤í—¤ì–´ í…ìŠ¤ì²˜
+    private Color crosshairColor = Color.white;  // í¬ë¡œìŠ¤í—¤ì–´ ìƒ‰ìƒ
+    private float crosshairSize = 25f;           // í¬ë¡œìŠ¤í—¤ì–´ í¬ê¸°
 
 
-    public float rotationSpeed = 100f;          // ¹°Ã¼ È¸Àü ¼Óµµ
-    public Vector3 rotationAxis = Vector3.up;   // È¸Àü Ãà (±âº»°ª: YÃà)
-    private Quaternion objectRotation;          // ¹°Ã¼ÀÇ ÇöÀç È¸Àü »óÅÂ
+    public float rotationSpeed = 100f;          // ë¬¼ì²´ íšŒì „ ì†ë„
+    public Vector3 rotationAxis = Vector3.up;   // íšŒì „ ì¶• (ê¸°ë³¸ê°’: Yì¶•)
+    private Quaternion objectRotation;          // ë¬¼ì²´ì˜ í˜„ì¬ íšŒì „ ìƒíƒœ
 
-    public float pickupRange = 3f; // ÇÃ·¹ÀÌ¾î°¡ ¹°Ã¼¸¦ ÁıÀ» ¼ö ÀÖ´Â ÃÖ´ë °Å¸®
-    public LayerMask pickupLayer; // ¹°Ã¼¸¦ ÁıÀ» ¼ö ÀÖ´Â ·¹ÀÌ¾î
-    public LayerMask placementLayer; // ¹°Ã¼¸¦ ³õÀ» ¼ö ÀÖ´Â ·¹ÀÌ¾î
-    public Camera playerCamera; // ÇÃ·¹ÀÌ¾îÀÇ Ä«¸Ş¶ó
-    public Vector3 heldObjectPosition = new Vector3(-0.5f, -0.3f, 0.5f); // È­¸é¿¡ ¹°Ã¼¸¦ Ç¥½ÃÇÒ À§Ä¡ (Ä«¸Ş¶ó ±âÁØ)
+    public float pickupRange = 3f; // í”Œë ˆì´ì–´ê°€ ë¬¼ì²´ë¥¼ ì§‘ì„ ìˆ˜ ìˆëŠ” ìµœëŒ€ ê±°ë¦¬
+    public LayerMask pickupLayer; // ë¬¼ì²´ë¥¼ ì§‘ì„ ìˆ˜ ìˆëŠ” ë ˆì´ì–´
+    public LayerMask placementLayer; // ë¬¼ì²´ë¥¼ ë†“ì„ ìˆ˜ ìˆëŠ” ë ˆì´ì–´
+    public Camera playerCamera; // í”Œë ˆì´ì–´ì˜ ì¹´ë©”ë¼
+    public Vector3 heldObjectPosition = new Vector3(-0.5f, -0.3f, 0.5f); // í™”ë©´ì— ë¬¼ì²´ë¥¼ í‘œì‹œí•  ìœ„ì¹˜ (ì¹´ë©”ë¼ ê¸°ì¤€)
     public Rigidbody playerRigidbody;
     public float jumpForce = 3;
 
-    private GameObject heldObject; // ÇöÀç ÇÃ·¹ÀÌ¾î°¡ µé°í ÀÖ´Â ¹°Ã¼
-    private Rigidbody heldRigidbody; // µé°í ÀÖ´Â ¹°Ã¼ÀÇ Rigidbody (¹°¸® ¼Ó¼º)
-    private Collider heldCollider; // µé°í ÀÖ´Â ¹°Ã¼ÀÇ Collider (Ãæµ¹ Ã³¸®)
-    private Vector3 originalScale; // ¹°Ã¼ÀÇ ¿ø·¡ Å©±â ÀúÀå
-    private Vector3 bottomOffset; // ¹°Ã¼ÀÇ ÇÏ´ÜÁ¡À» ±âÁØÀ¸·Î À§Ä¡¸¦ Á¶Á¤ÇÏ±â À§ÇÑ ¿ÀÇÁ¼Â
+    private GameObject heldObject; // í˜„ì¬ í”Œë ˆì´ì–´ê°€ ë“¤ê³  ìˆëŠ” ë¬¼ì²´
+    private Rigidbody heldRigidbody; // ë“¤ê³  ìˆëŠ” ë¬¼ì²´ì˜ Rigidbody (ë¬¼ë¦¬ ì†ì„±)
+    private Collider heldCollider; // ë“¤ê³  ìˆëŠ” ë¬¼ì²´ì˜ Collider (ì¶©ëŒ ì²˜ë¦¬)
+    private Vector3 originalScale; // ë¬¼ì²´ì˜ ì›ë˜ í¬ê¸° ì €ì¥
+    private Vector3 bottomOffset; // ë¬¼ì²´ì˜ í•˜ë‹¨ì ì„ ê¸°ì¤€ìœ¼ë¡œ ìœ„ì¹˜ë¥¼ ì¡°ì •í•˜ê¸° ìœ„í•œ ì˜¤í”„ì…‹
 
     [Header("Box Settings")]
     public BoxData boxData;
     public GameObject box;
     private List<ItemData> remainingItems;
     private float boxTimer = 1f;
-    //°è¼ÓÇØ¼­ ´­·¯µµ ¾È ³ª¿À°Ô Å¸ÀÌ¸Ó ¼³Á¤
+    //ê³„ì†í•´ì„œ ëˆŒëŸ¬ë„ ì•ˆ ë‚˜ì˜¤ê²Œ íƒ€ì´ë¨¸ ì„¤ì •
 
     public GameObject ESCUI;
     public bool isESC;
 
     public bool isGrounded;
     public float jumpTime;
-    public Image fadeImage; // ÆäÀÌµå¿ë ÀÌ¹ÌÁö
-    public float fadeDuration = 1f; // ÆäÀÌµå ½Ã°£
+    public Image fadeImage; // í˜ì´ë“œìš© ì´ë¯¸ì§€
+    public float fadeDuration = 1f; // í˜ì´ë“œ ì‹œê°„
     public float holdDuration = 1f;
 
     private void Awake()
@@ -55,9 +55,9 @@ public class PickupController : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1;
-        playerCamera = playerCamera ? playerCamera : Camera.main; // ¸¸¾à Ä«¸Ş¶ó°¡ ¼³Á¤µÇÁö ¾Ê¾Ò´Ù¸é ¸ŞÀÎ Ä«¸Ş¶ó¸¦ »ç¿ë
-        Cursor.lockState = CursorLockMode.Locked; // ¸¶¿ì½º Ä¿¼­¸¦ È­¸é Áß¾Ó¿¡ °íÁ¤
-        Cursor.visible = false; // ¸¶¿ì½º Ä¿¼­ ¼û±è
+        playerCamera = playerCamera ? playerCamera : Camera.main; // ë§Œì•½ ì¹´ë©”ë¼ê°€ ì„¤ì •ë˜ì§€ ì•Šì•˜ë‹¤ë©´ ë©”ì¸ ì¹´ë©”ë¼ë¥¼ ì‚¬ìš©
+        Cursor.lockState = CursorLockMode.Locked; // ë§ˆìš°ìŠ¤ ì»¤ì„œë¥¼ í™”ë©´ ì¤‘ì•™ì— ê³ ì •
+        Cursor.visible = false; // ë§ˆìš°ìŠ¤ ì»¤ì„œ ìˆ¨ê¹€
         isGrounded = true;
         jumpTime = 0f;
         if (fadeImage != null)
@@ -68,10 +68,10 @@ public class PickupController : MonoBehaviour
 
     void Update()
     {
-        // ¸¶¿ì½º ¿ŞÂÊ ¹öÆ°À» ´­·¶À» ¶§
+        // ë§ˆìš°ìŠ¤ ì™¼ìª½ ë²„íŠ¼ì„ ëˆŒë €ì„ ë•Œ
         if (Input.GetMouseButtonDown(0))
         {
-            // ¹°Ã¼¸¦ µé°í ÀÖÁö ¾ÊÀ¸¸é Áı±â ½Ãµµ
+            // ë¬¼ì²´ë¥¼ ë“¤ê³  ìˆì§€ ì•Šìœ¼ë©´ ì§‘ê¸° ì‹œë„
             if (heldObject == null)
             {
                 TryPickup();
@@ -79,7 +79,7 @@ public class PickupController : MonoBehaviour
             }
             else
             {
-                // ¹°Ã¼¸¦ µé°í ÀÖÀ¸¸é ³õ±â ½Ãµµ
+                // ë¬¼ì²´ë¥¼ ë“¤ê³  ìˆìœ¼ë©´ ë†“ê¸° ì‹œë„
                 TryPlace();
                 Debug.Log("PickDown");
             }
@@ -116,7 +116,7 @@ public class PickupController : MonoBehaviour
             boxTimer = 0;
         }
 
-        // ¹°Ã¼¸¦ µé°í ÀÖ´Â µ¿¾È °è¼Ó À§Ä¡ ¾÷µ¥ÀÌÆ®
+        // ë¬¼ì²´ë¥¼ ë“¤ê³  ìˆëŠ” ë™ì•ˆ ê³„ì† ìœ„ì¹˜ ì—…ë°ì´íŠ¸
         if (heldObject != null)
         {
             UpdateHeldObjectPosition();
@@ -171,7 +171,7 @@ public class PickupController : MonoBehaviour
                 if (hit.collider.CompareTag("Picker"))
                 {
                     hit.collider.gameObject.transform.Rotate(0, 90, 0);
-                    Debug.Log("¹°Ã¼ È¸Àü");
+                    Debug.Log("ë¬¼ì²´ íšŒì „");
                 }
             }
         }
@@ -179,30 +179,30 @@ public class PickupController : MonoBehaviour
 
     void OnGUI()
     {
-        // È­¸é Áß¾Ó ÁÂÇ¥ °è»ê
+        // í™”ë©´ ì¤‘ì•™ ì¢Œí‘œ ê³„ì‚°
         float centerX = Screen.width / 2;
         float centerY = Screen.height / 2;
 
-        // Å©·Î½ºÇì¾î À§Ä¡ ¹× Å©±â °è»ê
+        // í¬ë¡œìŠ¤í—¤ì–´ ìœ„ì¹˜ ë° í¬ê¸° ê³„ì‚°
         Rect crosshairRect = new Rect(centerX - crosshairSize / 2, centerY - crosshairSize / 2, crosshairSize, crosshairSize);
 
-        // Å©·Î½ºÇì¾î ±×¸®±â
+        // í¬ë¡œìŠ¤í—¤ì–´ ê·¸ë¦¬ê¸°
         GUI.color = crosshairColor;
         GUI.DrawTexture(crosshairRect, defaultCrosshair);
     }
 
-    // ¹°Ã¼¸¦ Áı±â ½ÃµµÇÏ´Â ÇÔ¼ö
+    // ë¬¼ì²´ë¥¼ ì§‘ê¸° ì‹œë„í•˜ëŠ” í•¨ìˆ˜
     void TryPickup()
     {
-        // Ä«¸Ş¶ó Áß½É¿¡¼­ ·¹ÀÌ¸¦ ½÷¼­ ¹°Ã¼¸¦ Ã£À½
-        Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)); // Ä«¸Ş¶ó È­¸é Áß¾Ó¿¡¼­ ·¹ÀÌ ½ÃÀÛ
-        if (Physics.Raycast(ray, out RaycastHit hit, pickupRange, pickupLayer)) // ·¹ÀÌ°¡ Ãæµ¹ÇÏ¸é
+        // ì¹´ë©”ë¼ ì¤‘ì‹¬ì—ì„œ ë ˆì´ë¥¼ ì´ì„œ ë¬¼ì²´ë¥¼ ì°¾ìŒ
+        Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)); // ì¹´ë©”ë¼ í™”ë©´ ì¤‘ì•™ì—ì„œ ë ˆì´ ì‹œì‘
+        if (Physics.Raycast(ray, out RaycastHit hit, pickupRange, pickupLayer)) // ë ˆì´ê°€ ì¶©ëŒí•˜ë©´
         {
             if (hit.collider.tag == "Picker" && hit.collider != null)
             {
                 try
                 {
-                    PickupObject(hit.collider.gameObject); // ¹°Ã¼ Áı±â
+                    PickupObject(hit.collider.gameObject); // ë¬¼ì²´ ì§‘ê¸°
                 }
                 catch
                 {
@@ -214,11 +214,11 @@ public class PickupController : MonoBehaviour
         }
     }
 
-    // ¹°Ã¼¸¦ ½ÇÁ¦·Î Áı´Â ÇÔ¼ö
+    // ë¬¼ì²´ë¥¼ ì‹¤ì œë¡œ ì§‘ëŠ” í•¨ìˆ˜
     void PickupObject(GameObject obj)
     {
-        heldObject = obj; // µé°í ÀÖ´Â ¹°Ã¼ ¼³Á¤
-        originalScale = obj.transform.localScale; // ¹°Ã¼ÀÇ ¿ø·¡ Å©±â ÀúÀå
+        heldObject = obj; // ë“¤ê³  ìˆëŠ” ë¬¼ì²´ ì„¤ì •
+        originalScale = obj.transform.localScale; // ë¬¼ì²´ì˜ ì›ë˜ í¬ê¸° ì €ì¥
 
         if(obj.tag == "Picker")
         {
@@ -230,139 +230,116 @@ public class PickupController : MonoBehaviour
             }
         }        
 
-        // ¹°Ã¼¿¡ Rigidbody°¡ ÀÖÀ¸¸é ¹°¸®Àû »óÈ£ÀÛ¿ë ÁßÁö
+        // ë¬¼ì²´ì— Rigidbodyê°€ ìˆìœ¼ë©´ ë¬¼ë¦¬ì  ìƒí˜¸ì‘ìš© ì¤‘ì§€
         heldRigidbody = obj.GetComponent<Rigidbody>();
         if (heldRigidbody != null)
         {
-            heldRigidbody.isKinematic = true; // ¹°Ã¼°¡ ´Ù¸¥ ¹°Ã¼¿Í Ãæµ¹ÇÏ°Å³ª Áß·Â¿¡ ¿µÇâÀ» ¹ŞÁö ¾Êµµ·Ï ¼³Á¤
-            heldRigidbody.useGravity = false; // Áß·Â ºñÈ°¼ºÈ­
+            heldRigidbody.isKinematic = true; // ë¬¼ì²´ê°€ ë‹¤ë¥¸ ë¬¼ì²´ì™€ ì¶©ëŒí•˜ê±°ë‚˜ ì¤‘ë ¥ì— ì˜í–¥ì„ ë°›ì§€ ì•Šë„ë¡ ì„¤ì •
+            heldRigidbody.useGravity = false; // ì¤‘ë ¥ ë¹„í™œì„±í™”
         }
 
-        // ¹°Ã¼¿¡ Collider°¡ ÀÖÀ¸¸é ºñÈ°¼ºÈ­ÇÏ¿© ÇÃ·¹ÀÌ¾î¿Í Ãæµ¹ÇÏÁö ¾Êµµ·Ï ¼³Á¤
+        // ë¬¼ì²´ì— Colliderê°€ ìˆìœ¼ë©´ ë¹„í™œì„±í™”í•˜ì—¬ í”Œë ˆì´ì–´ì™€ ì¶©ëŒí•˜ì§€ ì•Šë„ë¡ ì„¤ì •
         heldCollider = obj.GetComponent<Collider>();
         if (heldCollider != null)
         {
-            heldCollider.enabled = false; // ¹°Ã¼ÀÇ Ãæµ¹ Ã³¸® ºñÈ°¼ºÈ­
-            bottomOffset = CalculateBottomOffset(heldCollider); // ¹°Ã¼ÀÇ ÇÏ´Ü ¿ÀÇÁ¼Â °è»ê
+            heldCollider.enabled = false; // ë¬¼ì²´ì˜ ì¶©ëŒ ì²˜ë¦¬ ë¹„í™œì„±í™”
+            bottomOffset = CalculateBottomOffset(heldCollider); // ë¬¼ì²´ì˜ í•˜ë‹¨ ì˜¤í”„ì…‹ ê³„ì‚°
         }
 
-        obj.transform.SetParent(playerCamera.transform); // ¹°Ã¼¸¦ ÇÃ·¹ÀÌ¾î Ä«¸Ş¶óÀÇ ÀÚ½ÄÀ¸·Î ¼³Á¤ÇÏ¿© ÇÃ·¹ÀÌ¾î¿Í ÇÔ²² ÀÌµ¿
-        UpdateHeldObjectPosition(); // ¹°Ã¼¸¦ È­¸é¿¡ º¸ÀÌµµ·Ï À§Ä¡ ¾÷µ¥ÀÌÆ®
-        obj.transform.localScale = originalScale * 1f; // ¹°Ã¼ Å©±â¸¦ Ãà¼ÒÇÏ¿© ÇÃ·¹ÀÌ¾î°¡ µé°í ÀÖ´Ù´Â ´À³¦À» ÁÜ
+        obj.transform.SetParent(playerCamera.transform); // ë¬¼ì²´ë¥¼ í”Œë ˆì´ì–´ ì¹´ë©”ë¼ì˜ ìì‹ìœ¼ë¡œ ì„¤ì •í•˜ì—¬ í”Œë ˆì´ì–´ì™€ í•¨ê»˜ ì´ë™
+        UpdateHeldObjectPosition(); // ë¬¼ì²´ë¥¼ í™”ë©´ì— ë³´ì´ë„ë¡ ìœ„ì¹˜ ì—…ë°ì´íŠ¸
+        obj.transform.localScale = originalScale * 1f; // ë¬¼ì²´ í¬ê¸°ë¥¼ ì¶•ì†Œí•˜ì—¬ í”Œë ˆì´ì–´ê°€ ë“¤ê³  ìˆë‹¤ëŠ” ëŠë‚Œì„ ì¤Œ
     }
 
-    // ¹°Ã¼ÀÇ ÇÏ´ÜÁ¡À» °è»êÇÏ¿© ¹°Ã¼¸¦ Á¤È®È÷ ³õ±â À§ÇÑ ¿ÀÇÁ¼ÂÀ» ¹İÈ¯ÇÏ´Â ÇÔ¼ö
+    // ë¬¼ì²´ì˜ í•˜ë‹¨ì ì„ ê³„ì‚°í•˜ì—¬ ë¬¼ì²´ë¥¼ ì •í™•íˆ ë†“ê¸° ìœ„í•œ ì˜¤í”„ì…‹ì„ ë°˜í™˜í•˜ëŠ” í•¨ìˆ˜
     Vector3 CalculateBottomOffset(Collider collider)
     {
-        // ¹°Ã¼°¡ BoxColliderÀÏ °æ¿ì ÇÏ´ÜÁ¡ °è»ê
+        // ë¬¼ì²´ê°€ BoxColliderì¼ ê²½ìš° í•˜ë‹¨ì  ê³„ì‚°
         if (collider is BoxCollider boxCollider)
         {
-            return new Vector3(0, -boxCollider.size.y / 2, 0); // ¹Ú½ºÀÇ ÇÏ´Ü
+            return new Vector3(0, -boxCollider.size.y / 2, 0); // ë°•ìŠ¤ì˜ í•˜ë‹¨
         }
-        // ¹°Ã¼°¡ SphereColliderÀÏ °æ¿ì ÇÏ´ÜÁ¡ °è»ê
+        // ë¬¼ì²´ê°€ SphereColliderì¼ ê²½ìš° í•˜ë‹¨ì  ê³„ì‚°
         else if (collider is SphereCollider sphereCollider)
         {
-            return new Vector3(0, -sphereCollider.radius, 0); // ±¸ÀÇ ÇÏ´Ü
+            return new Vector3(0, -sphereCollider.radius, 0); // êµ¬ì˜ í•˜ë‹¨
         }
-        // ¹°Ã¼°¡ CapsuleColliderÀÏ °æ¿ì ÇÏ´ÜÁ¡ °è»ê
+        // ë¬¼ì²´ê°€ CapsuleColliderì¼ ê²½ìš° í•˜ë‹¨ì  ê³„ì‚°
         else if (collider is CapsuleCollider capsuleCollider)
         {
-            return new Vector3(0, -capsuleCollider.height / 2, 0); // Ä¸½¶ÀÇ ÇÏ´Ü
+            return new Vector3(0, -capsuleCollider.height / 2, 0); // ìº¡ìŠì˜ í•˜ë‹¨
         }
-        // ´Ù¸¥ Á¾·ùÀÇ Äİ¶óÀÌ´õ¿¡ ´ëÇØ¼­µµ Ãß°¡·Î Ã³¸®ÇÒ ¼ö ÀÖÀ½
-        return Vector3.zero; // Äİ¶óÀÌ´õ Å¸ÀÔÀÌ ´Ù¸¥ °æ¿ì ±âº»°ª ¹İÈ¯
+        // ë‹¤ë¥¸ ì¢…ë¥˜ì˜ ì½œë¼ì´ë”ì— ëŒ€í•´ì„œë„ ì¶”ê°€ë¡œ ì²˜ë¦¬í•  ìˆ˜ ìˆìŒ
+        return Vector3.zero; // ì½œë¼ì´ë” íƒ€ì…ì´ ë‹¤ë¥¸ ê²½ìš° ê¸°ë³¸ê°’ ë°˜í™˜
     }
 
-    // µé°í ÀÖ´Â ¹°Ã¼ÀÇ À§Ä¡¿Í È¸ÀüÀ» ¾÷µ¥ÀÌÆ®ÇÏ´Â ÇÔ¼ö
+    // ë“¤ê³  ìˆëŠ” ë¬¼ì²´ì˜ ìœ„ì¹˜ì™€ íšŒì „ì„ ì—…ë°ì´íŠ¸í•˜ëŠ” í•¨ìˆ˜
     void UpdateHeldObjectPosition()
     {
-        heldObject.transform.localPosition = heldObjectPosition; // ¹°Ã¼¸¦ ¼³Á¤µÈ È­¸é À§Ä¡·Î ÀÌµ¿
-        heldObject.transform.localRotation = Quaternion.identity; // ¹°Ã¼ÀÇ È¸ÀüÀ» ÃÊ±âÈ­ÇÏ¿© ÀÏÁ¤ÇÑ ¹æÇâÀ» À¯Áö
+        heldObject.transform.localPosition = heldObjectPosition; // ë¬¼ì²´ë¥¼ ì„¤ì •ëœ í™”ë©´ ìœ„ì¹˜ë¡œ ì´ë™
+        heldObject.transform.localRotation = Quaternion.identity; // ë¬¼ì²´ì˜ íšŒì „ì„ ì´ˆê¸°í™”í•˜ì—¬ ì¼ì •í•œ ë°©í–¥ì„ ìœ ì§€
     }
 
-    // ¹°Ã¼¸¦ ³õ´Â ½Ãµµ¸¦ ÇÏ´Â ÇÔ¼ö
+    // ë¬¼ì²´ë¥¼ ë†“ëŠ” ì‹œë„ë¥¼ í•˜ëŠ” í•¨ìˆ˜
     void TryPlace()
     {
-        // Ä«¸Ş¶ó Áß¾Ó¿¡¼­ ·¹ÀÌ¸¦ ½÷¼­ ¹°Ã¼¸¦ ³õÀ» ¼ö ÀÖ´Â ÁöÁ¡À» Ã£À½
-        Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)); // Ä«¸Ş¶ó È­¸é Áß¾Ó¿¡¼­ ·¹ÀÌ ½ÃÀÛ
-        if (Physics.Raycast(ray, out RaycastHit hit, pickupRange, placementLayer)) // ·¹ÀÌ°¡ ¹°Ã¼ ³õ±â °¡´ÉÇÑ °÷¿¡ ¸ÂÀ¸¸é
+        Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        RaycastHit hit;
+
+        // ëª¨ë“  ë ˆì´ì–´ì™€ ì¶©ëŒ ì²´í¬í•˜ë„ë¡ ë³€ê²½
+        if (Physics.Raycast(ray, out hit, pickupRange))
         {
-            PlaceObject(hit.point, hit.normal); // ¹°Ã¼¸¦ ³õÀ½
+            bool isWall = ((1 << hit.collider.gameObject.layer) & placementLayer) != 0;
+            PlaceObject(hit.point, hit.normal, hit.collider, isWall);
         }
     }
 
-    // ¹°Ã¼¸¦ ½ÇÁ¦·Î ³õ´Â ÇÔ¼ö
-    void PlaceObject(Vector3 position, Vector3 normal)
+    void PlaceObject(Vector3 position, Vector3 normal, Collider surfaceCollider, bool isWall)
     {
-        // Ä«¸Ş¶ó¿¡¼­ Ãæµ¹ ÁöÁ¡±îÁöÀÇ ¹æÇâ
-        Vector3 cameraToPoint = position - playerCamera.transform.position;
-
-        // Ç¥¸éÀÌ º®ÀÎÁö È®ÀÎ (³»Àû »ç¿ë)
-        float surfaceAngle = Vector3.Dot(normal, Vector3.up);
-        bool isWall = Mathf.Abs(surfaceAngle) < 0.5f; // 45µµ ÀÌ»ó ±â¿ï¾îÁø Ç¥¸éÀ» º®À¸·Î °£ÁÖ
-
         heldObject.transform.SetParent(null);
+        heldObject.transform.localScale = originalScale;
 
-        // º®ÀÎ °æ¿ìÀÇ À§Ä¡ Á¶Á¤
+        Vector3 placementPosition = position;
+        Quaternion placementRotation;
+
         if (isWall)
         {
-            // Ä«¸Ş¶ó°¡ º¸´Â ¹æÇâ°ú º® ¹ı¼± º¤ÅÍÀÇ ³»ÀûÀ» È®ÀÎ
-            float viewAlignment = Vector3.Dot(playerCamera.transform.forward, normal);
+            // ë²½ì—ì„œ ì•½ê°„ ë–¨ì–´ì§„ ìœ„ì¹˜ ê³„ì‚°
+            float wallOffset = 0.01f;  // ë²½ê³¼ì˜ ê±°ë¦¬ë¥¼ ìµœì†Œí™”
+            placementPosition += normal * wallOffset;
 
-            // º®ÀÇ ¾ÕÂÊ ¸é¿¡ ¹°Ã¼¸¦ ³õ±â À§ÇÑ À§Ä¡ °è»ê
-            Vector3 adjustedNormal = viewAlignment > 0 ? -normal : normal;
-            float wallOffset = 0.05f; // º®¿¡¼­ ¾ó¸¶³ª ¶³¾î¶ß¸±Áö ¼³Á¤
-            position += adjustedNormal * wallOffset;
+            // ë²½ì— í‰í–‰í•˜ê²Œ íšŒì „
+            placementRotation = Quaternion.LookRotation(-normal);
 
-            // ¹°Ã¼¸¦ º®°ú ÆòÇàÇÏ°Ô È¸ÀüÇÏµÇ, Ä«¸Ş¶ó ¹æÇâ °í·Á
-            Quaternion wallRotation;
-            if (viewAlignment > 0)
+            // ë¬¼ì²´ê°€ ë°”ë‹¥ìœ¼ë¡œ ë–¨ì–´ì§€ë„ë¡ Yì¶• ìœ„ì¹˜ëŠ” ê·¸ëŒ€ë¡œ ìœ ì§€
+            heldObject.transform.position = placementPosition;
+            heldObject.transform.rotation = placementRotation;
+
+            // ë¬¼ë¦¬ íš¨ê³¼ í™œì„±í™”
+            if (heldRigidbody != null)
             {
-                // Ä«¸Ş¶ó°¡ º®À» ¹Ù¶óº¸´Â °æ¿ì
-                wallRotation = Quaternion.LookRotation(-adjustedNormal);
+                heldRigidbody.isKinematic = false;
+                heldRigidbody.useGravity = true;
+                heldRigidbody.velocity = Vector3.zero;
+                heldRigidbody.angularVelocity = Vector3.zero;
             }
-            else
-            {
-                // Ä«¸Ş¶ó°¡ º®ÀÇ ¹İ´ëÆíÀ» ¹Ù¶óº¸´Â °æ¿ì
-                wallRotation = Quaternion.LookRotation(adjustedNormal);
-            }
-
-            heldObject.transform.rotation = wallRotation;
-
-            // ¹°Ã¼ÀÇ ³ôÀÌ¸¦ °í·ÁÇÑ À§Ä¡ Á¶Á¤
-            Vector3 adjustedPosition = position;
-
-            // ¹°Ã¼°¡ ¹Ù´Ú¿¡ ´êµµ·Ï YÃà À§Ä¡ Á¶Á¤
-            if (heldCollider != null)
-            {
-                float bottomY = position.y + heldCollider.bounds.extents.y;
-                adjustedPosition.y = bottomY;
-            }
-
-            heldObject.transform.position = adjustedPosition;
         }
         else
         {
-            // ±âÁ¸ ¹Ù´Ú ¹èÄ¡ ·ÎÁ÷
-            heldObject.transform.rotation = Quaternion.FromToRotation(Vector3.up, normal);
-            Vector3 adjustedPosition = position - heldObject.transform.TransformVector(bottomOffset);
-            heldObject.transform.position = adjustedPosition;
-        }
+            // ë°”ë‹¥ì— ë†“ì„ ë•Œì˜ ê¸°ì¡´ ë¡œì§
+            placementRotation = Quaternion.FromToRotation(Vector3.up, normal);
+            placementPosition -= heldObject.transform.TransformVector(bottomOffset);
 
-        heldObject.transform.localScale = originalScale;
+            heldObject.transform.position = placementPosition;
+            heldObject.transform.rotation = placementRotation;
 
-        // Rigidbody ¼³Á¤
-        if (heldRigidbody != null)
-        {
-            heldRigidbody.isKinematic = false;
-            heldRigidbody.useGravity = true;
-            heldRigidbody.velocity = Vector3.zero;
-            heldRigidbody.angularVelocity = Vector3.zero;
-
-            // º®¿¡ ³õÀ» ¶§´Â Àá½Ã µ¿¾È kinematicÀ¸·Î ¼³Á¤ÇÏ¿© ¾ÈÁ¤È­
-            if (isWall)
+            // ë¬¼ë¦¬ íš¨ê³¼ í™œì„±í™”
+            if (heldRigidbody != null)
             {
-                StartCoroutine(StabilizeOnWall(heldRigidbody));
+                heldRigidbody.isKinematic = false;
+                heldRigidbody.useGravity = true;
+                heldRigidbody.velocity = Vector3.zero;
+                heldRigidbody.angularVelocity = Vector3.zero;
             }
         }
 
@@ -371,33 +348,28 @@ public class PickupController : MonoBehaviour
             heldCollider.enabled = true;
         }
 
-        // Ãß°¡ÀûÀÎ ¾ÈÁ¤¼º °Ë»ç: º® µÚ¿¡ ¹°Ã¼°¡ »ı¼ºµÇ¾ú´ÂÁö È®ÀÎ
-        if (isWall)
-        {
-            CheckAndAdjustObjectPosition();
-        }
-
         heldObject = null;
         heldRigidbody = null;
         heldCollider = null;
     }
 
+
     private void CheckAndAdjustObjectPosition()
     {
-        // Ä«¸Ş¶ó¿¡¼­ ¹°Ã¼ ¹æÇâÀ¸·Î ·¹ÀÌÄ³½ºÆ®
+        // ì¹´ë©”ë¼ì—ì„œ ë¬¼ì²´ ë°©í–¥ìœ¼ë¡œ ë ˆì´ìºìŠ¤íŠ¸
         Vector3 directionToObject = heldObject.transform.position - playerCamera.transform.position;
         Ray ray = new Ray(playerCamera.transform.position, directionToObject.normalized);
         RaycastHit[] hits = Physics.RaycastAll(ray, directionToObject.magnitude + 1f);
 
-        // ·¹ÀÌÄ³½ºÆ® È÷Æ®¸¦ °Å¸®¼øÀ¸·Î Á¤·Ä
+        // ë ˆì´ìºìŠ¤íŠ¸ íˆíŠ¸ë¥¼ ê±°ë¦¬ìˆœìœ¼ë¡œ ì •ë ¬
         System.Array.Sort(hits, (a, b) => a.distance.CompareTo(b.distance));
 
         foreach (RaycastHit hit in hits)
         {
-            // Ã¹ ¹øÂ°·Î ºÎµúÈù ¹°Ã¼°¡ ¹æ±İ ³õÀº ¹°Ã¼°¡ ¾Æ´Ï¶ó¸é
+            // ì²« ë²ˆì§¸ë¡œ ë¶€ë”ªíŒ ë¬¼ì²´ê°€ ë°©ê¸ˆ ë†“ì€ ë¬¼ì²´ê°€ ì•„ë‹ˆë¼ë©´
             if (hit.collider.gameObject != heldObject)
             {
-                // ¹°Ã¼°¡ º® µÚ¿¡ ÀÖ´Ù´Â ÀÇ¹ÌÀÌ¹Ç·Î À§Ä¡ Á¶Á¤
+                // ë¬¼ì²´ê°€ ë²½ ë’¤ì— ìˆë‹¤ëŠ” ì˜ë¯¸ì´ë¯€ë¡œ ìœ„ì¹˜ ì¡°ì •
                 Vector3 adjustedPosition = hit.point + (hit.normal * 0.05f);
                 heldObject.transform.position = adjustedPosition;
                 break;
@@ -417,7 +389,7 @@ public class PickupController : MonoBehaviour
 
     public IEnumerator FadeIn()
     {
-        // °ËÁ¤ È­¸é À¯Áö
+        // ê²€ì • í™”ë©´ ìœ ì§€
         yield return new WaitForSeconds(holdDuration);
 
         float elapsedTime = 0f;
