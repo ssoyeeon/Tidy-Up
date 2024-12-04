@@ -294,34 +294,87 @@ public class PickupController : MonoBehaviour
     // 물체를 실제로 놓는 함수
     void PlaceObject(Vector3 position, Vector3 normal)
     {
-        heldObject.transform.SetParent(null); // 물체를 카메라의 자식에서 해제
-        heldObject.transform.rotation = Quaternion.FromToRotation(Vector3.up, normal); // 물체를 바닥에 맞게 회전
-        heldObject.transform.localScale = originalScale; // 물체 크기를 원래 크기로 복구
+        // 표면이 벽인지 확인 (내적 사용)
+        float surfaceAngle = Vector3.Dot(normal, Vector3.up);
+        bool isWall = Mathf.Abs(surfaceAngle) < 0.5f; // 45도 이상 기울어진 표면을 벽으로 간주
 
-        // 하단점을 기준으로 물체의 위치를 조정하여 정확히 바닥에 놓음
-        Vector3 adjustedPosition = position - heldObject.transform.TransformVector(bottomOffset);
-        heldObject.transform.position = adjustedPosition; // 위치 조정된 값으로 물체 배치
+        heldObject.transform.SetParent(null);
 
-        // 물체에 Rigidbody가 있으면 물리적 상호작용을 다시 활성화
+        // 벽인 경우의 위치 조정
+        if (isWall)
+        {
+            // 벽 표면에서 약간 앞으로 오프셋
+            float wallOffset = 0.05f; // 벽에서 얼마나 떨어뜨릴지 설정
+            position += normal * wallOffset;
+
+            // 물체를 벽과 평행하게 회전
+            Quaternion wallRotation = Quaternion.LookRotation(-normal);
+            heldObject.transform.rotation = wallRotation;
+        }
+        else
+        {
+            // 기존 바닥 배치 로직 유지
+            heldObject.transform.rotation = Quaternion.FromToRotation(Vector3.up, normal);
+        }
+
+        heldObject.transform.localScale = originalScale;
+
+        // 벽인 경우와 바닥인 경우의 위치 조정 로직 분리
+        Vector3 adjustedPosition;
+        if (isWall)
+        {
+            // 벽에 놓을 때는 물체의 중심점 기준으로 위치 조정
+            adjustedPosition = position;
+
+            // 물체가 바닥에 닿도록 Y축 위치 조정
+            float bottomY = heldCollider != null ?
+                position.y + heldCollider.bounds.extents.y :
+                position.y;
+            adjustedPosition.y = bottomY;
+        }
+        else
+        {
+            // 기존 바닥 배치 로직 유지
+            adjustedPosition = position - heldObject.transform.TransformVector(bottomOffset);
+        }
+
+        heldObject.transform.position = adjustedPosition;
+
+        // Rigidbody 설정
         if (heldRigidbody != null)
         {
-            heldRigidbody.isKinematic = false; // 물리적 상호작용 활성화
-            heldRigidbody.useGravity = true; // 중력 다시 적용
-            heldRigidbody.velocity = Vector3.zero; // 물체의 이동 속도 초기화
-            heldRigidbody.angularVelocity = Vector3.zero; // 물체의 회전 속도 초기화
+            heldRigidbody.isKinematic = false;
+            heldRigidbody.useGravity = true;
+            heldRigidbody.velocity = Vector3.zero;
+            heldRigidbody.angularVelocity = Vector3.zero;
+
+            // 벽에 놓을 때는 잠시 동안 kinematic으로 설정하여 안정화
+            if (isWall)
+            {
+                StartCoroutine(StabilizeOnWall(heldRigidbody));
+            }
         }
 
-        // 물체의 Collider도 다시 활성화하여 충돌이 가능하게 함
         if (heldCollider != null)
         {
-            heldCollider.enabled = true; // 물체의 충돌 처리 다시 활성화
+            heldCollider.enabled = true;
         }
 
-        // 들고 있던 물체 관련 변수 초기화
         heldObject = null;
         heldRigidbody = null;
         heldCollider = null;
     }
+
+    private IEnumerator StabilizeOnWall(Rigidbody rb)
+    {
+        rb.isKinematic = true;
+        yield return new WaitForSeconds(0.1f); // 0.1초 동안 안정화
+        if (rb != null) // 물체가 아직 존재하는지 확인
+        {
+            rb.isKinematic = false;
+        }
+    }
+
     public IEnumerator FadeIn()
     {
         // 검정 화면 유지
