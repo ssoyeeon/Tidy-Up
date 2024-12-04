@@ -473,9 +473,9 @@ GameObject:
   - component: {fileID: 183237236}
   - component: {fileID: 183237235}
   - component: {fileID: 183237234}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -706,7 +706,7 @@ GameObject:
   - component: {fileID: 232579911}
   - component: {fileID: 232579910}
   - component: {fileID: 232579909}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Cube (1)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -966,7 +966,7 @@ GameObject:
   - component: {fileID: 295693791}
   - component: {fileID: 295693790}
   - component: {fileID: 295693789}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Cube (3)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -1311,7 +1311,7 @@ GameObject:
   - component: {fileID: 345640995}
   - component: {fileID: 345640994}
   - component: {fileID: 345640993}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Cube (7)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -1416,7 +1416,7 @@ GameObject:
   - component: {fileID: 347488649}
   - component: {fileID: 347488648}
   - component: {fileID: 347488647}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Cube (2)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -1521,7 +1521,7 @@ GameObject:
   - component: {fileID: 352429050}
   - component: {fileID: 352429049}
   - component: {fileID: 352429048}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Cube (5)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -3270,7 +3270,7 @@ GameObject:
   - component: {fileID: 1430328712}
   - component: {fileID: 1430328711}
   - component: {fileID: 1430328710}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Cube (4)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -4341,7 +4341,7 @@ GameObject:
   - component: {fileID: 2063592067}
   - component: {fileID: 2063592066}
   - component: {fileID: 2063592065}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Cube (6)
   m_TagString: Wall
   m_Icon: {fileID: 0}
