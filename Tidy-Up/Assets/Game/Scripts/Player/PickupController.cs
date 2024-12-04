@@ -294,6 +294,9 @@ public class PickupController : MonoBehaviour
     // 물체를 실제로 놓는 함수
     void PlaceObject(Vector3 position, Vector3 normal)
     {
+        // 카메라에서 충돌 지점까지의 방향
+        Vector3 cameraToPoint = position - playerCamera.transform.position;
+
         // 표면이 벽인지 확인 (내적 사용)
         float surfaceAngle = Vector3.Dot(normal, Vector3.up);
         bool isWall = Mathf.Abs(surfaceAngle) < 0.5f; // 45도 이상 기울어진 표면을 벽으로 간주
@@ -303,42 +306,50 @@ public class PickupController : MonoBehaviour
         // 벽인 경우의 위치 조정
         if (isWall)
         {
-            // 벽 표면에서 약간 앞으로 오프셋
-            float wallOffset = 0.05f; // 벽에서 얼마나 떨어뜨릴지 설정
-            position += normal * wallOffset;
+            // 카메라가 보는 방향과 벽 법선 벡터의 내적을 확인
+            float viewAlignment = Vector3.Dot(playerCamera.transform.forward, normal);
 
-            // 물체를 벽과 평행하게 회전
-            Quaternion wallRotation = Quaternion.LookRotation(-normal);
+            // 벽의 앞쪽 면에 물체를 놓기 위한 위치 계산
+            Vector3 adjustedNormal = viewAlignment > 0 ? -normal : normal;
+            float wallOffset = 0.05f; // 벽에서 얼마나 떨어뜨릴지 설정
+            position += adjustedNormal * wallOffset;
+
+            // 물체를 벽과 평행하게 회전하되, 카메라 방향 고려
+            Quaternion wallRotation;
+            if (viewAlignment > 0)
+            {
+                // 카메라가 벽을 바라보는 경우
+                wallRotation = Quaternion.LookRotation(-adjustedNormal);
+            }
+            else
+            {
+                // 카메라가 벽의 반대편을 바라보는 경우
+                wallRotation = Quaternion.LookRotation(adjustedNormal);
+            }
+
             heldObject.transform.rotation = wallRotation;
+
+            // 물체의 높이를 고려한 위치 조정
+            Vector3 adjustedPosition = position;
+
+            // 물체가 바닥에 닿도록 Y축 위치 조정
+            if (heldCollider != null)
+            {
+                float bottomY = position.y + heldCollider.bounds.extents.y;
+                adjustedPosition.y = bottomY;
+            }
+
+            heldObject.transform.position = adjustedPosition;
         }
         else
         {
-            // 기존 바닥 배치 로직 유지
+            // 기존 바닥 배치 로직
             heldObject.transform.rotation = Quaternion.FromToRotation(Vector3.up, normal);
+            Vector3 adjustedPosition = position - heldObject.transform.TransformVector(bottomOffset);
+            heldObject.transform.position = adjustedPosition;
         }
 
         heldObject.transform.localScale = originalScale;
-
-        // 벽인 경우와 바닥인 경우의 위치 조정 로직 분리
-        Vector3 adjustedPosition;
-        if (isWall)
-        {
-            // 벽에 놓을 때는 물체의 중심점 기준으로 위치 조정
-            adjustedPosition = position;
-
-            // 물체가 바닥에 닿도록 Y축 위치 조정
-            float bottomY = heldCollider != null ?
-                position.y + heldCollider.bounds.extents.y :
-                position.y;
-            adjustedPosition.y = bottomY;
-        }
-        else
-        {
-            // 기존 바닥 배치 로직 유지
-            adjustedPosition = position - heldObject.transform.TransformVector(bottomOffset);
-        }
-
-        heldObject.transform.position = adjustedPosition;
 
         // Rigidbody 설정
         if (heldRigidbody != null)
@@ -360,16 +371,45 @@ public class PickupController : MonoBehaviour
             heldCollider.enabled = true;
         }
 
+        // 추가적인 안정성 검사: 벽 뒤에 물체가 생성되었는지 확인
+        if (isWall)
+        {
+            CheckAndAdjustObjectPosition();
+        }
+
         heldObject = null;
         heldRigidbody = null;
         heldCollider = null;
     }
 
+    private void CheckAndAdjustObjectPosition()
+    {
+        // 카메라에서 물체 방향으로 레이캐스트
+        Vector3 directionToObject = heldObject.transform.position - playerCamera.transform.position;
+        Ray ray = new Ray(playerCamera.transform.position, directionToObject.normalized);
+        RaycastHit[] hits = Physics.RaycastAll(ray, directionToObject.magnitude + 1f);
+
+        // 레이캐스트 히트를 거리순으로 정렬
+        System.Array.Sort(hits, (a, b) => a.distance.CompareTo(b.distance));
+
+        foreach (RaycastHit hit in hits)
+        {
+            // 첫 번째로 부딪힌 물체가 방금 놓은 물체가 아니라면
+            if (hit.collider.gameObject != heldObject)
+            {
+                // 물체가 벽 뒤에 있다는 의미이므로 위치 조정
+                Vector3 adjustedPosition = hit.point + (hit.normal * 0.05f);
+                heldObject.transform.position = adjustedPosition;
+                break;
+            }
+        }
+    }
+
     private IEnumerator StabilizeOnWall(Rigidbody rb)
     {
         rb.isKinematic = true;
-        yield return new WaitForSeconds(0.1f); // 0.1초 동안 안정화
-        if (rb != null) // 물체가 아직 존재하는지 확인
+        yield return new WaitForSeconds(0.1f);
+        if (rb != null)
         {
             rb.isKinematic = false;
         }
