@@ -2,37 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
+using DG.Tweening;
 
 public class StartTextDocBAck : MonoBehaviour
 {
-    public TextMeshPro introText;
-    public float textDuration = 3;
+    public GameObject canvasGroup;
+    public CanvasGroup textCanvas;
     public float holdDuration = 5;
+    public float timer = 4;
+    private bool isEnd = false;
 
+    private void Awake()
+    {
+        canvasGroup.SetActive(false);
+    }
     void Start()
     {
-        FadeOut();
+        
     }
 
-    public IEnumerator FadeOut()
+    void Update()
     {
-        // 검정 화면 유지
-        yield return new WaitForSeconds(holdDuration);
+        if(isEnd == false) timer -= Time.deltaTime;
 
-        float elapsedTime = 0f;
-        Color color = introText.color;
-        color.a = 1f;
-
-        while (elapsedTime < textDuration)
+        if(timer < 0)
         {
-            elapsedTime += Time.deltaTime;
-            color.a = Mathf.Lerp(1f, 0f, elapsedTime / textDuration);
-            introText.color = color;
-            yield return null;
+            isEnd = true;
+            canvasGroup.SetActive(true);
+            timer = 0;
+            StartCoroutine(FadeOut());
         }
+    }
 
-        color.a = 0f;
-        introText.color = color;
+    private IEnumerator FadeOut()
+    {
+        yield return new WaitForSeconds(5f);
+        textCanvas.DOFade(0f, 2f);
+        canvasGroup.SetActive(false);
+
     }
 }

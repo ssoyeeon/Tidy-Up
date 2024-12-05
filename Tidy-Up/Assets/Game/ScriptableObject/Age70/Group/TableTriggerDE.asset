@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1fe4c09c066b314089a5a74055e0df4, type: 3}
-  m_Name: humidifierDE
+  m_Script: {fileID: 11500000, guid: 59b378d3bddd08a4eb4b222274dee43a, type: 3}
+  m_Name: TableTriggerDE
   m_EditorClassIdentifier: 
-  id: 6
-  prefab: {fileID: 2189100005083736495, guid: 886be469a3edb83488efca09251c8aa5, type: 3}
+  items:
+  - {fileID: 11400000, guid: ff72664959a58ee43974392ed5ac4ae0, type: 2}

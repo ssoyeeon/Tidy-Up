@@ -170,6 +170,18 @@ public class PickupController : MonoBehaviour
             {
                 if (hit.collider.CompareTag("Picker"))
                 {
+                    hit.collider.gameObject.transform.Rotate(90, 0, 0);
+                    Debug.Log("물체 회전");
+                }
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit))
+            {
+                if (hit.collider.CompareTag("Picker"))
+                {
                     hit.collider.gameObject.transform.Rotate(0, 90, 0);
                     Debug.Log("물체 회전");
                 }
@@ -257,7 +269,7 @@ public class PickupController : MonoBehaviour
         // 물체가 BoxCollider일 경우 하단점 계산
         if (collider is BoxCollider boxCollider)
         {
-            return new Vector3(0, -boxCollider.size.y / 2, 0); // 박스의 하단
+            return new Vector3(0, -boxCollider.size.z / 2, 0); // 박스의 하단
         }
         // 물체가 SphereCollider일 경우 하단점 계산
         else if (collider is SphereCollider sphereCollider)

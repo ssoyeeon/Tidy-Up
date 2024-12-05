@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d1fe4c09c066b314089a5a74055e0df4, type: 3}
-  m_Name: humidifierDE
+  m_Name: Diffuser
   m_EditorClassIdentifier: 
-  id: 6
-  prefab: {fileID: 2189100005083736495, guid: 886be469a3edb83488efca09251c8aa5, type: 3}
+  id: 12
+  prefab: {fileID: 5855536877265284531, guid: c5c6cd03501fa954c8168daaf3155faa, type: 3}
