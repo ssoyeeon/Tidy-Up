@@ -3737,14 +3737,14 @@ RectTransform:
   m_GameObject: {fileID: 455426978}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.63764, y: 0.63764, z: 0.63764}
+  m_LocalScale: {x: 0.4413451, y: 0.4413451, z: 0.4413451}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 957894735}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -332, y: -406}
+  m_AnchoredPosition: {x: -358, y: -411}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &455426980
@@ -3782,8 +3782,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC9C0\uAE08 \uC0DD\uAC01\uD574\uBCF4\uB2C8 \uC774\uB550 \uC815\uB9D0
-    \uC5B4\uB838\uC5B4"
+  m_text: "\uB2E4\uC2DC \uC0DD\uAC01\uD574 \uBCF4\uB2C8 \uC774\uB54C\uAC00 \uAC00\uC7A5
+    \uD589\uBCF5\uD588\uC5C8\uB358 \uAC83 \uAC19\uC544"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 87d1f981040926a4982d87cf3e127bd8, type: 2}
   m_sharedMaterial: {fileID: 6047294052942260185, guid: 87d1f981040926a4982d87cf3e127bd8,
@@ -6334,7 +6334,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &715535736
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6344,7 +6344,7 @@ RectTransform:
   m_GameObject: {fileID: 715535735}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 12.631742, y: 1, z: 1}
+  m_LocalScale: {x: 8.119917, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 957894735}
