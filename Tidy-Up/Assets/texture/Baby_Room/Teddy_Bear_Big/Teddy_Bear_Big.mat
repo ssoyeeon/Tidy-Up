@@ -129,7 +129,7 @@ Material:
     - _RimLightIntensity: 0.5
     - _RimLightPower: 6
     - _ShadowExtraBias: 0
-    - _Smoothness: 0.5
+    - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _Spring: 5
