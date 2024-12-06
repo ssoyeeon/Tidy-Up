@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: -6474478027346902176}
   - component: {fileID: 3353253593503847282}
   - component: {fileID: 1313804877761670062}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Diffuser
-  m_TagString: Untagged
+  m_TagString: Picker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
