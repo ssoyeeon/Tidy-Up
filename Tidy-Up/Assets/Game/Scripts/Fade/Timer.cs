@@ -13,11 +13,13 @@ public class Timer : MonoBehaviour
     public GameObject Object;
     public Image fadeImage; // 페이드용 이미지
     public float fadeDuration = 1f; // 페이드 시간
+    public AudioSource audioSource;
 
     private void Awake()
     {
         firstObject.SetActive(true);
         Object.SetActive(false);
+        audioSource.PlayDelayed(3f);
     }
     // Update is called once per frame
     void Update()
@@ -25,7 +27,7 @@ public class Timer : MonoBehaviour
         StartTimer -= Time.deltaTime;
         NextScene -= Time.deltaTime;
         if(StartTimer <= StopTimer) Object.SetActive(true);
-        if (StartTimer <= 0) { firstObject.SetActive(false); StartTimer = 0; }
+        if (StartTimer <= 0) { firstObject.SetActive(false); StartTimer = 0;}
         if (NextScene <= 5)
         {
             StartCoroutine(FadeOut());

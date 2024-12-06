@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BoxTrigger : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class BoxTrigger : MonoBehaviour
 
     void Start()
     {
-        
+        BoxItem = GameObject.FindGameObjectsWithTag("Picker").Length;
     }
 
     // Update is called once per frame
@@ -20,9 +21,16 @@ public class BoxTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(tag == "Picker")
+        if(other.CompareTag("Picker"))
         {
-            
+            Destroy(other.gameObject);
+
+            BoxItem -= 1;
+
+            if(BoxItem <= 0)
+            {
+                SceneManager.LoadScene("EndScene");
+            }
         }
     }
 }

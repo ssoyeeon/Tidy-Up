@@ -466,6 +466,21 @@ PrefabInstance:
       propertyPath: playerRigidbody
       value: 
       objectReference: {fileID: 290237825}
+    - target: {fileID: 25009251984860270, guid: 31378d9fc21a44b4ebf8f03b24be194e,
+        type: 3}
+      propertyPath: heldObjectPosition.x
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 25009251984860270, guid: 31378d9fc21a44b4ebf8f03b24be194e,
+        type: 3}
+      propertyPath: heldObjectPosition.y
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 25009251984860270, guid: 31378d9fc21a44b4ebf8f03b24be194e,
+        type: 3}
+      propertyPath: heldObjectPosition.z
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 6875174781299004103, guid: 31378d9fc21a44b4ebf8f03b24be194e,
         type: 3}
       propertyPath: m_Name
@@ -3301,6 +3316,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 7491156906514935362}
+    - targetCorrespondingSourceObject: {fileID: 3463244745712802707, guid: c757add987957e34f92bdc3db28b17cb,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7491156906514935363}
   m_SourcePrefab: {fileID: 100100000, guid: c757add987957e34f92bdc3db28b17cb, type: 3}
 --- !u!1 &3239839238930507090 stripped
 GameObject:
@@ -4015,8 +4034,29 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4.752581, y: 2.5347698, z: 3.9142108}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 4.752581, y: 1.327465, z: 3.9142108}
+  m_Center: {x: 0, y: -0.6036525, z: 0}
+--- !u!65 &7491156906514935363
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6479137907789958683}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.43526256, y: 2.5347698, z: 3.9142108}
+  m_Center: {x: -2.1586595, y: 0, z: 0}
 --- !u!65 &7777848591516577292
 BoxCollider:
   m_ObjectHideFlags: 0
