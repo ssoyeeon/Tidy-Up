@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 4132768152219602314}
   - component: {fileID: 3274758459716813131}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: AchievementManagerGameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
