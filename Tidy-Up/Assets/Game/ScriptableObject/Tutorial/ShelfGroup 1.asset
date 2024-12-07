@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: ShelfGroup 1
   m_EditorClassIdentifier: 
   items:
-  - {fileID: 11400000, guid: ecb6ac63a8e3ebf4185e33bec87b3cf0, type: 2}
   - {fileID: 11400000, guid: d27e7fb24be496642b83b27e41f32051, type: 2}
