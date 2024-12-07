@@ -2363,6 +2363,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f5e28666fc510394eb0843de150e63b7, type: 2}
   - {fileID: 11400000, guid: b653d970706bcb44fab86cd4bbed0d5f, type: 2}
   - {fileID: 11400000, guid: 32647032dd725564f8d47a2f1b35fb20, type: 2}
+  bar: {fileID: 0}
+  resetAchievements: 0
 --- !u!4 &583989603
 Transform:
   m_ObjectHideFlags: 0
@@ -2426,6 +2428,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popupPrefab: {fileID: 3274758459716813131, guid: 784fcd0e506f3424988c8b893d409d9f,
     type: 3}
+  targetCanvas: {fileID: 0}
 --- !u!1 &676389077
 GameObject:
   m_ObjectHideFlags: 0
@@ -3054,7 +3057,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -14.158536, y: 4.796686, z: -14.813623}
-  m_LocalScale: {x: 2.823, y: 0.44288, z: 4.7758}
+  m_LocalScale: {x: 2.823, y: 0.26263672, z: 4.7758}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 239757880}
@@ -6650,6 +6653,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Center.z
       value: -0.087516785
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648343140312519562, guid: df6e174e94cdbec4796e9c67290aed2c,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 5.4509134
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648343140312519562, guid: df6e174e94cdbec4796e9c67290aed2c,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 5.480666
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648343140312519562, guid: df6e174e94cdbec4796e9c67290aed2c,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -5.439409
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648343140312519562, guid: df6e174e94cdbec4796e9c67290aed2c,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 5.253265
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

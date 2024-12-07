@@ -2871,7 +2871,7 @@ PrefabInstance:
     - target: {fileID: 4000215418374691535, guid: 23cfde097f188b4438dbe8a0c05ac1ec,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4000215418374691535, guid: 23cfde097f188b4438dbe8a0c05ac1ec,
         type: 3}
@@ -4885,6 +4885,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popupPrefab: {fileID: 3274758459716813131, guid: 784fcd0e506f3424988c8b893d409d9f,
     type: 3}
+  targetCanvas: {fileID: 0}
 --- !u!4 &1051856572
 Transform:
   m_ObjectHideFlags: 0
@@ -5382,6 +5383,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f5e28666fc510394eb0843de150e63b7, type: 2}
   - {fileID: 11400000, guid: b653d970706bcb44fab86cd4bbed0d5f, type: 2}
   - {fileID: 11400000, guid: 32647032dd725564f8d47a2f1b35fb20, type: 2}
+  bar: {fileID: 0}
+  resetAchievements: 0
 --- !u!4 &1125801494
 Transform:
   m_ObjectHideFlags: 0
@@ -8872,6 +8875,11 @@ PrefabInstance:
       propertyPath: fadeImage
       value: 
       objectReference: {fileID: 1662388936}
+    - target: {fileID: 25009251984860270, guid: 31378d9fc21a44b4ebf8f03b24be194e,
+        type: 3}
+      propertyPath: pickupRange
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 25009251984860270, guid: 31378d9fc21a44b4ebf8f03b24be194e,
         type: 3}
       propertyPath: fadeDuration
