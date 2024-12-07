@@ -3359,6 +3359,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f5e28666fc510394eb0843de150e63b7, type: 2}
   - {fileID: 11400000, guid: b653d970706bcb44fab86cd4bbed0d5f, type: 2}
   - {fileID: 11400000, guid: 32647032dd725564f8d47a2f1b35fb20, type: 2}
+  bar: {fileID: 0}
   resetAchievements: 0
 --- !u!4 &2003090074
 Transform:
@@ -4642,6 +4643,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456218766033583493, guid: 0eaa59b2b3a684a4bbff069b5cefdfb0,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.6330292
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456218766033583493, guid: 0eaa59b2b3a684a4bbff069b5cefdfb0,
+        type: 3}
+      propertyPath: m_Center.y
+      value: -0.80309165
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

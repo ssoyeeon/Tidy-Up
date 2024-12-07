@@ -13,6 +13,8 @@ public class AchievementManager : MonoBehaviour
 
     public event Action<AchievementData> OnAchievementUnlocked;
 
+    public GameObject bar;
+
     [SerializeField] private bool resetAchievements = false; // Inspector에서 체크박스로 표시됨
 
 
