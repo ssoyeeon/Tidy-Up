@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: KeyboardEQ
   m_EditorClassIdentifier: 
   id: 17
-  prefab: {fileID: 8114554040867338442, guid: 33e9220ba7b284540bfa67cf4b1d7c58, type: 3}
+  prefab: {fileID: 4418323639586144302, guid: fff84afc93b046c4bbbc4ad49c371a0e, type: 3}
