@@ -974,6 +974,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f5e28666fc510394eb0843de150e63b7, type: 2}
   - {fileID: 11400000, guid: b653d970706bcb44fab86cd4bbed0d5f, type: 2}
   - {fileID: 11400000, guid: 32647032dd725564f8d47a2f1b35fb20, type: 2}
+  bar: {fileID: 0}
+  resetAchievements: 0
 --- !u!4 &579671879
 Transform:
   m_ObjectHideFlags: 0
@@ -1619,6 +1621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popupPrefab: {fileID: 3274758459716813131, guid: 784fcd0e506f3424988c8b893d409d9f,
     type: 3}
+  targetCanvas: {fileID: 0}
 --- !u!1 &1329075923 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2388794741559591853, guid: 079d613aa7f18c542ab28971e57882c0,
@@ -2304,6 +2307,7 @@ PrefabInstance:
     - {fileID: 4103822180223771126, guid: 84539836dfe9e984d95d34565707d208, type: 3}
     - {fileID: 6730262829936306487, guid: 84539836dfe9e984d95d34565707d208, type: 3}
     - {fileID: 1667982224766099440, guid: 84539836dfe9e984d95d34565707d208, type: 3}
+    - {fileID: 6730427591082088663, guid: 84539836dfe9e984d95d34565707d208, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6880938830454638172, guid: 84539836dfe9e984d95d34565707d208,
         type: 3}
