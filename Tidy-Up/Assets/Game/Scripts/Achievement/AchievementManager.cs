@@ -13,6 +13,9 @@ public class AchievementManager : MonoBehaviour
 
     public event Action<AchievementData> OnAchievementUnlocked;
 
+    [SerializeField] private bool resetAchievements = false; // Inspector에서 체크박스로 표시됨
+
+
     private void Awake()
     {
         if(Instance == null)
@@ -26,6 +29,26 @@ public class AchievementManager : MonoBehaviour
     private void Start()
     {
         levelStartTime = Time.time;
+
+        // 체크박스가 체크되어 있으면 업적 초기화
+        if (resetAchievements)
+        {
+            // PlayerPrefs 초기화
+            foreach (var achievement in achievementList)
+            {
+                PlayerPrefs.DeleteKey($"Achievement_{achievement.id}");
+            }
+            PlayerPrefs.Save();
+
+            // Dictionary 초기화
+            foreach (var achievement in achievementList)
+            {
+                unlockedAchievements[achievement.id] = false;
+            }
+
+            Debug.Log("업적이 초기화되었습니다.");
+            resetAchievements = false; // 초기화 후 체크박스 해제
+        }
     }
 
     private void InitializeAchievements()
@@ -40,6 +63,11 @@ public class AchievementManager : MonoBehaviour
     public void OnItemCorrectlyPlaced()
     {
         UnlockAchievement("FIRST_ITEM");
+    }
+
+    public void OnFirstItemPickUp()
+    {
+        UnlockAchievement("FIRST_PICKUP");
     }
 
     public void OnGroupCompleted()

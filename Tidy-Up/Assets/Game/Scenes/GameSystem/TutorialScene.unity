@@ -1058,12 +1058,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -1475,6 +1475,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f5e28666fc510394eb0843de150e63b7, type: 2}
   - {fileID: 11400000, guid: b653d970706bcb44fab86cd4bbed0d5f, type: 2}
   - {fileID: 11400000, guid: 32647032dd725564f8d47a2f1b35fb20, type: 2}
+  - {fileID: 11400000, guid: c25fdd84e6167d74e88a68c7d15d24d7, type: 2}
+  resetAchievements: 1
 --- !u!4 &960652129
 Transform:
   m_ObjectHideFlags: 0
@@ -2643,6 +2645,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popupPrefab: {fileID: 3274758459716813131, guid: 784fcd0e506f3424988c8b893d409d9f,
     type: 3}
+  targetCanvas: {fileID: 754182362}
 --- !u!1 &2036696163
 GameObject:
   m_ObjectHideFlags: 0

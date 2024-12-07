@@ -145,6 +145,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4132768152219602314}
   - component: {fileID: 3274758459716813131}
+  - component: {fileID: 7557997835390139441}
   m_Layer: 0
   m_Name: AchievementManagerGameObject
   m_TagString: Untagged
@@ -171,7 +172,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 964, y: -420}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3274758459716813131
@@ -190,7 +191,19 @@ MonoBehaviour:
   descriptionText: {fileID: 4325605111913376338}
   iconimage: {fileID: 2373863314724255506}
   showDuration: 3
-  canvasGroup: {fileID: 0}
+  canvasGroup: {fileID: 7557997835390139441}
+--- !u!225 &7557997835390139441
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642106708669468818}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &3465051291076402768
 GameObject:
   m_ObjectHideFlags: 0

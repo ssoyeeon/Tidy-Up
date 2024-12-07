@@ -6,6 +6,7 @@ public class AchievementUI : MonoBehaviour
 {
     [SerializeField] private AchievementPopup popupPrefab;
     private Queue<AchievementData> achievementQueue = new Queue<AchievementData>();
+    [SerializeField] private Canvas targetCanvas; // Å¸°Ù Äµ¹ö½º Ãß°¡
     private AchievementPopup currentPopup;
     private bool isShowingPopup = false;
 
@@ -37,7 +38,7 @@ public class AchievementUI : MonoBehaviour
 
         if (currentPopup == null)
         {
-            currentPopup = Instantiate(popupPrefab, transform);
+            currentPopup = Instantiate(popupPrefab, targetCanvas.transform);
         }
 
         currentPopup.ShowAchievement(achievement);

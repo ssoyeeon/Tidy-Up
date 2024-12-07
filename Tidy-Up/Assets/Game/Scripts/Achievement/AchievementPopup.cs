@@ -11,16 +11,20 @@ public class AchievementPopup : MonoBehaviour
     [SerializeField] private Image iconimage;
     [SerializeField] private float showDuration = 3f;
     [SerializeField] private CanvasGroup canvasGroup;
+    [SerializeField] private float fadeSpeed = 1f; // 페이드 속도 조절
+
+    private Coroutine fadeCoroutine;
 
     void Start()
     {
-        Hide();        
+        Hide();
     }
+
     public void ShowAchievement(AchievementData achievement)
     {
         titleText.text = achievement.title;
         descriptionText.text = achievement.description;
-        if(achievement.icon != null)
+        if (achievement.icon != null)
         {
             iconimage.sprite = achievement.icon;
         }
@@ -29,16 +33,48 @@ public class AchievementPopup : MonoBehaviour
 
     private void Show()
     {
-        canvasGroup.alpha = 1;
-        canvasGroup.interactable = true;
-        canvasGroup.blocksRaycasts = true;
+        // 이전에 실행 중인 페이드 코루틴이 있다면 중지
+        if (fadeCoroutine != null)
+        {
+            StopCoroutine(fadeCoroutine);
+        }
+        fadeCoroutine = StartCoroutine(FadeIn());
+    }
+
+    private IEnumerator FadeIn()
+    {
+        canvasGroup.alpha = 0;
+
+        // 페이드 인
+        while (canvasGroup.alpha < 1)
+        {
+            canvasGroup.alpha += Time.deltaTime * fadeSpeed;
+            yield return null;
+        }
+
+        // 지정된 시간만큼 표시
+        yield return new WaitForSeconds(showDuration);
+
+        // 페이드 아웃
+        while (canvasGroup.alpha > 0)
+        {
+            canvasGroup.alpha -= Time.deltaTime * fadeSpeed;
+            yield return null;
+        }
+
+        Hide();
     }
 
     private void Hide()
     {
         canvasGroup.alpha = 0;
-        canvasGroup.interactable = false;
-        canvasGroup.blocksRaycasts = false;
     }
 
+    private void OnDestroy()
+    {
+        if (fadeCoroutine != null)
+        {
+            StopCoroutine(fadeCoroutine);
+        }
+    }
 }

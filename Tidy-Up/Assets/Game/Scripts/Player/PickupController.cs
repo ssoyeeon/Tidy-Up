@@ -231,8 +231,8 @@ public class PickupController : MonoBehaviour
     {
         heldObject = obj; // 들고 있는 물체 설정
         originalScale = obj.transform.localScale; // 물체의 원래 크기 저장
-
-        if(obj.tag == "Picker")
+        AchievementManager.Instance.OnFirstItemPickUp();
+        if (obj.tag == "Picker")
         {
             ObjectItem temp = obj.GetComponent<ObjectItem>();
             if (temp.inGroup == true)
