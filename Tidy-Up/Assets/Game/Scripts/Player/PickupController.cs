@@ -270,6 +270,7 @@ public class PickupController : MonoBehaviour
         if (collider is BoxCollider boxCollider)
         {
             return new Vector3(0, -boxCollider.size.y / 2, 0); // 박스의 하단
+            Debug.Log("박스 하단 계산했어요");
         }
         // 물체가 SphereCollider일 경우 하단점 계산
         else if (collider is SphereCollider sphereCollider)
