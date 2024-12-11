@@ -8,6 +8,13 @@ public class Group : MonoBehaviour
     private HashSet<int> currentItems = new HashSet<int>();
     private bool firstItemPlaced = false;
 
+    public void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.K))
+        {
+            isComplete = true;
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         var item = other.GetComponent<Item>();

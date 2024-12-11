@@ -5383,6 +5383,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f5e28666fc510394eb0843de150e63b7, type: 2}
   - {fileID: 11400000, guid: b653d970706bcb44fab86cd4bbed0d5f, type: 2}
   - {fileID: 11400000, guid: 32647032dd725564f8d47a2f1b35fb20, type: 2}
+  - {fileID: 11400000, guid: c25fdd84e6167d74e88a68c7d15d24d7, type: 2}
   bar: {fileID: 0}
   resetAchievements: 1
 --- !u!4 &1125801494
@@ -5815,7 +5816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneName:
-  - 
+  - IntroScene
   - 
   - 
   - 
@@ -8943,6 +8944,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4000215418374691535, guid: 23cfde097f188b4438dbe8a0c05ac1ec,
         type: 3}
+    - target: {fileID: 246355895623782468, guid: 31378d9fc21a44b4ebf8f03b24be194e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 246355895623782468, guid: 31378d9fc21a44b4ebf8f03b24be194e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1196364462}
+    - target: {fileID: 246355895623782468, guid: 31378d9fc21a44b4ebf8f03b24be194e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartScene
+      objectReference: {fileID: 0}
     - target: {fileID: 720619269287322192, guid: 31378d9fc21a44b4ebf8f03b24be194e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8952,6 +8968,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.907
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699672654073066378, guid: 31378d9fc21a44b4ebf8f03b24be194e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1196364462}
+    - target: {fileID: 1699672654073066378, guid: 31378d9fc21a44b4ebf8f03b24be194e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExitButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1972318400389908980, guid: 31378d9fc21a44b4ebf8f03b24be194e,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.009009008
       objectReference: {fileID: 0}
     - target: {fileID: 1972318400389908980, guid: 31378d9fc21a44b4ebf8f03b24be194e,
         type: 3}
@@ -9005,8 +9036,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7206037854552962614, guid: 31378d9fc21a44b4ebf8f03b24be194e,
         type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.009009008
+      objectReference: {fileID: 0}
+    - target: {fileID: 7206037854552962614, guid: 31378d9fc21a44b4ebf8f03b24be194e,
+        type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7206037854552962614, guid: 31378d9fc21a44b4ebf8f03b24be194e,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.009009008
       objectReference: {fileID: 0}
     - target: {fileID: 7442676617444152600, guid: 31378d9fc21a44b4ebf8f03b24be194e,
         type: 3}
